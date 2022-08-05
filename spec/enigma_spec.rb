@@ -1,0 +1,164 @@
+require 'enigma'
+
+describe Enigma do
+  let(:enigma) {Enigma.new}
+
+  it 'exists and has attributes' do
+    expect(enigma).to be_instance_of(Enigma)
+    expect(enigma.message).to eq(nil)
+    expect(enigma.given_key).to eq(nil)
+    expect(enigma.given_date).to eq(nil)
+    expect(enigma.encrypted_message).to eq(nil)
+    expect(enigma.character_set).to eq(["a", "b", "c", "d", "e", "f", 
+                                        "g", "h", "i", "j", "k", "l", 
+                                        "m", "n", "o", "p", "q", "r", 
+                                        "s", "t", "u", "v", "w", "x", 
+                                        "y", "z", " "])
+  end
+
+  it 'encrypts a message when given a key and date' do
+    allow(enigma).to receive(:encrypt_message).and_return("keder ohulw")
+    expect(enigma.encrypt("hello world", "02715", "040895")).to eq( {
+          encryption: "keder ohulw",
+          key: "02715",
+          date: "040895"
+        } )
+    expect(enigma.message).to eq("hello world")
+    expect(enigma.given_key).to eq("02715")
+    expect(enigma.given_date).to eq("040895")
+  end
+
+  it 'assigns message, key, and date attributes based on input' do
+    allow(enigma).to receive(:encrypt_message).and_return("keder ohulw")
+    enigma.encrypt("hello world", "02715", "040895")
+    expect(enigma.message).to eq("hello world")
+    expect(enigma.given_key).to eq("02715")
+    expect(enigma.given_date).to eq("040895")
+  end
+
+  it 'determines the key shift for A key' do
+    allow(enigma).to receive(:encrypt_message).and_return("keder ohulw")
+    enigma.encrypt("hello world", "02715", "040895")
+    expect(enigma.a_key_shift).to eq(2)
+  end
+
+  it 'determines the key shift for B key' do
+    allow(enigma).to receive(:encrypt_message).and_return("keder ohulw")
+    enigma.encrypt("hello world", "02715", "040895")
+    expect(enigma.b_key_shift).to eq(27)
+  end
+
+  it 'determines the key shift for C key' do
+    allow(enigma).to receive(:encrypt_message).and_return("keder ohulw")
+    enigma.encrypt("hello world", "02715", "040895")
+    expect(enigma.c_key_shift).to eq(71)
+  end
+
+  it 'determines the key shift for D key' do
+    allow(enigma).to receive(:encrypt_message).and_return("keder ohulw")
+    enigma.encrypt("hello world", "02715", "040895")
+    expect(enigma.d_key_shift).to eq(15)
+  end
+
+  it 'squares the properly formatted date' do
+    allow(enigma).to receive(:encrypt_message).and_return("keder ohulw")
+    enigma.encrypt("hello world", "02715", "040895")
+    expect(enigma.square_date).to eq(1672401025)
+  end
+
+  it 'determines the date shift for A key' do
+    allow(enigma).to receive(:encrypt_message).and_return("keder ohulw")
+    enigma.encrypt("hello world", "02715", "040895")
+    expect(enigma.a_date_shift).to eq(1)
+  end
+
+  it 'determines the date shift for B key' do
+    allow(enigma).to receive(:encrypt_message).and_return("keder ohulw")
+    enigma.encrypt("hello world", "02715", "040895")
+    expect(enigma.b_date_shift).to eq(0)
+  end
+
+  it 'determines the date shift for C key' do
+    allow(enigma).to receive(:encrypt_message).and_return("keder ohulw")
+    enigma.encrypt("hello world", "02715", "040895")
+    expect(enigma.c_date_shift).to eq(2)
+  end
+
+  it 'determines the date shift for D key' do
+    allow(enigma).to receive(:encrypt_message).and_return("keder ohulw")
+    enigma.encrypt("hello world", "02715", "040895")
+    expect(enigma.d_date_shift).to eq(5)
+  end
+
+  it 'determines final shifts for A, B, C, D keys' do
+    allow(enigma).to receive(:encrypt_message).and_return("keder ohulw")
+    enigma.encrypt("hello world", "02715", "040895")
+
+    expect(enigma.a_final_shift).to eq(3)
+    expect(enigma.b_final_shift).to eq(27)
+    expect(enigma.c_final_shift).to eq(73)
+    expect(enigma.d_final_shift).to eq(20)
+  end
+
+  it 'determines encrypted character for A, B, C, D keys' do
+    allow(enigma).to receive(:encrypt_message).and_return("keder ohulw")
+    enigma.encrypt("hello world", "02715", "040895")
+
+    expect(enigma.a_shift("h")).to eq("k")
+    expect(enigma.b_shift("e")).to eq("e")
+    expect(enigma.c_shift("l")).to eq("d")
+    expect(enigma.d_shift("l")).to eq("e")
+  end
+
+  describe 'sorts the message' do
+
+  end
+
+  it 'encrypts the message' do
+    enigma.encrypt("hello ", "02715", "040895")
+      enigma.message = "h"
+      expect(enigma.encrypt_message).to eq("k")
+
+      enigma.message = "he"
+      expect(enigma.encrypt_message).to eq("ke")
+
+      enigma.message = "hel"
+      expect(enigma.encrypt_message).to eq("ked")
+
+      enigma.message = "hell"
+      expect(enigma.encrypt_message).to eq("kede")
+
+      enigma.message = "hello world"
+      expect(enigma.encrypt_message).to eq("keder ohulw")
+  end
+
+  it 'determines decrypted character for A, B, C, D keys' do
+    enigma.encrypted_message = "keder ohulw"
+    enigma.given_date = "040895"
+    enigma.given_key = "02715"
+
+    expect(enigma.reverse_a_shift("k")).to eq("h")
+    expect(enigma.reverse_b_shift("e")).to eq("e")
+    expect(enigma.reverse_c_shift("d")).to eq("l")
+    expect(enigma.reverse_d_shift("e")).to eq("l")
+  end
+
+  it 'decrypts the message' do
+    enigma.given_date = "040895"
+    enigma.given_key = "02715"
+    enigma.encrypted_message = "k"
+    expect(enigma.decrypt_message).to eq("h")
+
+    enigma.encrypted_message = "ke"
+    expect(enigma.decrypt_message).to eq("he")
+
+    enigma.encrypted_message = "ked"
+    expect(enigma.decrypt_message).to eq("hel")
+
+    enigma.encrypted_message = "kede"
+    expect(enigma.decrypt_message).to eq("hell")
+
+    enigma.encrypted_message = "keder ohulw"
+    expect(enigma.decrypt_message).to eq("hello world")
+  end
+end
