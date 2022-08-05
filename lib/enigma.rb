@@ -143,6 +143,7 @@ class Enigma
   def decrypt_message
     position = 0
     @message = @encrypted_message.split("").map do |character|
+      return character unless @character_set.include?(character)
       position += 1
       if position % 4 == 1
         reverse_a_shift(character)
