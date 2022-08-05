@@ -1,4 +1,7 @@
+require 'key_generator'
+
 class Enigma
+  include KeyGenerator
   attr_accessor :message,
               :given_key,
               :given_date,
