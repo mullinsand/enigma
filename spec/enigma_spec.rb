@@ -162,3 +162,4 @@ describe Enigma do
     expect(enigma.decrypt_message).to eq("hello world")
   end
 end
+
