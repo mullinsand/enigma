@@ -1,4 +1,4 @@
-require 'key_generator'
+require_relative 'key_generator'
 
 class Enigma
   include KeyGenerator

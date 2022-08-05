@@ -1,4 +1,4 @@
-require 'enigma'
+require './lib/enigma'
 
 module KeyGenerator
   def generate_key
