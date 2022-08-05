@@ -42,4 +42,24 @@ class Enigma
   def d_key_shift
     @given_key[3..4].to_i
   end
+
+  def square_date
+    @given_date.to_i**2
+  end
+
+  def a_date_shift
+    square_date.digits[3]
+  end
+
+  def b_date_shift
+    square_date.digits[2]
+  end
+
+  def c_date_shift
+    square_date.digits[1]
+  end
+
+  def d_date_shift
+    square_date.digits[0]
+  end
 end

@@ -53,4 +53,34 @@ describe Enigma do
     enigma.encrypt("hello world", "02715", "040895")
     expect(enigma.d_key_shift).to eq(15)
   end
+
+  it 'squares the properly formatted date' do
+    allow(enigma).to receive(:encrypt_message).and_return("keder ohulw")
+    enigma.encrypt("hello world", "02715", "040895")
+    expect(enigma.square_date).to eq(1672401025)
+  end
+
+  it 'determines the date shift for A key' do
+    allow(enigma).to receive(:encrypt_message).and_return("keder ohulw")
+    enigma.encrypt("hello world", "02715", "040895")
+    expect(enigma.a_date_shift).to eq(1)
+  end
+
+  it 'determines the date shift for B key' do
+    allow(enigma).to receive(:encrypt_message).and_return("keder ohulw")
+    enigma.encrypt("hello world", "02715", "040895")
+    expect(enigma.b_date_shift).to eq(0)
+  end
+
+  it 'determines the date shift for C key' do
+    allow(enigma).to receive(:encrypt_message).and_return("keder ohulw")
+    enigma.encrypt("hello world", "02715", "040895")
+    expect(enigma.c_date_shift).to eq(2)
+  end
+
+  it 'determines the date shift for D key' do
+    allow(enigma).to receive(:encrypt_message).and_return("keder ohulw")
+    enigma.encrypt("hello world", "02715", "040895")
+    expect(enigma.d_date_shift).to eq(5)
+  end
 end
