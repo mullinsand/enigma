@@ -98,4 +98,14 @@ describe Enigma do
     expect(enigma.c_final_shift).to eq(73)
     expect(enigma.d_final_shift).to eq(20)
   end
+
+  it 'determines encrypted character for A, B, C, D keys' do
+    allow(enigma).to receive(:encrypt_message).and_return("keder ohulw")
+    enigma.encrypt("hello world", "02715", "040895")
+
+    expect(enigma.a_shift("h")).to eq("k")
+    expect(enigma.b_shift("e")).to eq("e")
+    expect(enigma.c_shift("l")).to eq("d")
+    expect(enigma.d_shift("l")).to eq("e")
+  end
 end

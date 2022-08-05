@@ -84,4 +84,20 @@ class Enigma
   def d_final_shift
     d_key_shift + d_date_shift
   end
+
+  def a_shift(character)
+    @character_set[(@character_set.index(character) + a_final_shift) % 27]
+  end
+
+  def b_shift(character)
+    @character_set[(@character_set.index(character) + b_final_shift) % 27]
+  end
+
+  def c_shift(character)
+    @character_set[(@character_set.index(character) + c_final_shift) % 27]
+  end
+
+  def d_shift(character)
+    @character_set[(@character_set.index(character) + d_final_shift) % 27]
+  end
 end
