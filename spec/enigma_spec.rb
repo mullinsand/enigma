@@ -31,6 +31,26 @@ describe Enigma do
   end
 
   it 'determines the key shift for A key' do
+    allow(enigma).to receive(:encrypt_message).and_return("keder ohulw")
+    enigma.encrypt("hello world", "02715", "040895")
     expect(enigma.a_key_shift).to eq(2)
+  end
+
+  it 'determines the key shift for B key' do
+    allow(enigma).to receive(:encrypt_message).and_return("keder ohulw")
+    enigma.encrypt("hello world", "02715", "040895")
+    expect(enigma.b_key_shift).to eq(27)
+  end
+
+  it 'determines the key shift for C key' do
+    allow(enigma).to receive(:encrypt_message).and_return("keder ohulw")
+    enigma.encrypt("hello world", "02715", "040895")
+    expect(enigma.c_key_shift).to eq(71)
+  end
+
+  it 'determines the key shift for D key' do
+    allow(enigma).to receive(:encrypt_message).and_return("keder ohulw")
+    enigma.encrypt("hello world", "02715", "040895")
+    expect(enigma.d_key_shift).to eq(15)
   end
 end

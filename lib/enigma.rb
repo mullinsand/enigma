@@ -28,6 +28,18 @@ class Enigma
   end
 
   def a_key_shift
+    @given_key[0..1].to_i
+  end
 
+  def b_key_shift
+    @given_key[1..2].to_i
+  end
+
+  def c_key_shift
+    @given_key[2..3].to_i
+  end
+
+  def d_key_shift
+    @given_key[3..4].to_i
   end
 end
