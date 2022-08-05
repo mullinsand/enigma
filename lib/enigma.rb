@@ -100,4 +100,22 @@ class Enigma
   def d_shift(character)
     @character_set[(@character_set.index(character) + d_final_shift) % 27]
   end
+   
+  def encrypt_message
+    position = 1
+    decrypted_message = []
+    @message.split("").each do |character|
+      if position % 4 == 1
+        decrypted_message << a_shift(character)
+      elsif position % 4 == 2 
+        decrypted_message << b_shift(character)
+      elsif position % 4 == 3
+        decrypted_message << c_shift(character)
+      elsif position % 4 == 0
+        decrypted_message << d_shift(character) 
+      end
+      position += 1
+    end
+    decrypted_message.join
+  end
 end

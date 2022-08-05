@@ -108,4 +108,31 @@ describe Enigma do
     expect(enigma.c_shift("l")).to eq("d")
     expect(enigma.d_shift("l")).to eq("e")
   end
+
+  it 'identifies A,B,C,D keys in the message' do
+    allow(enigma).to receive(:encrypt_message).and_return("keder ohulw")
+    enigma.encrypt("hello world", "02715", "040895")
+      # enigma.message = "h"
+      # expect(enigma.sort_message).to eq("k")
+
+      # enigma.message = "he"
+      # expect(enigma.sort_message).to eq("ke")
+    # it 'can tell C key' do
+    #   enigma.message = "hel"
+    #   expect(enigma.sort_message).to eq("ked")
+    # end
+    # it 'can tell D key' do
+    #   enigma.message = "hell"
+    #   expect(enigma.sort_message).to eq("kede")
+    # end
+    # it 'can tell A key' do
+    #   enigma.message = "hello"
+    #   expect(enigma.sort_message).to eq("keder")
+    # end
+      enigma.message = "hello "
+      expect(enigma.sort_message).to eq("keder ")
+
+
+
+  end
 end
