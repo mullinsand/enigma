@@ -2,7 +2,8 @@ class Enigma
   attr_accessor :message,
               :given_key,
               :given_date,
-              :character_set
+              :character_set,
+              :encrypted_message
 
   def initialize
     #component_creation
@@ -15,6 +16,7 @@ class Enigma
     @message = nil
     @given_key = nil
     @given_date = nil
+    @encrypted_message = nil
     @character_set = ["a", "b", "c", "d", "e", "f", 
                       "g", "h", "i", "j", "k", "l", 
                       "m", "n", "o", "p", "q", "r", 
@@ -27,7 +29,7 @@ class Enigma
     @given_key = given_key
     @given_date = given_date
     {
-      encryption: encrypt_message(message, given_key, given_date),
+      encryption: encrypt_message,
       key: given_key,
       date: given_date
     }
@@ -100,22 +102,57 @@ class Enigma
   def d_shift(character)
     @character_set[(@character_set.index(character) + d_final_shift) % 27]
   end
-   
+
+  def reverse_a_shift(character)
+    @character_set[(@character_set.index(character) - a_final_shift) % 27]
+  end
+
+  def reverse_b_shift(character)
+    @character_set[(@character_set.index(character) - b_final_shift) % 27]
+  end
+
+  def reverse_c_shift(character)
+    @character_set[(@character_set.index(character) - c_final_shift) % 27]
+  end
+
+  def reverse_d_shift(character)
+    @character_set[(@character_set.index(character) - d_final_shift) % 27]
+  end
+  
+  def sort_by_position(character)
+
+  end
+
   def encrypt_message
-    position = 1
-    decrypted_message = []
-    @message.split("").each do |character|
-      if position % 4 == 1
-        decrypted_message << a_shift(character)
-      elsif position % 4 == 2 
-        decrypted_message << b_shift(character)
-      elsif position % 4 == 3
-        decrypted_message << c_shift(character)
-      elsif position % 4 == 0
-        decrypted_message << d_shift(character) 
-      end
+    position = 0
+    @encrypted_message = @message.split("").map do |character|
       position += 1
-    end
-    decrypted_message.join
+      return character unless @character_set.include?(character)
+      if position % 4 == 1
+        a_shift(character)
+      elsif position % 4 == 2
+        b_shift(character)
+      elsif position % 4 == 3
+        c_shift(character)
+      elsif position % 4 == 0
+        d_shift(character)
+      end
+    end.join
+  end
+
+  def decrypt_message
+    position = 0
+    @message = @encrypted_message.split("").map do |character|
+      position += 1
+      if position % 4 == 1
+        reverse_a_shift(character)
+      elsif position % 4 == 2
+        reverse_b_shift(character)
+      elsif position % 4 == 3
+        reverse_c_shift(character)
+      elsif position % 4 == 0
+        reverse_d_shift(character)
+      end
+    end.join
   end
 end

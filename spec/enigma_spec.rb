@@ -8,6 +8,7 @@ describe Enigma do
     expect(enigma.message).to eq(nil)
     expect(enigma.given_key).to eq(nil)
     expect(enigma.given_date).to eq(nil)
+    expect(enigma.encrypted_message).to eq(nil)
     expect(enigma.character_set).to eq(["a", "b", "c", "d", "e", "f", 
                                         "g", "h", "i", "j", "k", "l", 
                                         "m", "n", "o", "p", "q", "r", 
@@ -109,30 +110,55 @@ describe Enigma do
     expect(enigma.d_shift("l")).to eq("e")
   end
 
-  it 'identifies A,B,C,D keys in the message' do
-    allow(enigma).to receive(:encrypt_message).and_return("keder ohulw")
-    enigma.encrypt("hello world", "02715", "040895")
-      # enigma.message = "h"
-      # expect(enigma.sort_message).to eq("k")
+  describe 'sorts the message' do
 
-      # enigma.message = "he"
-      # expect(enigma.sort_message).to eq("ke")
-    # it 'can tell C key' do
-    #   enigma.message = "hel"
-    #   expect(enigma.sort_message).to eq("ked")
-    # end
-    # it 'can tell D key' do
-    #   enigma.message = "hell"
-    #   expect(enigma.sort_message).to eq("kede")
-    # end
-    # it 'can tell A key' do
-    #   enigma.message = "hello"
-    #   expect(enigma.sort_message).to eq("keder")
-    # end
-      enigma.message = "hello "
-      expect(enigma.sort_message).to eq("keder ")
+  end
 
+  it 'encrypts the message' do
+    enigma.encrypt("hello ", "02715", "040895")
+      enigma.message = "h"
+      expect(enigma.encrypt_message).to eq("k")
 
+      enigma.message = "he"
+      expect(enigma.encrypt_message).to eq("ke")
 
+      enigma.message = "hel"
+      expect(enigma.encrypt_message).to eq("ked")
+
+      enigma.message = "hell"
+      expect(enigma.encrypt_message).to eq("kede")
+
+      enigma.message = "hello world"
+      expect(enigma.encrypt_message).to eq("keder ohulw")
+  end
+
+  it 'determines decrypted character for A, B, C, D keys' do
+    enigma.encrypted_message = "keder ohulw"
+    enigma.given_date = "040895"
+    enigma.given_key = "02715"
+
+    expect(enigma.reverse_a_shift("k")).to eq("h")
+    expect(enigma.reverse_b_shift("e")).to eq("e")
+    expect(enigma.reverse_c_shift("d")).to eq("l")
+    expect(enigma.reverse_d_shift("e")).to eq("l")
+  end
+
+  it 'decrypts the message' do
+    enigma.given_date = "040895"
+    enigma.given_key = "02715"
+    enigma.encrypted_message = "k"
+    expect(enigma.decrypt_message).to eq("h")
+
+    enigma.encrypted_message = "ke"
+    expect(enigma.decrypt_message).to eq("he")
+
+    enigma.encrypted_message = "ked"
+    expect(enigma.decrypt_message).to eq("hel")
+
+    enigma.encrypted_message = "kede"
+    expect(enigma.decrypt_message).to eq("hell")
+
+    enigma.encrypted_message = "keder ohulw"
+    expect(enigma.decrypt_message).to eq("hello world")
   end
 end
