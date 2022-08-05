@@ -27,14 +27,25 @@ class Enigma
                       "y", "z", " "]
   end
 
-  def encrypt(message, given_key, given_date = Time.new.strftime("%m%d%y"))
+  def encrypt(message, given_key = generate_key, given_date = Time.new.strftime("%m%d%y"))
     @message = message
     @given_key = given_key
     @given_date = given_date
     {
       encryption: encrypt_message,
-      key: given_key,
-      date: given_date
+      key: @given_key,
+      date: @given_date
+    }
+  end
+
+  def decrypt(ciphertext, given_key, given_date = Time.new.strftime("%m%d%y"))
+    @encrypted_message = ciphertext
+    @given_key = given_key
+    @given_date = given_date
+    {
+      decryption: decrypt_message,
+      key: @given_key,
+      date: @given_date
     }
   end
 

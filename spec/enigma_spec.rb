@@ -17,7 +17,6 @@ describe Enigma do
   end
 
   it 'encrypts a message when given a key and date' do
-    allow(enigma).to receive(:encrypt_message).and_return("keder ohulw")
     expect(enigma.encrypt("hello world", "02715", "040895")).to eq( {
           encryption: "keder ohulw",
           key: "02715",
@@ -26,6 +25,41 @@ describe Enigma do
     expect(enigma.message).to eq("hello world")
     expect(enigma.given_key).to eq("02715")
     expect(enigma.given_date).to eq("040895")
+  end
+
+  xit 'encrypts a message' do
+    allow(enigma).to receive(:key_generator).and_return("02715")
+    allow(enigma).to receive(:given_date).and_return("040895")
+
+    expect(enigma.encrypt("hello world")).to eq( {
+          encryption: "keder ohulw",
+          key: "02715",
+          date: "040895"
+        } )
+    expect(enigma.message).to eq("hello world")
+    expect(enigma.given_key).to eq("02715")
+    expect(enigma.given_date).to eq("040895")
+  end
+
+  it 'decrypts a ciphertext when given a key and date' do
+    expect(enigma.decrypt("keder ohulw", "02715", "040895")).to eq( {
+          decryption: "hello world",
+          key: "02715",
+          date: "040895"
+        } )
+    
+    expect(enigma.encrypted_message).to eq("keder ohulw")
+    expect(enigma.given_key).to eq("02715")
+    expect(enigma.given_date).to eq("040895")
+  end
+
+  xit 'decrypts a ciphertext when given a just a key' do
+    allow(enigma).to receive(:given_date).and_return("040895")
+    expect(enigma.decrypt("keder ohulw", "02715")).to eq( {
+      encryption: "hello world",
+      key: "02715",
+      date: "040895"
+    } )
   end
 
   it 'assigns message, key, and date attributes based on input' do
