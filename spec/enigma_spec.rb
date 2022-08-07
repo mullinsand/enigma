@@ -197,3 +197,54 @@ describe Enigma do
   end
 end
 
+describe 'cracking some code' do
+  let(:enigma) {Enigma.new}
+  it 'figures out the end positions' do
+    @encrypted_message = enigma.encrypt("hello end", "02715", "040895")[:encryption]
+    #keder xgg
+    @date = "040895"
+#figure out positions for " end" in the message to determine ABCD shifts
+#total length of message - 3 for " "
+    expect(enigma.space_position).to eq(6)
+    expect(enigma.e_position).to eq(7)
+    expect(enigma.n_position).to eq(8)
+    expect(enigma.d_position).to eq(9)
+  end
+
+  it 'determines ABCD shifts and shifts using just date shift' do
+    @encrypted_message = enigma.encrypt("hello end", "02715", "040895")[:encryption]
+    #keder xgg
+    @date = "040895"
+    expect(enigma.date_shift(enigma.space_position, " ")).to eq(" ")
+    expect(enigma.date_shift(enigma.e_position, "e")).to eq("g")
+    expect(enigma.date_shift(enigma.n_position, "n")).to eq("s")
+    expect(enigma.date_shift(enigma.d_position, "d")).to eq("e")
+    # #2 key shifd
+    # #1 date shift
+    # enigma.determine_a_key_shift
+    # #27
+    # #0
+    # enigma.determine_b_key_shift
+    # #71
+    # #2
+    # enigma.determine_c_key_shift
+    # #15
+    # #5
+    # enigma.determine_d_key_shift
+  end
+
+  it 'determines key shift' do
+    @encrypted_message = enigma.encrypt("hello end", "02715", "040895")[:encryption]
+    #keder xgg
+    @date = "040895"
+
+    expect(key_shift(@encrypted_message[enigma.space_position], enigma.date_shift(enigma.space_position, " "))).to eq(" ")
+    expect(enigma.date_shift(enigma.e_position, "e")).to eq("g")
+    expect(enigma.date_shift(enigma.n_position, "n")).to eq("s")
+    expect(enigma.date_shift(enigma.d_position, "d")).to eq("e")
+  end
+  
+  
+
+end
+

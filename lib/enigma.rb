@@ -25,9 +25,10 @@ class Enigma
                       "m", "n", "o", "p", "q", "r", 
                       "s", "t", "u", "v", "w", "x", 
                       "y", "z", " "]
+
   end
 
-  def encrypt(message, given_key = generate_key, given_date = Time.new.strftime("%m%d%y"))
+  def encrypt(message, given_key = generate_key, given_date = Time.new.strftime("%d%m%y"))
     @message = message
     @given_key = given_key
     @given_date = given_date
@@ -38,7 +39,7 @@ class Enigma
     }
   end
 
-  def decrypt(ciphertext, given_key, given_date = Time.new.strftime("%m%d%y"))
+  def decrypt(ciphertext, given_key, given_date = Time.new.strftime("d%m%y"))
     @encrypted_message = ciphertext
     @given_key = given_key
     @given_date = given_date
@@ -172,4 +173,33 @@ class Enigma
       end
     end.join
   end
+
+  def space_position
+    @encrypted_message.length - 3
+  end
+
+  def e_position
+    @encrypted_message.length - 2
+  end
+
+  def n_position
+    @encrypted_message.length - 1
+  end
+
+  def d_position
+    @encrypted_message.length
+  end
+
+  def date_shift(position, character)
+    if position % 4 == 1
+      @character_set[(@character_set.index(character) + square_date.digits[3]) % 27]
+    elsif position % 4 == 2
+      @character_set[(@character_set.index(character) + square_date.digits[2]) % 27]
+    elsif position % 4 == 3
+      @character_set[(@character_set.index(character) + square_date.digits[1]) % 27]
+    elsif position % 4 == 0
+      @character_set[(@character_set.index(character) + square_date.digits[0]) % 27]
+    end
+  end
+
 end
