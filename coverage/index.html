@@ -14,7 +14,7 @@
       <img src="./assets/0.12.3/loading.gif" alt="loading"/>
     </div>
     <div id="wrapper" class="hide">
-      <div class="timestamp">Generated <abbr class="timeago" title="2022-08-05T06:22:45-06:00">2022-08-05T06:22:45-06:00</abbr></div>
+      <div class="timestamp">Generated <abbr class="timeago" title="2022-08-08T15:22:51-06:00">2022-08-08T15:22:51-06:00</abbr></div>
       <ul class="group_tabs"></ul>
 
       <div id="content">
@@ -23,14 +23,14 @@
     <span class="group_name">All Files</span>
     (<span class="covered_percent">
       <span class="green">
-  100.0%
+  93.67%
 </span>
 
      </span>
      covered at
      <span class="covered_strength">
        <span class="green">
-         4.55
+         37.89
        </span>
     </span> hits/line
     )
@@ -39,15 +39,15 @@
   <a name="AllFiles"></a>
 
   <div>
-    <b>2</b> files in total.
+    <b>3</b> files in total.
   </div>
 
   <div class="t-line-summary">
-    <b>187</b> relevant lines,
-    <span class="green"><b>187</b> lines covered</span> and
-    <span class="red"><b>0</b> lines missed. </span>
+    <b>411</b> relevant lines,
+    <span class="green"><b>385</b> lines covered</span> and
+    <span class="red"><b>26</b> lines missed. </span>
     (<span class="green">
-  100.0%
+  93.67%
 </span>
 )
   </div>
@@ -72,21 +72,32 @@
         
           <tr class="t-file">
             <td class="strong t-file__name"><a href="#aed6fc848c06623f7307174aea7d936c0d533763" class="src_link" title="lib/enigma.rb">lib/enigma.rb</a></td>
-            <td class="green strong cell--number t-file__coverage">100.00 %</td>
-            <td class="cell--number">158</td>
-            <td class="cell--number">81</td>
-            <td class="cell--number">81</td>
-            <td class="cell--number">0</td>
-            <td class="cell--number">8.99</td>
+            <td class="green strong cell--number t-file__coverage">90.45 %</td>
+            <td class="cell--number">360</td>
+            <td class="cell--number">220</td>
+            <td class="cell--number">199</td>
+            <td class="cell--number">21</td>
+            <td class="cell--number">69.80</td>
+            
+          </tr>
+        
+          <tr class="t-file">
+            <td class="strong t-file__name"><a href="#f59fbdcdbf579d80535c1cb7a68c706cbd64e580" class="src_link" title="lib/key_generator.rb">lib/key_generator.rb</a></td>
+            <td class="red strong cell--number t-file__coverage">37.50 %</td>
+            <td class="cell--number">12</td>
+            <td class="cell--number">8</td>
+            <td class="cell--number">3</td>
+            <td class="cell--number">5</td>
+            <td class="cell--number">0.38</td>
             
           </tr>
         
           <tr class="t-file">
             <td class="strong t-file__name"><a href="#c83cf23364bd232cb9e0d51fae88860fa2be0e6f" class="src_link" title="spec/enigma_spec.rb">spec/enigma_spec.rb</a></td>
             <td class="green strong cell--number t-file__coverage">100.00 %</td>
-            <td class="cell--number">164</td>
-            <td class="cell--number">106</td>
-            <td class="cell--number">106</td>
+            <td class="cell--number">327</td>
+            <td class="cell--number">183</td>
+            <td class="cell--number">183</td>
             <td class="cell--number">0</td>
             <td class="cell--number">1.16</td>
             
@@ -114,7 +125,7 @@
     <h3>lib/enigma.rb</h3>
     <h4>
       <span class="green">
-  100.0%
+  90.45%
 </span>
 
       lines covered
@@ -123,9 +134,9 @@
     
 
     <div class="t-line-summary">
-      <b>81</b> relevant lines.
-      <span class="green"><b>81</b> lines covered</span> and
-      <span class="red"><b>0</b> lines missed.</span>
+      <b>220</b> relevant lines.
+      <span class="green"><b>199</b> lines covered</span> and
+      <span class="red"><b>21</b> lines missed.</span>
     </div>
 
     
@@ -142,12 +153,45 @@
 
             
 
+            <code class="ruby">require_relative &#39;key_generator&#39;</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="2">
+            
+            
+
+            
+
+            <code class="ruby"></code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="3">
+            <span class="hits">1</span>
+            
+
+            
+
             <code class="ruby">class Enigma</code>
           </li>
         </div>
       
         <div>
-          <li class="covered" data-hits="1" data-linenumber="2">
+          <li class="covered" data-hits="1" data-linenumber="4">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">  include KeyGenerator</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="5">
             <span class="hits">1</span>
             
 
@@ -158,7 +202,7 @@
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="3">
+          <li class="never" data-hits="" data-linenumber="6">
             
             
 
@@ -169,7 +213,7 @@
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="4">
+          <li class="never" data-hits="" data-linenumber="7">
             
             
 
@@ -180,7 +224,7 @@
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="5">
+          <li class="never" data-hits="" data-linenumber="8">
             
             
 
@@ -191,7 +235,7 @@
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="6">
+          <li class="never" data-hits="" data-linenumber="9">
             
             
 
@@ -202,7 +246,7 @@
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="7">
+          <li class="never" data-hits="" data-linenumber="10">
             
             
 
@@ -213,7 +257,7 @@
         </div>
       
         <div>
-          <li class="covered" data-hits="1" data-linenumber="8">
+          <li class="covered" data-hits="1" data-linenumber="11">
             <span class="hits">1</span>
             
 
@@ -224,46 +268,13 @@
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="9">
-            
-            
-
-            
-
-            <code class="ruby">    #component_creation</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="never" data-hits="" data-linenumber="10">
-            
+          <li class="covered" data-hits="29" data-linenumber="12">
+            <span class="hits">29</span>
             
 
             
 
-            <code class="ruby">    #CLI Class</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="never" data-hits="" data-linenumber="11">
-            
-            
-
-            
-
-            <code class="ruby">    #run CLI method</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="never" data-hits="" data-linenumber="12">
-            
-            
-
-            
-
-            <code class="ruby">      #Input (encryption, decryption, crack)</code>
+            <code class="ruby">    @character_set = [&quot;a&quot;, &quot;b&quot;, &quot;c&quot;, &quot;d&quot;, &quot;e&quot;, &quot;f&quot;, </code>
           </li>
         </div>
       
@@ -274,7 +285,7 @@
 
             
 
-            <code class="ruby">      #Sends info onto crypto class</code>
+            <code class="ruby">                      &quot;g&quot;, &quot;h&quot;, &quot;i&quot;, &quot;j&quot;, &quot;k&quot;, &quot;l&quot;, </code>
           </li>
         </div>
       
@@ -285,7 +296,7 @@
 
             
 
-            <code class="ruby">      #Outputs final stuff</code>
+            <code class="ruby">                      &quot;m&quot;, &quot;n&quot;, &quot;o&quot;, &quot;p&quot;, &quot;q&quot;, &quot;r&quot;, </code>
           </li>
         </div>
       
@@ -296,100 +307,12 @@
 
             
 
-            <code class="ruby">    #Enigma Class</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="covered" data-hits="17" data-linenumber="16">
-            <span class="hits">17</span>
-            
-
-            
-
-            <code class="ruby">    @message = nil</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="covered" data-hits="17" data-linenumber="17">
-            <span class="hits">17</span>
-            
-
-            
-
-            <code class="ruby">    @given_key = nil</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="covered" data-hits="17" data-linenumber="18">
-            <span class="hits">17</span>
-            
-
-            
-
-            <code class="ruby">    @given_date = nil</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="covered" data-hits="17" data-linenumber="19">
-            <span class="hits">17</span>
-            
-
-            
-
-            <code class="ruby">    @encrypted_message = nil</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="covered" data-hits="17" data-linenumber="20">
-            <span class="hits">17</span>
-            
-
-            
-
-            <code class="ruby">    @character_set = [&quot;a&quot;, &quot;b&quot;, &quot;c&quot;, &quot;d&quot;, &quot;e&quot;, &quot;f&quot;, </code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="never" data-hits="" data-linenumber="21">
-            
-            
-
-            
-
-            <code class="ruby">                      &quot;g&quot;, &quot;h&quot;, &quot;i&quot;, &quot;j&quot;, &quot;k&quot;, &quot;l&quot;, </code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="never" data-hits="" data-linenumber="22">
-            
-            
-
-            
-
-            <code class="ruby">                      &quot;m&quot;, &quot;n&quot;, &quot;o&quot;, &quot;p&quot;, &quot;q&quot;, &quot;r&quot;, </code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="never" data-hits="" data-linenumber="23">
-            
-            
-
-            
-
             <code class="ruby">                      &quot;s&quot;, &quot;t&quot;, &quot;u&quot;, &quot;v&quot;, &quot;w&quot;, &quot;x&quot;, </code>
           </li>
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="24">
+          <li class="never" data-hits="" data-linenumber="16">
             
             
 
@@ -400,7 +323,7 @@
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="25">
+          <li class="never" data-hits="" data-linenumber="17">
             
             
 
@@ -411,7 +334,7 @@
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="26">
+          <li class="never" data-hits="" data-linenumber="18">
             
             
 
@@ -422,19 +345,19 @@
         </div>
       
         <div>
-          <li class="covered" data-hits="1" data-linenumber="27">
+          <li class="covered" data-hits="1" data-linenumber="19">
             <span class="hits">1</span>
             
 
             
 
-            <code class="ruby">  def encrypt(message, given_key, given_date = Time.new.strftime(&quot;%m%d%y&quot;))</code>
+            <code class="ruby">  def encrypt(message, given_key, given_date)</code>
           </li>
         </div>
       
         <div>
-          <li class="covered" data-hits="14" data-linenumber="28">
-            <span class="hits">14</span>
+          <li class="covered" data-hits="22" data-linenumber="20">
+            <span class="hits">22</span>
             
 
             
@@ -444,8 +367,19 @@
         </div>
       
         <div>
-          <li class="covered" data-hits="14" data-linenumber="29">
-            <span class="hits">14</span>
+          <li class="covered" data-hits="22" data-linenumber="21">
+            <span class="hits">22</span>
+            
+
+            
+
+            <code class="ruby">    given_key ||= generate_key</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="22" data-linenumber="22">
+            <span class="hits">22</span>
             
 
             
@@ -455,8 +389,19 @@
         </div>
       
         <div>
-          <li class="covered" data-hits="14" data-linenumber="30">
-            <span class="hits">14</span>
+          <li class="covered" data-hits="22" data-linenumber="23">
+            <span class="hits">22</span>
+            
+
+            
+
+            <code class="ruby">    given_date ||= Time.new.strftime(&quot;%d%m%y&quot;)</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="22" data-linenumber="24">
+            <span class="hits">22</span>
             
 
             
@@ -466,7 +411,7 @@
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="31">
+          <li class="never" data-hits="" data-linenumber="25">
             
             
 
@@ -477,8 +422,8 @@
         </div>
       
         <div>
-          <li class="covered" data-hits="14" data-linenumber="32">
-            <span class="hits">14</span>
+          <li class="covered" data-hits="22" data-linenumber="26">
+            <span class="hits">22</span>
             
 
             
@@ -488,29 +433,29 @@
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="33">
+          <li class="never" data-hits="" data-linenumber="27">
             
             
 
             
 
-            <code class="ruby">      key: given_key,</code>
+            <code class="ruby">      key: @given_key,</code>
           </li>
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="34">
+          <li class="never" data-hits="" data-linenumber="28">
             
             
 
             
 
-            <code class="ruby">      date: given_date</code>
+            <code class="ruby">      date: @given_date</code>
           </li>
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="35">
+          <li class="never" data-hits="" data-linenumber="29">
             
             
 
@@ -521,13 +466,79 @@
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="36">
+          <li class="never" data-hits="" data-linenumber="30">
             
             
 
             
 
             <code class="ruby">  end</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="31">
+            
+            
+
+            
+
+            <code class="ruby"></code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="32">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">  def decrypt(ciphertext, given_key, given_date)</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="2" data-linenumber="33">
+            <span class="hits">2</span>
+            
+
+            
+
+            <code class="ruby">    @encrypted_message = ciphertext</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="2" data-linenumber="34">
+            <span class="hits">2</span>
+            
+
+            
+
+            <code class="ruby">    @given_key = given_key</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="2" data-linenumber="35">
+            <span class="hits">2</span>
+            
+
+            
+
+            <code class="ruby">    given_date ||= Time.new.strftime(&quot;%d%m%y&quot;)</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="2" data-linenumber="36">
+            <span class="hits">2</span>
+            
+
+            
+
+            <code class="ruby">    @given_date = given_date</code>
           </li>
         </div>
       
@@ -538,29 +549,29 @@
 
             
 
-            <code class="ruby"></code>
+            <code class="ruby">    {</code>
           </li>
         </div>
       
         <div>
-          <li class="covered" data-hits="1" data-linenumber="38">
-            <span class="hits">1</span>
+          <li class="covered" data-hits="2" data-linenumber="38">
+            <span class="hits">2</span>
             
 
             
 
-            <code class="ruby">  def a_key_shift</code>
+            <code class="ruby">      decryption: decrypt_message,</code>
           </li>
         </div>
       
         <div>
-          <li class="covered" data-hits="20" data-linenumber="39">
-            <span class="hits">20</span>
+          <li class="never" data-hits="" data-linenumber="39">
+            
             
 
             
 
-            <code class="ruby">    @given_key[0..1].to_i</code>
+            <code class="ruby">      key: @given_key,</code>
           </li>
         </div>
       
@@ -571,7 +582,7 @@
 
             
 
-            <code class="ruby">  end</code>
+            <code class="ruby">      date: @given_date</code>
           </li>
         </div>
       
@@ -582,12 +593,78 @@
 
             
 
+            <code class="ruby">    }</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="42">
+            
+            
+
+            
+
+            <code class="ruby">  end</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="43">
+            
+            
+
+            
+
             <code class="ruby"></code>
           </li>
         </div>
       
         <div>
-          <li class="covered" data-hits="1" data-linenumber="42">
+          <li class="covered" data-hits="1" data-linenumber="44">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">  def a_key_shift</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="56" data-linenumber="45">
+            <span class="hits">56</span>
+            
+
+            
+
+            <code class="ruby">    @given_key[0..1].to_i</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="46">
+            
+            
+
+            
+
+            <code class="ruby">  end</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="47">
+            
+            
+
+            
+
+            <code class="ruby"></code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="48">
             <span class="hits">1</span>
             
 
@@ -598,8 +675,8 @@
         </div>
       
         <div>
-          <li class="covered" data-hits="18" data-linenumber="43">
-            <span class="hits">18</span>
+          <li class="covered" data-hits="46" data-linenumber="49">
+            <span class="hits">46</span>
             
 
             
@@ -609,7 +686,7 @@
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="44">
+          <li class="never" data-hits="" data-linenumber="50">
             
             
 
@@ -620,7 +697,7 @@
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="45">
+          <li class="never" data-hits="" data-linenumber="51">
             
             
 
@@ -631,7 +708,7 @@
         </div>
       
         <div>
-          <li class="covered" data-hits="1" data-linenumber="46">
+          <li class="covered" data-hits="1" data-linenumber="52">
             <span class="hits">1</span>
             
 
@@ -642,8 +719,8 @@
         </div>
       
         <div>
-          <li class="covered" data-hits="15" data-linenumber="47">
-            <span class="hits">15</span>
+          <li class="covered" data-hits="43" data-linenumber="53">
+            <span class="hits">43</span>
             
 
             
@@ -653,7 +730,7 @@
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="48">
+          <li class="never" data-hits="" data-linenumber="54">
             
             
 
@@ -664,7 +741,7 @@
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="49">
+          <li class="never" data-hits="" data-linenumber="55">
             
             
 
@@ -675,7 +752,7 @@
         </div>
       
         <div>
-          <li class="covered" data-hits="1" data-linenumber="50">
+          <li class="covered" data-hits="1" data-linenumber="56">
             <span class="hits">1</span>
             
 
@@ -686,8 +763,8 @@
         </div>
       
         <div>
-          <li class="covered" data-hits="11" data-linenumber="51">
-            <span class="hits">11</span>
+          <li class="covered" data-hits="35" data-linenumber="57">
+            <span class="hits">35</span>
             
 
             
@@ -697,7 +774,7 @@
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="52">
+          <li class="never" data-hits="" data-linenumber="58">
             
             
 
@@ -708,7 +785,7 @@
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="53">
+          <li class="never" data-hits="" data-linenumber="59">
             
             
 
@@ -719,7 +796,7 @@
         </div>
       
         <div>
-          <li class="covered" data-hits="1" data-linenumber="54">
+          <li class="covered" data-hits="1" data-linenumber="60">
             <span class="hits">1</span>
             
 
@@ -730,8 +807,8 @@
         </div>
       
         <div>
-          <li class="covered" data-hits="65" data-linenumber="55">
-            <span class="hits">65</span>
+          <li class="covered" data-hits="641" data-linenumber="61">
+            <span class="hits">641</span>
             
 
             
@@ -741,7 +818,7 @@
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="56">
+          <li class="never" data-hits="" data-linenumber="62">
             
             
 
@@ -752,7 +829,7 @@
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="57">
+          <li class="never" data-hits="" data-linenumber="63">
             
             
 
@@ -763,7 +840,7 @@
         </div>
       
         <div>
-          <li class="covered" data-hits="1" data-linenumber="58">
+          <li class="covered" data-hits="1" data-linenumber="64">
             <span class="hits">1</span>
             
 
@@ -774,8 +851,8 @@
         </div>
       
         <div>
-          <li class="covered" data-hits="20" data-linenumber="59">
-            <span class="hits">20</span>
+          <li class="covered" data-hits="56" data-linenumber="65">
+            <span class="hits">56</span>
             
 
             
@@ -785,7 +862,7 @@
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="60">
+          <li class="never" data-hits="" data-linenumber="66">
             
             
 
@@ -796,7 +873,7 @@
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="61">
+          <li class="never" data-hits="" data-linenumber="67">
             
             
 
@@ -807,7 +884,7 @@
         </div>
       
         <div>
-          <li class="covered" data-hits="1" data-linenumber="62">
+          <li class="covered" data-hits="1" data-linenumber="68">
             <span class="hits">1</span>
             
 
@@ -818,8 +895,8 @@
         </div>
       
         <div>
-          <li class="covered" data-hits="18" data-linenumber="63">
-            <span class="hits">18</span>
+          <li class="covered" data-hits="46" data-linenumber="69">
+            <span class="hits">46</span>
             
 
             
@@ -829,7 +906,7 @@
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="64">
+          <li class="never" data-hits="" data-linenumber="70">
             
             
 
@@ -840,7 +917,7 @@
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="65">
+          <li class="never" data-hits="" data-linenumber="71">
             
             
 
@@ -851,7 +928,7 @@
         </div>
       
         <div>
-          <li class="covered" data-hits="1" data-linenumber="66">
+          <li class="covered" data-hits="1" data-linenumber="72">
             <span class="hits">1</span>
             
 
@@ -862,8 +939,8 @@
         </div>
       
         <div>
-          <li class="covered" data-hits="15" data-linenumber="67">
-            <span class="hits">15</span>
+          <li class="covered" data-hits="43" data-linenumber="73">
+            <span class="hits">43</span>
             
 
             
@@ -873,7 +950,7 @@
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="68">
+          <li class="never" data-hits="" data-linenumber="74">
             
             
 
@@ -884,7 +961,7 @@
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="69">
+          <li class="never" data-hits="" data-linenumber="75">
             
             
 
@@ -895,7 +972,7 @@
         </div>
       
         <div>
-          <li class="covered" data-hits="1" data-linenumber="70">
+          <li class="covered" data-hits="1" data-linenumber="76">
             <span class="hits">1</span>
             
 
@@ -906,8 +983,8 @@
         </div>
       
         <div>
-          <li class="covered" data-hits="11" data-linenumber="71">
-            <span class="hits">11</span>
+          <li class="covered" data-hits="35" data-linenumber="77">
+            <span class="hits">35</span>
             
 
             
@@ -917,7 +994,7 @@
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="72">
+          <li class="never" data-hits="" data-linenumber="78">
             
             
 
@@ -928,7 +1005,7 @@
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="73">
+          <li class="never" data-hits="" data-linenumber="79">
             
             
 
@@ -939,7 +1016,7 @@
         </div>
       
         <div>
-          <li class="covered" data-hits="1" data-linenumber="74">
+          <li class="covered" data-hits="1" data-linenumber="80">
             <span class="hits">1</span>
             
 
@@ -950,8 +1027,8 @@
         </div>
       
         <div>
-          <li class="covered" data-hits="19" data-linenumber="75">
-            <span class="hits">19</span>
+          <li class="covered" data-hits="55" data-linenumber="81">
+            <span class="hits">55</span>
             
 
             
@@ -961,7 +1038,7 @@
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="76">
+          <li class="never" data-hits="" data-linenumber="82">
             
             
 
@@ -972,7 +1049,7 @@
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="77">
+          <li class="never" data-hits="" data-linenumber="83">
             
             
 
@@ -983,7 +1060,7 @@
         </div>
       
         <div>
-          <li class="covered" data-hits="1" data-linenumber="78">
+          <li class="covered" data-hits="1" data-linenumber="84">
             <span class="hits">1</span>
             
 
@@ -994,8 +1071,8 @@
         </div>
       
         <div>
-          <li class="covered" data-hits="17" data-linenumber="79">
-            <span class="hits">17</span>
+          <li class="covered" data-hits="45" data-linenumber="85">
+            <span class="hits">45</span>
             
 
             
@@ -1005,7 +1082,7 @@
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="80">
+          <li class="never" data-hits="" data-linenumber="86">
             
             
 
@@ -1016,7 +1093,7 @@
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="81">
+          <li class="never" data-hits="" data-linenumber="87">
             
             
 
@@ -1027,7 +1104,7 @@
         </div>
       
         <div>
-          <li class="covered" data-hits="1" data-linenumber="82">
+          <li class="covered" data-hits="1" data-linenumber="88">
             <span class="hits">1</span>
             
 
@@ -1038,8 +1115,8 @@
         </div>
       
         <div>
-          <li class="covered" data-hits="14" data-linenumber="83">
-            <span class="hits">14</span>
+          <li class="covered" data-hits="42" data-linenumber="89">
+            <span class="hits">42</span>
             
 
             
@@ -1049,7 +1126,7 @@
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="84">
+          <li class="never" data-hits="" data-linenumber="90">
             
             
 
@@ -1060,7 +1137,7 @@
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="85">
+          <li class="never" data-hits="" data-linenumber="91">
             
             
 
@@ -1071,7 +1148,7 @@
         </div>
       
         <div>
-          <li class="covered" data-hits="1" data-linenumber="86">
+          <li class="covered" data-hits="1" data-linenumber="92">
             <span class="hits">1</span>
             
 
@@ -1082,8 +1159,8 @@
         </div>
       
         <div>
-          <li class="covered" data-hits="10" data-linenumber="87">
-            <span class="hits">10</span>
+          <li class="covered" data-hits="34" data-linenumber="93">
+            <span class="hits">34</span>
             
 
             
@@ -1093,7 +1170,7 @@
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="88">
+          <li class="never" data-hits="" data-linenumber="94">
             
             
 
@@ -1104,7 +1181,7 @@
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="89">
+          <li class="never" data-hits="" data-linenumber="95">
             
             
 
@@ -1115,7 +1192,7 @@
         </div>
       
         <div>
-          <li class="covered" data-hits="1" data-linenumber="90">
+          <li class="covered" data-hits="1" data-linenumber="96">
             <span class="hits">1</span>
             
 
@@ -1126,8 +1203,8 @@
         </div>
       
         <div>
-          <li class="covered" data-hits="10" data-linenumber="91">
-            <span class="hits">10</span>
+          <li class="covered" data-hits="37" data-linenumber="97">
+            <span class="hits">37</span>
             
 
             
@@ -1137,7 +1214,7 @@
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="92">
+          <li class="never" data-hits="" data-linenumber="98">
             
             
 
@@ -1148,7 +1225,7 @@
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="93">
+          <li class="never" data-hits="" data-linenumber="99">
             
             
 
@@ -1159,7 +1236,7 @@
         </div>
       
         <div>
-          <li class="covered" data-hits="1" data-linenumber="94">
+          <li class="covered" data-hits="1" data-linenumber="100">
             <span class="hits">1</span>
             
 
@@ -1170,8 +1247,8 @@
         </div>
       
         <div>
-          <li class="covered" data-hits="9" data-linenumber="95">
-            <span class="hits">9</span>
+          <li class="covered" data-hits="29" data-linenumber="101">
+            <span class="hits">29</span>
             
 
             
@@ -1181,7 +1258,7 @@
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="96">
+          <li class="never" data-hits="" data-linenumber="102">
             
             
 
@@ -1192,7 +1269,7 @@
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="97">
+          <li class="never" data-hits="" data-linenumber="103">
             
             
 
@@ -1203,7 +1280,7 @@
         </div>
       
         <div>
-          <li class="covered" data-hits="1" data-linenumber="98">
+          <li class="covered" data-hits="1" data-linenumber="104">
             <span class="hits">1</span>
             
 
@@ -1214,8 +1291,8 @@
         </div>
       
         <div>
-          <li class="covered" data-hits="7" data-linenumber="99">
-            <span class="hits">7</span>
+          <li class="covered" data-hits="27" data-linenumber="105">
+            <span class="hits">27</span>
             
 
             
@@ -1225,7 +1302,7 @@
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="100">
+          <li class="never" data-hits="" data-linenumber="106">
             
             
 
@@ -1236,7 +1313,7 @@
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="101">
+          <li class="never" data-hits="" data-linenumber="107">
             
             
 
@@ -1247,7 +1324,7 @@
         </div>
       
         <div>
-          <li class="covered" data-hits="1" data-linenumber="102">
+          <li class="covered" data-hits="1" data-linenumber="108">
             <span class="hits">1</span>
             
 
@@ -1258,8 +1335,8 @@
         </div>
       
         <div>
-          <li class="covered" data-hits="5" data-linenumber="103">
-            <span class="hits">5</span>
+          <li class="covered" data-hits="23" data-linenumber="109">
+            <span class="hits">23</span>
             
 
             
@@ -1269,7 +1346,7 @@
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="104">
+          <li class="never" data-hits="" data-linenumber="110">
             
             
 
@@ -1280,7 +1357,7 @@
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="105">
+          <li class="never" data-hits="" data-linenumber="111">
             
             
 
@@ -1291,7 +1368,7 @@
         </div>
       
         <div>
-          <li class="covered" data-hits="1" data-linenumber="106">
+          <li class="covered" data-hits="1" data-linenumber="112">
             <span class="hits">1</span>
             
 
@@ -1302,8 +1379,8 @@
         </div>
       
         <div>
-          <li class="covered" data-hits="8" data-linenumber="107">
-            <span class="hits">8</span>
+          <li class="covered" data-hits="17" data-linenumber="113">
+            <span class="hits">17</span>
             
 
             
@@ -1313,7 +1390,7 @@
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="108">
+          <li class="never" data-hits="" data-linenumber="114">
             
             
 
@@ -1324,7 +1401,7 @@
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="109">
+          <li class="never" data-hits="" data-linenumber="115">
             
             
 
@@ -1335,7 +1412,7 @@
         </div>
       
         <div>
-          <li class="covered" data-hits="1" data-linenumber="110">
+          <li class="covered" data-hits="1" data-linenumber="116">
             <span class="hits">1</span>
             
 
@@ -1346,8 +1423,8 @@
         </div>
       
         <div>
-          <li class="covered" data-hits="7" data-linenumber="111">
-            <span class="hits">7</span>
+          <li class="covered" data-hits="15" data-linenumber="117">
+            <span class="hits">15</span>
             
 
             
@@ -1357,7 +1434,7 @@
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="112">
+          <li class="never" data-hits="" data-linenumber="118">
             
             
 
@@ -1368,7 +1445,7 @@
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="113">
+          <li class="never" data-hits="" data-linenumber="119">
             
             
 
@@ -1379,7 +1456,7 @@
         </div>
       
         <div>
-          <li class="covered" data-hits="1" data-linenumber="114">
+          <li class="covered" data-hits="1" data-linenumber="120">
             <span class="hits">1</span>
             
 
@@ -1390,8 +1467,8 @@
         </div>
       
         <div>
-          <li class="covered" data-hits="6" data-linenumber="115">
-            <span class="hits">6</span>
+          <li class="covered" data-hits="14" data-linenumber="121">
+            <span class="hits">14</span>
             
 
             
@@ -1401,79 +1478,13 @@
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="116">
+          <li class="never" data-hits="" data-linenumber="122">
             
             
 
             
 
             <code class="ruby">  end</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="never" data-hits="" data-linenumber="117">
-            
-            
-
-            
-
-            <code class="ruby"></code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="covered" data-hits="1" data-linenumber="118">
-            <span class="hits">1</span>
-            
-
-            
-
-            <code class="ruby">  def reverse_d_shift(character)</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="covered" data-hits="4" data-linenumber="119">
-            <span class="hits">4</span>
-            
-
-            
-
-            <code class="ruby">    @character_set[(@character_set.index(character) - d_final_shift) % 27]</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="never" data-hits="" data-linenumber="120">
-            
-            
-
-            
-
-            <code class="ruby">  end</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="never" data-hits="" data-linenumber="121">
-            
-            
-
-            
-
-            <code class="ruby">  </code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="covered" data-hits="1" data-linenumber="122">
-            <span class="hits">1</span>
-            
-
-            
-
-            <code class="ruby">  def sort_by_position(character)</code>
           </li>
         </div>
       
@@ -1489,7 +1500,29 @@
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="124">
+          <li class="covered" data-hits="1" data-linenumber="124">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">  def reverse_d_shift(character)</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="10" data-linenumber="125">
+            <span class="hits">10</span>
+            
+
+            
+
+            <code class="ruby">    @character_set[(@character_set.index(character) - d_final_shift) % 27]</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="126">
             
             
 
@@ -1500,7 +1533,29 @@
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="125">
+          <li class="never" data-hits="" data-linenumber="127">
+            
+            
+
+            
+
+            <code class="ruby">  </code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="128">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">  def sort_by_position(character)</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="129">
             
             
 
@@ -1511,7 +1566,29 @@
         </div>
       
         <div>
-          <li class="covered" data-hits="1" data-linenumber="126">
+          <li class="never" data-hits="" data-linenumber="130">
+            
+            
+
+            
+
+            <code class="ruby">  end</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="131">
+            
+            
+
+            
+
+            <code class="ruby"></code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="132">
             <span class="hits">1</span>
             
 
@@ -1522,8 +1599,8 @@
         </div>
       
         <div>
-          <li class="covered" data-hits="6" data-linenumber="127">
-            <span class="hits">6</span>
+          <li class="covered" data-hits="15" data-linenumber="133">
+            <span class="hits">15</span>
             
 
             
@@ -1533,8 +1610,8 @@
         </div>
       
         <div>
-          <li class="covered" data-hits="6" data-linenumber="128">
-            <span class="hits">6</span>
+          <li class="covered" data-hits="15" data-linenumber="134">
+            <span class="hits">15</span>
             
 
             
@@ -1544,8 +1621,8 @@
         </div>
       
         <div>
-          <li class="covered" data-hits="27" data-linenumber="129">
-            <span class="hits">27</span>
+          <li class="covered" data-hits="112" data-linenumber="135">
+            <span class="hits">112</span>
             
 
             
@@ -1555,30 +1632,41 @@
         </div>
       
         <div>
-          <li class="covered" data-hits="27" data-linenumber="130">
-            <span class="hits">27</span>
+          <li class="covered" data-hits="112" data-linenumber="136">
+            <span class="hits">112</span>
             
 
             
 
-            <code class="ruby">      return character unless @character_set.include?(character)</code>
+            <code class="ruby">      if !@character_set.include?(character)</code>
           </li>
         </div>
       
         <div>
-          <li class="covered" data-hits="27" data-linenumber="131">
-            <span class="hits">27</span>
+          <li class="missed" data-hits="0" data-linenumber="137">
+            
             
 
             
 
-            <code class="ruby">      if position % 4 == 1</code>
+            <code class="ruby">        character</code>
           </li>
         </div>
       
         <div>
-          <li class="covered" data-hits="9" data-linenumber="132">
-            <span class="hits">9</span>
+          <li class="covered" data-hits="112" data-linenumber="138">
+            <span class="hits">112</span>
+            
+
+            
+
+            <code class="ruby">      elsif position % 4 == 1</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="36" data-linenumber="139">
+            <span class="hits">36</span>
             
 
             
@@ -1588,8 +1676,8 @@
         </div>
       
         <div>
-          <li class="covered" data-hits="18" data-linenumber="133">
-            <span class="hits">18</span>
+          <li class="covered" data-hits="76" data-linenumber="140">
+            <span class="hits">76</span>
             
 
             
@@ -1599,8 +1687,8 @@
         </div>
       
         <div>
-          <li class="covered" data-hits="8" data-linenumber="134">
-            <span class="hits">8</span>
+          <li class="covered" data-hits="28" data-linenumber="141">
+            <span class="hits">28</span>
             
 
             
@@ -1610,8 +1698,8 @@
         </div>
       
         <div>
-          <li class="covered" data-hits="10" data-linenumber="135">
-            <span class="hits">10</span>
+          <li class="covered" data-hits="48" data-linenumber="142">
+            <span class="hits">48</span>
             
 
             
@@ -1621,8 +1709,8 @@
         </div>
       
         <div>
-          <li class="covered" data-hits="6" data-linenumber="136">
-            <span class="hits">6</span>
+          <li class="covered" data-hits="26" data-linenumber="143">
+            <span class="hits">26</span>
             
 
             
@@ -1632,8 +1720,8 @@
         </div>
       
         <div>
-          <li class="covered" data-hits="4" data-linenumber="137">
-            <span class="hits">4</span>
+          <li class="covered" data-hits="22" data-linenumber="144">
+            <span class="hits">22</span>
             
 
             
@@ -1643,8 +1731,8 @@
         </div>
       
         <div>
-          <li class="covered" data-hits="4" data-linenumber="138">
-            <span class="hits">4</span>
+          <li class="covered" data-hits="22" data-linenumber="145">
+            <span class="hits">22</span>
             
 
             
@@ -1654,7 +1742,7 @@
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="139">
+          <li class="never" data-hits="" data-linenumber="146">
             
             
 
@@ -1665,7 +1753,7 @@
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="140">
+          <li class="never" data-hits="" data-linenumber="147">
             
             
 
@@ -1676,7 +1764,7 @@
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="141">
+          <li class="never" data-hits="" data-linenumber="148">
             
             
 
@@ -1687,7 +1775,7 @@
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="142">
+          <li class="never" data-hits="" data-linenumber="149">
             
             
 
@@ -1698,7 +1786,7 @@
         </div>
       
         <div>
-          <li class="covered" data-hits="1" data-linenumber="143">
+          <li class="covered" data-hits="1" data-linenumber="150">
             <span class="hits">1</span>
             
 
@@ -1709,8 +1797,8 @@
         </div>
       
         <div>
-          <li class="covered" data-hits="5" data-linenumber="144">
-            <span class="hits">5</span>
+          <li class="covered" data-hits="8" data-linenumber="151">
+            <span class="hits">8</span>
             
 
             
@@ -1720,8 +1808,8 @@
         </div>
       
         <div>
-          <li class="covered" data-hits="5" data-linenumber="145">
-            <span class="hits">5</span>
+          <li class="covered" data-hits="8" data-linenumber="152">
+            <span class="hits">8</span>
             
 
             
@@ -1731,8 +1819,8 @@
         </div>
       
         <div>
-          <li class="covered" data-hits="21" data-linenumber="146">
-            <span class="hits">21</span>
+          <li class="covered" data-hits="52" data-linenumber="153">
+            <span class="hits">52</span>
             
 
             
@@ -1742,19 +1830,41 @@
         </div>
       
         <div>
-          <li class="covered" data-hits="21" data-linenumber="147">
-            <span class="hits">21</span>
+          <li class="covered" data-hits="52" data-linenumber="154">
+            <span class="hits">52</span>
             
 
             
 
-            <code class="ruby">      if position % 4 == 1</code>
+            <code class="ruby">      if !@character_set.include?(character)</code>
           </li>
         </div>
       
         <div>
-          <li class="covered" data-hits="7" data-linenumber="148">
-            <span class="hits">7</span>
+          <li class="missed" data-hits="0" data-linenumber="155">
+            
+            
+
+            
+
+            <code class="ruby">        character</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="52" data-linenumber="156">
+            <span class="hits">52</span>
+            
+
+            
+
+            <code class="ruby">      elsif position % 4 == 1</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="16" data-linenumber="157">
+            <span class="hits">16</span>
             
 
             
@@ -1764,8 +1874,8 @@
         </div>
       
         <div>
-          <li class="covered" data-hits="14" data-linenumber="149">
-            <span class="hits">14</span>
+          <li class="covered" data-hits="36" data-linenumber="158">
+            <span class="hits">36</span>
             
 
             
@@ -1775,8 +1885,8 @@
         </div>
       
         <div>
-          <li class="covered" data-hits="6" data-linenumber="150">
-            <span class="hits">6</span>
+          <li class="covered" data-hits="14" data-linenumber="159">
+            <span class="hits">14</span>
             
 
             
@@ -1786,8 +1896,8 @@
         </div>
       
         <div>
-          <li class="covered" data-hits="8" data-linenumber="151">
-            <span class="hits">8</span>
+          <li class="covered" data-hits="22" data-linenumber="160">
+            <span class="hits">22</span>
             
 
             
@@ -1797,8 +1907,8 @@
         </div>
       
         <div>
-          <li class="covered" data-hits="5" data-linenumber="152">
-            <span class="hits">5</span>
+          <li class="covered" data-hits="13" data-linenumber="161">
+            <span class="hits">13</span>
             
 
             
@@ -1808,8 +1918,8 @@
         </div>
       
         <div>
-          <li class="covered" data-hits="3" data-linenumber="153">
-            <span class="hits">3</span>
+          <li class="covered" data-hits="9" data-linenumber="162">
+            <span class="hits">9</span>
             
 
             
@@ -1819,8 +1929,8 @@
         </div>
       
         <div>
-          <li class="covered" data-hits="3" data-linenumber="154">
-            <span class="hits">3</span>
+          <li class="covered" data-hits="9" data-linenumber="163">
+            <span class="hits">9</span>
             
 
             
@@ -1830,7 +1940,7 @@
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="155">
+          <li class="never" data-hits="" data-linenumber="164">
             
             
 
@@ -1841,7 +1951,7 @@
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="156">
+          <li class="never" data-hits="" data-linenumber="165">
             
             
 
@@ -1852,7 +1962,7 @@
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="157">
+          <li class="never" data-hits="" data-linenumber="166">
             
             
 
@@ -1863,7 +1973,2293 @@
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="158">
+          <li class="never" data-hits="" data-linenumber="167">
+            
+            
+
+            
+
+            <code class="ruby"></code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="168">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">  def space_position</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="255" data-linenumber="169">
+            <span class="hits">255</span>
+            
+
+            
+
+            <code class="ruby">    @encrypted_message.length - 3</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="170">
+            
+            
+
+            
+
+            <code class="ruby">  end</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="171">
+            
+            
+
+            
+
+            <code class="ruby"></code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="172">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">  def e_position</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="250" data-linenumber="173">
+            <span class="hits">250</span>
+            
+
+            
+
+            <code class="ruby">    @encrypted_message.length - 2</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="174">
+            
+            
+
+            
+
+            <code class="ruby">  end</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="175">
+            
+            
+
+            
+
+            <code class="ruby"></code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="176">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">  def n_position</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="245" data-linenumber="177">
+            <span class="hits">245</span>
+            
+
+            
+
+            <code class="ruby">    @encrypted_message.length - 1</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="178">
+            
+            
+
+            
+
+            <code class="ruby">  end</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="179">
+            
+            
+
+            
+
+            <code class="ruby"></code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="180">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">  def d_position</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="240" data-linenumber="181">
+            <span class="hits">240</span>
+            
+
+            
+
+            <code class="ruby">    @encrypted_message.length</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="182">
+            
+            
+
+            
+
+            <code class="ruby">  end</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="183">
+            
+            
+
+            
+
+            <code class="ruby"></code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="184">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">  def date_shift(position, character)</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="460" data-linenumber="185">
+            <span class="hits">460</span>
+            
+
+            
+
+            <code class="ruby">    if position % 4 == 1 #A shift</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="115" data-linenumber="186">
+            <span class="hits">115</span>
+            
+
+            
+
+            <code class="ruby">      @character_set[(@character_set.index(character) + square_date.digits[3]) % 27]</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="345" data-linenumber="187">
+            <span class="hits">345</span>
+            
+
+            
+
+            <code class="ruby">    elsif position % 4 == 2 #B shift</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="115" data-linenumber="188">
+            <span class="hits">115</span>
+            
+
+            
+
+            <code class="ruby">      @character_set[(@character_set.index(character) + square_date.digits[2]) % 27]</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="230" data-linenumber="189">
+            <span class="hits">230</span>
+            
+
+            
+
+            <code class="ruby">    elsif position % 4 == 3 #C shift</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="115" data-linenumber="190">
+            <span class="hits">115</span>
+            
+
+            
+
+            <code class="ruby">      @character_set[(@character_set.index(character) + square_date.digits[1]) % 27]</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="115" data-linenumber="191">
+            <span class="hits">115</span>
+            
+
+            
+
+            <code class="ruby">    elsif position % 4 == 0 #D shift</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="115" data-linenumber="192">
+            <span class="hits">115</span>
+            
+
+            
+
+            <code class="ruby">      @character_set[(@character_set.index(character) + square_date.digits[0]) % 27]</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="193">
+            
+            
+
+            
+
+            <code class="ruby">    end</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="194">
+            
+            
+
+            
+
+            <code class="ruby">  end</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="195">
+            
+            
+
+            
+
+            <code class="ruby"></code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="196">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">  def possible_key_shifts(encrypted_character, date_shifted_character)</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="456" data-linenumber="197">
+            <span class="hits">456</span>
+            
+
+            
+
+            <code class="ruby">    raw_key_shift = @character_set.index(encrypted_character) - @character_set.index(date_shifted_character)</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="456" data-linenumber="198">
+            <span class="hits">456</span>
+            
+
+            
+
+            <code class="ruby">    possible_key_shifts = []</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="456" data-linenumber="199">
+            <span class="hits">456</span>
+            
+
+            
+
+            <code class="ruby">    raw_key_shift += 27 if raw_key_shift &lt; 0</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="456" data-linenumber="200">
+            <span class="hits">456</span>
+            
+
+            
+
+            <code class="ruby">    raw_key_shift.to_s.length == 1 ? key_shift_str = &quot;0&quot; + raw_key_shift.to_s : key_shift_str = raw_key_shift.to_s</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="456" data-linenumber="201">
+            <span class="hits">456</span>
+            
+
+            
+
+            <code class="ruby">    possible_key_shifts &lt;&lt; key_shift_str</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="456" data-linenumber="202">
+            <span class="hits">456</span>
+            
+
+            
+
+            <code class="ruby">    until raw_key_shift &gt; 100</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1824" data-linenumber="203">
+            <span class="hits">1824</span>
+            
+
+            
+
+            <code class="ruby">      raw_key_shift += 27</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1824" data-linenumber="204">
+            <span class="hits">1824</span>
+            
+
+            
+
+            <code class="ruby">      raw_key_shift.to_s.length == 1 ? key_shift_str = &quot;0&quot; + raw_key_shift.to_s : key_shift_str = raw_key_shift.to_s</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1824" data-linenumber="205">
+            <span class="hits">1824</span>
+            
+
+            
+
+            <code class="ruby">      possible_key_shifts &lt;&lt; key_shift_str if raw_key_shift &lt; 100</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="206">
+            
+            
+
+            
+
+            <code class="ruby">    end</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="456" data-linenumber="207">
+            <span class="hits">456</span>
+            
+
+            
+
+            <code class="ruby">    possible_key_shifts</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="208">
+            
+            
+
+            
+
+            <code class="ruby">  end</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="209">
+            
+            
+
+            
+
+            <code class="ruby"></code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="210">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">  def assign_letter_shift(end_position)</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="20" data-linenumber="211">
+            <span class="hits">20</span>
+            
+
+            
+
+            <code class="ruby">        position = end_position</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="20" data-linenumber="212">
+            <span class="hits">20</span>
+            
+
+            
+
+            <code class="ruby">    if position % 4 == 1 #A shift</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="5" data-linenumber="213">
+            <span class="hits">5</span>
+            
+
+            
+
+            <code class="ruby">      if end_position == space_position</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="missed" data-hits="0" data-linenumber="214">
+            
+            
+
+            
+
+            <code class="ruby">        @space_position_shift = :a_first</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="5" data-linenumber="215">
+            <span class="hits">5</span>
+            
+
+            
+
+            <code class="ruby">      elsif end_position == e_position</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="missed" data-hits="0" data-linenumber="216">
+            
+            
+
+            
+
+            <code class="ruby">        @e_position_shift = :a_first</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="5" data-linenumber="217">
+            <span class="hits">5</span>
+            
+
+            
+
+            <code class="ruby">      elsif end_position == n_position</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="missed" data-hits="0" data-linenumber="218">
+            
+            
+
+            
+
+            <code class="ruby">        @n_position_shift = :a_first</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="5" data-linenumber="219">
+            <span class="hits">5</span>
+            
+
+            
+
+            <code class="ruby">      elsif end_position == d_position</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="5" data-linenumber="220">
+            <span class="hits">5</span>
+            
+
+            
+
+            <code class="ruby">        @d_position_shift = :a_first</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="221">
+            
+            
+
+            
+
+            <code class="ruby">      end</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="15" data-linenumber="222">
+            <span class="hits">15</span>
+            
+
+            
+
+            <code class="ruby">    elsif position % 4 == 2 #B shift</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="5" data-linenumber="223">
+            <span class="hits">5</span>
+            
+
+            
+
+            <code class="ruby">      if end_position == space_position</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="5" data-linenumber="224">
+            <span class="hits">5</span>
+            
+
+            
+
+            <code class="ruby">        @space_position_shift = :b_second</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="missed" data-hits="0" data-linenumber="225">
+            
+            
+
+            
+
+            <code class="ruby">      elsif end_position == e_position</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="missed" data-hits="0" data-linenumber="226">
+            
+            
+
+            
+
+            <code class="ruby">        @e_position_shift = :b_second</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="missed" data-hits="0" data-linenumber="227">
+            
+            
+
+            
+
+            <code class="ruby">      elsif end_position == n_position</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="missed" data-hits="0" data-linenumber="228">
+            
+            
+
+            
+
+            <code class="ruby">        @n_position_shift = :b_second</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="missed" data-hits="0" data-linenumber="229">
+            
+            
+
+            
+
+            <code class="ruby">      elsif end_position == d_position</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="missed" data-hits="0" data-linenumber="230">
+            
+            
+
+            
+
+            <code class="ruby">        @d_position_shift = :b_second</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="231">
+            
+            
+
+            
+
+            <code class="ruby">      end</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="10" data-linenumber="232">
+            <span class="hits">10</span>
+            
+
+            
+
+            <code class="ruby">    elsif position % 4 == 3 #C shift</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="5" data-linenumber="233">
+            <span class="hits">5</span>
+            
+
+            
+
+            <code class="ruby">      if end_position == space_position</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="missed" data-hits="0" data-linenumber="234">
+            
+            
+
+            
+
+            <code class="ruby">        @space_position_shift = :c_third</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="5" data-linenumber="235">
+            <span class="hits">5</span>
+            
+
+            
+
+            <code class="ruby">      elsif end_position == e_position</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="5" data-linenumber="236">
+            <span class="hits">5</span>
+            
+
+            
+
+            <code class="ruby">        @e_position_shift = :c_third</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="missed" data-hits="0" data-linenumber="237">
+            
+            
+
+            
+
+            <code class="ruby">      elsif end_position == n_position</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="missed" data-hits="0" data-linenumber="238">
+            
+            
+
+            
+
+            <code class="ruby">        @n_position_shift = :c_third</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="missed" data-hits="0" data-linenumber="239">
+            
+            
+
+            
+
+            <code class="ruby">      elsif end_position == d_position</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="missed" data-hits="0" data-linenumber="240">
+            
+            
+
+            
+
+            <code class="ruby">        @d_position_shift = :c_third</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="241">
+            
+            
+
+            
+
+            <code class="ruby">      end</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="5" data-linenumber="242">
+            <span class="hits">5</span>
+            
+
+            
+
+            <code class="ruby">    elsif position % 4 == 0 #D shift</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="5" data-linenumber="243">
+            <span class="hits">5</span>
+            
+
+            
+
+            <code class="ruby">      if end_position == space_position</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="missed" data-hits="0" data-linenumber="244">
+            
+            
+
+            
+
+            <code class="ruby">        @space_position_shift = :d_fourth</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="5" data-linenumber="245">
+            <span class="hits">5</span>
+            
+
+            
+
+            <code class="ruby">      elsif end_position == e_position</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="missed" data-hits="0" data-linenumber="246">
+            
+            
+
+            
+
+            <code class="ruby">        @e_position_shift = :d_fourth</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="5" data-linenumber="247">
+            <span class="hits">5</span>
+            
+
+            
+
+            <code class="ruby">      elsif end_position == n_position</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="5" data-linenumber="248">
+            <span class="hits">5</span>
+            
+
+            
+
+            <code class="ruby">        @n_position_shift = :d_fourth</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="missed" data-hits="0" data-linenumber="249">
+            
+            
+
+            
+
+            <code class="ruby">      elsif end_position == d_position</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="missed" data-hits="0" data-linenumber="250">
+            
+            
+
+            
+
+            <code class="ruby">        @d_position_shift = :d_fourth</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="251">
+            
+            
+
+            
+
+            <code class="ruby">      end</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="252">
+            
+            
+
+            
+
+            <code class="ruby">    end</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="253">
+            
+            
+
+            
+
+            <code class="ruby">  end</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="254">
+            
+            
+
+            
+
+            <code class="ruby"></code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="255">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">  def key_shifts_by_letter</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="113" data-linenumber="256">
+            <span class="hits">113</span>
+            
+
+            
+
+            <code class="ruby">    keys_by_letter = Hash.new</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="113" data-linenumber="257">
+            <span class="hits">113</span>
+            
+
+            
+
+            <code class="ruby">    keys_by_letter[@space_position_shift] = possible_key_shifts(@encrypted_message[space_position - 1], date_shift(space_position, &quot; &quot;))</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="113" data-linenumber="258">
+            <span class="hits">113</span>
+            
+
+            
+
+            <code class="ruby">    keys_by_letter[@e_position_shift] = possible_key_shifts(@encrypted_message[e_position - 1], date_shift(e_position, &quot;e&quot;))</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="113" data-linenumber="259">
+            <span class="hits">113</span>
+            
+
+            
+
+            <code class="ruby">    keys_by_letter[@n_position_shift] = possible_key_shifts(@encrypted_message[n_position - 1], date_shift(n_position, &quot;n&quot;))</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="113" data-linenumber="260">
+            <span class="hits">113</span>
+            
+
+            
+
+            <code class="ruby">    keys_by_letter[@d_position_shift] = possible_key_shifts(@encrypted_message[d_position - 1], date_shift(d_position, &quot;d&quot;))</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="113" data-linenumber="261">
+            <span class="hits">113</span>
+            
+
+            
+
+            <code class="ruby">    keys_by_letter</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="262">
+            
+            
+
+            
+
+            <code class="ruby">  end</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="263">
+            
+            
+
+            
+
+            <code class="ruby"></code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="264">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">  def potential_key_shifts</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="21" data-linenumber="265">
+            <span class="hits">21</span>
+            
+
+            
+
+            <code class="ruby">    final_potential_keys = Hash.new{|h,k| h[k] = []}</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="266">
+            
+            
+
+            
+
+            <code class="ruby">    #b key match</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="7" data-linenumber="267">
+            <span class="hits">7</span>
+            
+
+            
+
+            <code class="ruby">    a_b_matches = []</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="7" data-linenumber="268">
+            <span class="hits">7</span>
+            
+
+            
+
+            <code class="ruby">    b_c_matches = []</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="7" data-linenumber="269">
+            <span class="hits">7</span>
+            
+
+            
+
+            <code class="ruby">    key_shifts_by_letter[:b_second].each do |b_key|</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="28" data-linenumber="270">
+            <span class="hits">28</span>
+            
+
+            
+
+            <code class="ruby">      key_shifts_by_letter[:a_first].each do |a_key|</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="112" data-linenumber="271">
+            <span class="hits">112</span>
+            
+
+            
+
+            <code class="ruby">        a_b_matches &lt;&lt; b_key if b_key[0] == a_key[1]</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="272">
+            
+            
+
+            
+
+            <code class="ruby">      end</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="28" data-linenumber="273">
+            <span class="hits">28</span>
+            
+
+            
+
+            <code class="ruby">      key_shifts_by_letter[:c_third].each do |c_key|</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="112" data-linenumber="274">
+            <span class="hits">112</span>
+            
+
+            
+
+            <code class="ruby">        b_c_matches &lt;&lt; b_key if b_key[1] == c_key[0]</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="275">
+            
+            
+
+            
+
+            <code class="ruby">      end</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="276">
+            
+            
+
+            
+
+            <code class="ruby">    end</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="7" data-linenumber="277">
+            <span class="hits">7</span>
+            
+
+            
+
+            <code class="ruby">    final_potential_keys[:b_second] = a_b_matches.select do |key|</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="7" data-linenumber="278">
+            <span class="hits">7</span>
+            
+
+            
+
+            <code class="ruby">      b_c_matches.include?(key)</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="279">
+            
+            
+
+            
+
+            <code class="ruby">    end</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="280">
+            
+            
+
+            
+
+            <code class="ruby">    #a key match</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="7" data-linenumber="281">
+            <span class="hits">7</span>
+            
+
+            
+
+            <code class="ruby">    key_shifts_by_letter[:a_first].each do |a_key|</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="28" data-linenumber="282">
+            <span class="hits">28</span>
+            
+
+            
+
+            <code class="ruby">      final_potential_keys[:b_second].each do |b_key|</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="28" data-linenumber="283">
+            <span class="hits">28</span>
+            
+
+            
+
+            <code class="ruby">        final_potential_keys[:a_first] &lt;&lt; a_key if a_key[1] == b_key[0]</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="284">
+            
+            
+
+            
+
+            <code class="ruby">      end</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="285">
+            
+            
+
+            
+
+            <code class="ruby">    end</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="286">
+            
+            
+
+            
+
+            <code class="ruby">    #c key match</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="7" data-linenumber="287">
+            <span class="hits">7</span>
+            
+
+            
+
+            <code class="ruby">    c_d_matches = []</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="7" data-linenumber="288">
+            <span class="hits">7</span>
+            
+
+            
+
+            <code class="ruby">    c_b_matches = []</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="7" data-linenumber="289">
+            <span class="hits">7</span>
+            
+
+            
+
+            <code class="ruby">    key_shifts_by_letter[:c_third].each do |c_key|</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="28" data-linenumber="290">
+            <span class="hits">28</span>
+            
+
+            
+
+            <code class="ruby">      key_shifts_by_letter[:d_fourth].each do |d_key|</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="112" data-linenumber="291">
+            <span class="hits">112</span>
+            
+
+            
+
+            <code class="ruby">        c_d_matches &lt;&lt; c_key if d_key[0] == c_key[1]</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="292">
+            
+            
+
+            
+
+            <code class="ruby">      end</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="28" data-linenumber="293">
+            <span class="hits">28</span>
+            
+
+            
+
+            <code class="ruby">      final_potential_keys[:b_second].each do |b_key|</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="28" data-linenumber="294">
+            <span class="hits">28</span>
+            
+
+            
+
+            <code class="ruby">        c_b_matches &lt;&lt; c_key if c_key[0] == b_key[1]</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="295">
+            
+            
+
+            
+
+            <code class="ruby">      end</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="296">
+            
+            
+
+            
+
+            <code class="ruby">    end</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="7" data-linenumber="297">
+            <span class="hits">7</span>
+            
+
+            
+
+            <code class="ruby">    final_potential_keys[:c_third] = c_d_matches.select do |key|</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="14" data-linenumber="298">
+            <span class="hits">14</span>
+            
+
+            
+
+            <code class="ruby">      c_b_matches.include?(key)</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="299">
+            
+            
+
+            
+
+            <code class="ruby">    end</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="300">
+            
+            
+
+            
+
+            <code class="ruby">    #d key matches</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="7" data-linenumber="301">
+            <span class="hits">7</span>
+            
+
+            
+
+            <code class="ruby">    key_shifts_by_letter[:d_fourth].each do |d_key|</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="28" data-linenumber="302">
+            <span class="hits">28</span>
+            
+
+            
+
+            <code class="ruby">      final_potential_keys[:c_third].each do |c_key|</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="28" data-linenumber="303">
+            <span class="hits">28</span>
+            
+
+            
+
+            <code class="ruby">        final_potential_keys[:d_fourth] &lt;&lt; d_key if c_key[1] == d_key[0]</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="304">
+            
+            
+
+            
+
+            <code class="ruby">      end</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="305">
+            
+            
+
+            
+
+            <code class="ruby">    end</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="7" data-linenumber="306">
+            <span class="hits">7</span>
+            
+
+            
+
+            <code class="ruby">    final_potential_keys</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="307">
+            
+            
+
+            
+
+            <code class="ruby">  end</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="308">
+            
+            
+
+            
+
+            <code class="ruby"></code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="309">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">  def list_of_possible_keys</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="3" data-linenumber="310">
+            <span class="hits">3</span>
+            
+
+            
+
+            <code class="ruby">    final_potential_keys = potential_key_shifts</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="3" data-linenumber="311">
+            <span class="hits">3</span>
+            
+
+            
+
+            <code class="ruby">    keys = []</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="15" data-linenumber="312">
+            <span class="hits">15</span>
+            
+
+            
+
+            <code class="ruby">    if potential_key_shifts.all? {|k, shift| shift.length == 1}</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="3" data-linenumber="313">
+            <span class="hits">3</span>
+            
+
+            
+
+            <code class="ruby">      keys &lt;&lt; final_potential_keys[:a_first][0] + final_potential_keys[:c_third][0] + final_potential_keys[:d_fourth][0][1]</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="314">
+            
+            
+
+            
+
+            <code class="ruby">    else</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="missed" data-hits="0" data-linenumber="315">
+            
+            
+
+            
+
+            <code class="ruby">      keys = multiple_keys_scenario</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="316">
+            
+            
+
+            
+
+            <code class="ruby">    end</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="3" data-linenumber="317">
+            <span class="hits">3</span>
+            
+
+            
+
+            <code class="ruby">    keys</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="318">
+            
+            
+
+            
+
+            <code class="ruby">  end</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="319">
+            
+            
+
+            
+
+            <code class="ruby"></code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="320">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">  def multiple_keys_scenario</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="321">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">    final_potential_keys = potential_key_shifts</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="322">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">    keys = []</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="323">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">    final_potential_keys[:a_first].each do |a_key|</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="2" data-linenumber="324">
+            <span class="hits">2</span>
+            
+
+            
+
+            <code class="ruby">      final_potential_keys[:b_second].each do |b_key|</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="4" data-linenumber="325">
+            <span class="hits">4</span>
+            
+
+            
+
+            <code class="ruby">        final_potential_keys[:c_third].each do |c_key|</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="8" data-linenumber="326">
+            <span class="hits">8</span>
+            
+
+            
+
+            <code class="ruby">          final_potential_keys[:d_fourth].each do |d_key|</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="16" data-linenumber="327">
+            <span class="hits">16</span>
+            
+
+            
+
+            <code class="ruby">            keys &lt;&lt; a_key + c_key + d_key[1] if valid_key?(a_key, b_key, c_key, d_key)</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="328">
+            
+            
+
+            
+
+            <code class="ruby">          end</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="329">
+            
+            
+
+            
+
+            <code class="ruby">        end</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="330">
+            
+            
+
+            
+
+            <code class="ruby">      end</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="331">
+            
+            
+
+            
+
+            <code class="ruby">    end</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="332">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">    keys</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="333">
+            
+            
+
+            
+
+            <code class="ruby">  end</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="334">
+            
+            
+
+            
+
+            <code class="ruby"></code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="335">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">  def valid_key?(a_key, b_key, c_key, d_key)</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="16" data-linenumber="336">
+            <span class="hits">16</span>
+            
+
+            
+
+            <code class="ruby">    a_key[1] == b_key[0] &amp;&amp;</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="337">
+            
+            
+
+            
+
+            <code class="ruby">      b_key[1] == c_key[0] &amp;&amp;</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="338">
+            
+            
+
+            
+
+            <code class="ruby">      c_key[1] == d_key[0]</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="339">
+            
+            
+
+            
+
+            <code class="ruby">  end</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="340">
+            
+            
+
+            
+
+            <code class="ruby"></code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="341">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">  def assign_all_letter_shift</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="342">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">    assign_letter_shift(space_position)</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="343">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">    assign_letter_shift(e_position)</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="344">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">    assign_letter_shift(n_position)</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="345">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">    assign_letter_shift(d_position)</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="346">
+            
+            
+
+            
+
+            <code class="ruby">  end</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="347">
+            
+            
+
+            
+
+            <code class="ruby"></code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="348">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">  def crack(ciphertext, given_date)</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="349">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">    @encrypted_message = ciphertext</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="350">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">    assign_all_letter_shift</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="351">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">    given_date ||= Time.new.strftime(&quot;%d%m%y&quot;)</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="352">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">    @given_date = given_date</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="353">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">    @given_key = list_of_possible_keys[0]</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="354">
+            
+            
+
+            
+
+            <code class="ruby">    {</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="355">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">      decryption: decrypt_message,</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="356">
+            
+            
+
+            
+
+            <code class="ruby">      key: list_of_possible_keys[0],</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="357">
+            
+            
+
+            
+
+            <code class="ruby">      date: given_date</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="358">
+            
+            
+
+            
+
+            <code class="ruby">    }</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="359">
+            
+            
+
+            
+
+            <code class="ruby">  end</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="360">
+            
+            
+
+            
+
+            <code class="ruby">end</code>
+          </li>
+        </div>
+      
+    </ol>
+  </pre>
+</div>
+
+      
+        <div class="source_table" id="f59fbdcdbf579d80535c1cb7a68c706cbd64e580">
+  <div class="header">
+    <h3>lib/key_generator.rb</h3>
+    <h4>
+      <span class="red">
+  37.5%
+</span>
+
+      lines covered
+    </h4>
+
+    
+
+    <div class="t-line-summary">
+      <b>8</b> relevant lines.
+      <span class="green"><b>3</b> lines covered</span> and
+      <span class="red"><b>5</b> lines missed.</span>
+    </div>
+
+    
+
+  </div>
+
+  <pre>
+    <ol>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="1">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">require &#39;./lib/enigma&#39;</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="2">
+            
+            
+
+            
+
+            <code class="ruby"></code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="3">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">module KeyGenerator</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="4">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">  def generate_key</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="missed" data-hits="0" data-linenumber="5">
+            
+            
+
+            
+
+            <code class="ruby">    number_array = [&quot;0&quot;,&quot;1&quot;,&quot;2&quot;,&quot;3&quot;,&quot;4&quot;,&quot;5&quot;,&quot;6&quot;,&quot;7&quot;,&quot;8&quot;,&quot;9&quot;]</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="missed" data-hits="0" data-linenumber="6">
+            
+            
+
+            
+
+            <code class="ruby">    key_picks = []</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="missed" data-hits="0" data-linenumber="7">
+            
+            
+
+            
+
+            <code class="ruby">    5.times do</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="missed" data-hits="0" data-linenumber="8">
+            
+            
+
+            
+
+            <code class="ruby">      key_picks &lt;&lt; number_array.sample</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="9">
+            
+            
+
+            
+
+            <code class="ruby">    end</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="missed" data-hits="0" data-linenumber="10">
+            
+            
+
+            
+
+            <code class="ruby">    key_picks.join</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="11">
+            
+            
+
+            
+
+            <code class="ruby">  end</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="12">
             
             
 
@@ -1892,8 +4288,8 @@
     
 
     <div class="t-line-summary">
-      <b>106</b> relevant lines.
-      <span class="green"><b>106</b> lines covered</span> and
+      <b>183</b> relevant lines.
+      <span class="green"><b>183</b> lines covered</span> and
       <span class="red"><b>0</b> lines missed.</span>
     </div>
 
@@ -1938,8 +4334,8 @@
         </div>
       
         <div>
-          <li class="covered" data-hits="18" data-linenumber="4">
-            <span class="hits">18</span>
+          <li class="covered" data-hits="21" data-linenumber="4">
+            <span class="hits">21</span>
             
 
             
@@ -2120,23 +4516,12 @@
 
             
 
-            <code class="ruby">    allow(enigma).to receive(:encrypt_message).and_return(&quot;keder ohulw&quot;)</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="covered" data-hits="1" data-linenumber="21">
-            <span class="hits">1</span>
-            
-
-            
-
             <code class="ruby">    expect(enigma.encrypt(&quot;hello world&quot;, &quot;02715&quot;, &quot;040895&quot;)).to eq( {</code>
           </li>
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="22">
+          <li class="never" data-hits="" data-linenumber="21">
             
             
 
@@ -2147,7 +4532,7 @@
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="23">
+          <li class="never" data-hits="" data-linenumber="22">
             
             
 
@@ -2158,7 +4543,7 @@
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="24">
+          <li class="never" data-hits="" data-linenumber="23">
             
             
 
@@ -2169,7 +4554,7 @@
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="25">
+          <li class="never" data-hits="" data-linenumber="24">
             
             
 
@@ -2180,13 +4565,24 @@
         </div>
       
         <div>
-          <li class="covered" data-hits="1" data-linenumber="26">
+          <li class="covered" data-hits="1" data-linenumber="25">
             <span class="hits">1</span>
             
 
             
 
             <code class="ruby">    expect(enigma.message).to eq(&quot;hello world&quot;)</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="26">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">    expect(enigma.given_key).to eq(&quot;02715&quot;)</code>
           </li>
         </div>
       
@@ -2197,18 +4593,18 @@
 
             
 
-            <code class="ruby">    expect(enigma.given_key).to eq(&quot;02715&quot;)</code>
+            <code class="ruby">    expect(enigma.given_date).to eq(&quot;040895&quot;)</code>
           </li>
         </div>
       
         <div>
-          <li class="covered" data-hits="1" data-linenumber="28">
-            <span class="hits">1</span>
+          <li class="never" data-hits="" data-linenumber="28">
+            
             
 
             
 
-            <code class="ruby">    expect(enigma.given_date).to eq(&quot;040895&quot;)</code>
+            <code class="ruby">  end</code>
           </li>
         </div>
       
@@ -2219,18 +4615,18 @@
 
             
 
-            <code class="ruby">  end</code>
+            <code class="ruby"></code>
           </li>
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="30">
-            
-            
-
+          <li class="covered" data-hits="1" data-linenumber="30">
+            <span class="hits">1</span>
             
 
-            <code class="ruby"></code>
+            
+
+            <code class="ruby">  it &#39;encrypts a message&#39; do</code>
           </li>
         </div>
       
@@ -2241,7 +4637,7 @@
 
             
 
-            <code class="ruby">  it &#39;assigns message, key, and date attributes based on input&#39; do</code>
+            <code class="ruby">    allow(enigma).to receive(:generate_key).and_return(&quot;02715&quot;)</code>
           </li>
         </div>
       
@@ -2252,18 +4648,18 @@
 
             
 
-            <code class="ruby">    allow(enigma).to receive(:encrypt_message).and_return(&quot;keder ohulw&quot;)</code>
+            <code class="ruby">    allow(Time).to receive(:new).and_return(Time.new(1995, 8, 4))</code>
           </li>
         </div>
       
         <div>
-          <li class="covered" data-hits="1" data-linenumber="33">
-            <span class="hits">1</span>
+          <li class="never" data-hits="" data-linenumber="33">
+            
             
 
             
 
-            <code class="ruby">    enigma.encrypt(&quot;hello world&quot;, &quot;02715&quot;, &quot;040895&quot;)</code>
+            <code class="ruby"></code>
           </li>
         </div>
       
@@ -2274,29 +4670,29 @@
 
             
 
-            <code class="ruby">    expect(enigma.message).to eq(&quot;hello world&quot;)</code>
+            <code class="ruby">    expect(enigma.encrypt(&quot;hello world&quot;, nil, nil)).to eq( {</code>
           </li>
         </div>
       
         <div>
-          <li class="covered" data-hits="1" data-linenumber="35">
-            <span class="hits">1</span>
+          <li class="never" data-hits="" data-linenumber="35">
+            
             
 
             
 
-            <code class="ruby">    expect(enigma.given_key).to eq(&quot;02715&quot;)</code>
+            <code class="ruby">          encryption: &quot;keder ohulw&quot;,</code>
           </li>
         </div>
       
         <div>
-          <li class="covered" data-hits="1" data-linenumber="36">
-            <span class="hits">1</span>
+          <li class="never" data-hits="" data-linenumber="36">
+            
             
 
             
 
-            <code class="ruby">    expect(enigma.given_date).to eq(&quot;040895&quot;)</code>
+            <code class="ruby">          key: &quot;02715&quot;,</code>
           </li>
         </div>
       
@@ -2307,7 +4703,7 @@
 
             
 
-            <code class="ruby">  end</code>
+            <code class="ruby">          date: &quot;040895&quot;</code>
           </li>
         </div>
       
@@ -2318,7 +4714,7 @@
 
             
 
-            <code class="ruby"></code>
+            <code class="ruby">        } )</code>
           </li>
         </div>
       
@@ -2329,7 +4725,7 @@
 
             
 
-            <code class="ruby">  it &#39;determines the key shift for A key&#39; do</code>
+            <code class="ruby">    expect(enigma.message).to eq(&quot;hello world&quot;)</code>
           </li>
         </div>
       
@@ -2340,7 +4736,7 @@
 
             
 
-            <code class="ruby">    allow(enigma).to receive(:encrypt_message).and_return(&quot;keder ohulw&quot;)</code>
+            <code class="ruby">    expect(enigma.given_key).to eq(&quot;02715&quot;)</code>
           </li>
         </div>
       
@@ -2351,18 +4747,18 @@
 
             
 
-            <code class="ruby">    enigma.encrypt(&quot;hello world&quot;, &quot;02715&quot;, &quot;040895&quot;)</code>
+            <code class="ruby">    expect(enigma.given_date).to eq(&quot;040895&quot;)</code>
           </li>
         </div>
       
         <div>
-          <li class="covered" data-hits="1" data-linenumber="42">
-            <span class="hits">1</span>
+          <li class="never" data-hits="" data-linenumber="42">
+            
             
 
             
 
-            <code class="ruby">    expect(enigma.a_key_shift).to eq(2)</code>
+            <code class="ruby">  end</code>
           </li>
         </div>
       
@@ -2373,18 +4769,18 @@
 
             
 
-            <code class="ruby">  end</code>
+            <code class="ruby"></code>
           </li>
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="44">
-            
-            
-
+          <li class="covered" data-hits="1" data-linenumber="44">
+            <span class="hits">1</span>
             
 
-            <code class="ruby"></code>
+            
+
+            <code class="ruby">  it &#39;decrypts a ciphertext when given a key and date&#39; do</code>
           </li>
         </div>
       
@@ -2395,40 +4791,40 @@
 
             
 
-            <code class="ruby">  it &#39;determines the key shift for B key&#39; do</code>
+            <code class="ruby">    expect(enigma.decrypt(&quot;keder ohulw&quot;, &quot;02715&quot;, &quot;040895&quot;)).to eq( {</code>
           </li>
         </div>
       
         <div>
-          <li class="covered" data-hits="1" data-linenumber="46">
-            <span class="hits">1</span>
+          <li class="never" data-hits="" data-linenumber="46">
+            
             
 
             
 
-            <code class="ruby">    allow(enigma).to receive(:encrypt_message).and_return(&quot;keder ohulw&quot;)</code>
+            <code class="ruby">          decryption: &quot;hello world&quot;,</code>
           </li>
         </div>
       
         <div>
-          <li class="covered" data-hits="1" data-linenumber="47">
-            <span class="hits">1</span>
+          <li class="never" data-hits="" data-linenumber="47">
+            
             
 
             
 
-            <code class="ruby">    enigma.encrypt(&quot;hello world&quot;, &quot;02715&quot;, &quot;040895&quot;)</code>
+            <code class="ruby">          key: &quot;02715&quot;,</code>
           </li>
         </div>
       
         <div>
-          <li class="covered" data-hits="1" data-linenumber="48">
-            <span class="hits">1</span>
+          <li class="never" data-hits="" data-linenumber="48">
+            
             
 
             
 
-            <code class="ruby">    expect(enigma.b_key_shift).to eq(27)</code>
+            <code class="ruby">          date: &quot;040895&quot;</code>
           </li>
         </div>
       
@@ -2439,7 +4835,7 @@
 
             
 
-            <code class="ruby">  end</code>
+            <code class="ruby">        } )</code>
           </li>
         </div>
       
@@ -2450,7 +4846,7 @@
 
             
 
-            <code class="ruby"></code>
+            <code class="ruby">    </code>
           </li>
         </div>
       
@@ -2461,7 +4857,7 @@
 
             
 
-            <code class="ruby">  it &#39;determines the key shift for C key&#39; do</code>
+            <code class="ruby">    expect(enigma.encrypted_message).to eq(&quot;keder ohulw&quot;)</code>
           </li>
         </div>
       
@@ -2472,7 +4868,7 @@
 
             
 
-            <code class="ruby">    allow(enigma).to receive(:encrypt_message).and_return(&quot;keder ohulw&quot;)</code>
+            <code class="ruby">    expect(enigma.given_key).to eq(&quot;02715&quot;)</code>
           </li>
         </div>
       
@@ -2483,18 +4879,18 @@
 
             
 
-            <code class="ruby">    enigma.encrypt(&quot;hello world&quot;, &quot;02715&quot;, &quot;040895&quot;)</code>
+            <code class="ruby">    expect(enigma.given_date).to eq(&quot;040895&quot;)</code>
           </li>
         </div>
       
         <div>
-          <li class="covered" data-hits="1" data-linenumber="54">
-            <span class="hits">1</span>
+          <li class="never" data-hits="" data-linenumber="54">
+            
             
 
             
 
-            <code class="ruby">    expect(enigma.c_key_shift).to eq(71)</code>
+            <code class="ruby">  end</code>
           </li>
         </div>
       
@@ -2505,18 +4901,18 @@
 
             
 
-            <code class="ruby">  end</code>
+            <code class="ruby"></code>
           </li>
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="56">
-            
-            
-
+          <li class="covered" data-hits="1" data-linenumber="56">
+            <span class="hits">1</span>
             
 
-            <code class="ruby"></code>
+            
+
+            <code class="ruby">  it &#39;decrypts a ciphertext when given just a key&#39; do</code>
           </li>
         </div>
       
@@ -2527,7 +4923,7 @@
 
             
 
-            <code class="ruby">  it &#39;determines the key shift for D key&#39; do</code>
+            <code class="ruby">    allow(Time).to receive(:new).and_return(Time.new(1995, 8, 4))</code>
           </li>
         </div>
       
@@ -2538,29 +4934,29 @@
 
             
 
-            <code class="ruby">    allow(enigma).to receive(:encrypt_message).and_return(&quot;keder ohulw&quot;)</code>
+            <code class="ruby">    expect(enigma.decrypt(&quot;keder ohulw&quot;, &quot;02715&quot;, nil)).to eq( {</code>
           </li>
         </div>
       
         <div>
-          <li class="covered" data-hits="1" data-linenumber="59">
-            <span class="hits">1</span>
+          <li class="never" data-hits="" data-linenumber="59">
+            
             
 
             
 
-            <code class="ruby">    enigma.encrypt(&quot;hello world&quot;, &quot;02715&quot;, &quot;040895&quot;)</code>
+            <code class="ruby">      decryption: &quot;hello world&quot;,</code>
           </li>
         </div>
       
         <div>
-          <li class="covered" data-hits="1" data-linenumber="60">
-            <span class="hits">1</span>
+          <li class="never" data-hits="" data-linenumber="60">
+            
             
 
             
 
-            <code class="ruby">    expect(enigma.d_key_shift).to eq(15)</code>
+            <code class="ruby">      key: &quot;02715&quot;,</code>
           </li>
         </div>
       
@@ -2571,7 +4967,7 @@
 
             
 
-            <code class="ruby">  end</code>
+            <code class="ruby">      date: &quot;040895&quot;</code>
           </li>
         </div>
       
@@ -2582,29 +4978,29 @@
 
             
 
+            <code class="ruby">    } )</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="63">
+            
+            
+
+            
+
+            <code class="ruby">  end</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="64">
+            
+            
+
+            
+
             <code class="ruby"></code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="covered" data-hits="1" data-linenumber="63">
-            <span class="hits">1</span>
-            
-
-            
-
-            <code class="ruby">  it &#39;squares the properly formatted date&#39; do</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="covered" data-hits="1" data-linenumber="64">
-            <span class="hits">1</span>
-            
-
-            
-
-            <code class="ruby">    allow(enigma).to receive(:encrypt_message).and_return(&quot;keder ohulw&quot;)</code>
           </li>
         </div>
       
@@ -2615,7 +5011,7 @@
 
             
 
-            <code class="ruby">    enigma.encrypt(&quot;hello world&quot;, &quot;02715&quot;, &quot;040895&quot;)</code>
+            <code class="ruby">  it &#39;assigns message, key, and date attributes based on input&#39; do</code>
           </li>
         </div>
       
@@ -2626,29 +5022,29 @@
 
             
 
-            <code class="ruby">    expect(enigma.square_date).to eq(1672401025)</code>
+            <code class="ruby">    allow(enigma).to receive(:encrypt_message).and_return(&quot;keder ohulw&quot;)</code>
           </li>
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="67">
-            
-            
-
+          <li class="covered" data-hits="1" data-linenumber="67">
+            <span class="hits">1</span>
             
 
-            <code class="ruby">  end</code>
+            
+
+            <code class="ruby">    enigma.encrypt(&quot;hello world&quot;, &quot;02715&quot;, &quot;040895&quot;)</code>
           </li>
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="68">
-            
-            
-
+          <li class="covered" data-hits="1" data-linenumber="68">
+            <span class="hits">1</span>
             
 
-            <code class="ruby"></code>
+            
+
+            <code class="ruby">    expect(enigma.message).to eq(&quot;hello world&quot;)</code>
           </li>
         </div>
       
@@ -2659,7 +5055,7 @@
 
             
 
-            <code class="ruby">  it &#39;determines the date shift for A key&#39; do</code>
+            <code class="ruby">    expect(enigma.given_key).to eq(&quot;02715&quot;)</code>
           </li>
         </div>
       
@@ -2670,34 +5066,12 @@
 
             
 
-            <code class="ruby">    allow(enigma).to receive(:encrypt_message).and_return(&quot;keder ohulw&quot;)</code>
+            <code class="ruby">    expect(enigma.given_date).to eq(&quot;040895&quot;)</code>
           </li>
         </div>
       
         <div>
-          <li class="covered" data-hits="1" data-linenumber="71">
-            <span class="hits">1</span>
-            
-
-            
-
-            <code class="ruby">    enigma.encrypt(&quot;hello world&quot;, &quot;02715&quot;, &quot;040895&quot;)</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="covered" data-hits="1" data-linenumber="72">
-            <span class="hits">1</span>
-            
-
-            
-
-            <code class="ruby">    expect(enigma.a_date_shift).to eq(1)</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="never" data-hits="" data-linenumber="73">
+          <li class="never" data-hits="" data-linenumber="71">
             
             
 
@@ -2708,13 +5082,35 @@
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="74">
+          <li class="never" data-hits="" data-linenumber="72">
             
             
 
             
 
             <code class="ruby"></code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="73">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">  it &#39;determines the key shift for A key&#39; do</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="74">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">    allow(enigma).to receive(:encrypt_message).and_return(&quot;keder ohulw&quot;)</code>
           </li>
         </div>
       
@@ -2725,7 +5121,7 @@
 
             
 
-            <code class="ruby">  it &#39;determines the date shift for B key&#39; do</code>
+            <code class="ruby">    enigma.encrypt(&quot;hello world&quot;, &quot;02715&quot;, &quot;040895&quot;)</code>
           </li>
         </div>
       
@@ -2736,34 +5132,12 @@
 
             
 
-            <code class="ruby">    allow(enigma).to receive(:encrypt_message).and_return(&quot;keder ohulw&quot;)</code>
+            <code class="ruby">    expect(enigma.a_key_shift).to eq(2)</code>
           </li>
         </div>
       
         <div>
-          <li class="covered" data-hits="1" data-linenumber="77">
-            <span class="hits">1</span>
-            
-
-            
-
-            <code class="ruby">    enigma.encrypt(&quot;hello world&quot;, &quot;02715&quot;, &quot;040895&quot;)</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="covered" data-hits="1" data-linenumber="78">
-            <span class="hits">1</span>
-            
-
-            
-
-            <code class="ruby">    expect(enigma.b_date_shift).to eq(0)</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="never" data-hits="" data-linenumber="79">
+          <li class="never" data-hits="" data-linenumber="77">
             
             
 
@@ -2774,13 +5148,35 @@
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="80">
+          <li class="never" data-hits="" data-linenumber="78">
             
             
 
             
 
             <code class="ruby"></code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="79">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">  it &#39;determines the key shift for B key&#39; do</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="80">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">    allow(enigma).to receive(:encrypt_message).and_return(&quot;keder ohulw&quot;)</code>
           </li>
         </div>
       
@@ -2791,7 +5187,7 @@
 
             
 
-            <code class="ruby">  it &#39;determines the date shift for C key&#39; do</code>
+            <code class="ruby">    enigma.encrypt(&quot;hello world&quot;, &quot;02715&quot;, &quot;040895&quot;)</code>
           </li>
         </div>
       
@@ -2802,34 +5198,12 @@
 
             
 
-            <code class="ruby">    allow(enigma).to receive(:encrypt_message).and_return(&quot;keder ohulw&quot;)</code>
+            <code class="ruby">    expect(enigma.b_key_shift).to eq(27)</code>
           </li>
         </div>
       
         <div>
-          <li class="covered" data-hits="1" data-linenumber="83">
-            <span class="hits">1</span>
-            
-
-            
-
-            <code class="ruby">    enigma.encrypt(&quot;hello world&quot;, &quot;02715&quot;, &quot;040895&quot;)</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="covered" data-hits="1" data-linenumber="84">
-            <span class="hits">1</span>
-            
-
-            
-
-            <code class="ruby">    expect(enigma.c_date_shift).to eq(2)</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="never" data-hits="" data-linenumber="85">
+          <li class="never" data-hits="" data-linenumber="83">
             
             
 
@@ -2840,13 +5214,35 @@
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="86">
+          <li class="never" data-hits="" data-linenumber="84">
             
             
 
             
 
             <code class="ruby"></code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="85">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">  it &#39;determines the key shift for C key&#39; do</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="86">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">    allow(enigma).to receive(:encrypt_message).and_return(&quot;keder ohulw&quot;)</code>
           </li>
         </div>
       
@@ -2857,7 +5253,7 @@
 
             
 
-            <code class="ruby">  it &#39;determines the date shift for D key&#39; do</code>
+            <code class="ruby">    enigma.encrypt(&quot;hello world&quot;, &quot;02715&quot;, &quot;040895&quot;)</code>
           </li>
         </div>
       
@@ -2868,34 +5264,12 @@
 
             
 
-            <code class="ruby">    allow(enigma).to receive(:encrypt_message).and_return(&quot;keder ohulw&quot;)</code>
+            <code class="ruby">    expect(enigma.c_key_shift).to eq(71)</code>
           </li>
         </div>
       
         <div>
-          <li class="covered" data-hits="1" data-linenumber="89">
-            <span class="hits">1</span>
-            
-
-            
-
-            <code class="ruby">    enigma.encrypt(&quot;hello world&quot;, &quot;02715&quot;, &quot;040895&quot;)</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="covered" data-hits="1" data-linenumber="90">
-            <span class="hits">1</span>
-            
-
-            
-
-            <code class="ruby">    expect(enigma.d_date_shift).to eq(5)</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="never" data-hits="" data-linenumber="91">
+          <li class="never" data-hits="" data-linenumber="89">
             
             
 
@@ -2906,7 +5280,7 @@
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="92">
+          <li class="never" data-hits="" data-linenumber="90">
             
             
 
@@ -2917,18 +5291,18 @@
         </div>
       
         <div>
-          <li class="covered" data-hits="1" data-linenumber="93">
+          <li class="covered" data-hits="1" data-linenumber="91">
             <span class="hits">1</span>
             
 
             
 
-            <code class="ruby">  it &#39;determines final shifts for A, B, C, D keys&#39; do</code>
+            <code class="ruby">  it &#39;determines the key shift for D key&#39; do</code>
           </li>
         </div>
       
         <div>
-          <li class="covered" data-hits="1" data-linenumber="94">
+          <li class="covered" data-hits="1" data-linenumber="92">
             <span class="hits">1</span>
             
 
@@ -2939,13 +5313,35 @@
         </div>
       
         <div>
-          <li class="covered" data-hits="1" data-linenumber="95">
+          <li class="covered" data-hits="1" data-linenumber="93">
             <span class="hits">1</span>
             
 
             
 
             <code class="ruby">    enigma.encrypt(&quot;hello world&quot;, &quot;02715&quot;, &quot;040895&quot;)</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="94">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">    expect(enigma.d_key_shift).to eq(15)</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="95">
+            
+            
+
+            
+
+            <code class="ruby">  end</code>
           </li>
         </div>
       
@@ -2967,7 +5363,7 @@
 
             
 
-            <code class="ruby">    expect(enigma.a_final_shift).to eq(3)</code>
+            <code class="ruby">  it &#39;squares the properly formatted date&#39; do</code>
           </li>
         </div>
       
@@ -2978,7 +5374,7 @@
 
             
 
-            <code class="ruby">    expect(enigma.b_final_shift).to eq(27)</code>
+            <code class="ruby">    allow(enigma).to receive(:encrypt_message).and_return(&quot;keder ohulw&quot;)</code>
           </li>
         </div>
       
@@ -2989,7 +5385,7 @@
 
             
 
-            <code class="ruby">    expect(enigma.c_final_shift).to eq(73)</code>
+            <code class="ruby">    enigma.encrypt(&quot;hello world&quot;, &quot;02715&quot;, &quot;040895&quot;)</code>
           </li>
         </div>
       
@@ -3000,7 +5396,7 @@
 
             
 
-            <code class="ruby">    expect(enigma.d_final_shift).to eq(20)</code>
+            <code class="ruby">    expect(enigma.square_date).to eq(1672401025)</code>
           </li>
         </div>
       
@@ -3033,7 +5429,7 @@
 
             
 
-            <code class="ruby">  it &#39;determines encrypted character for A, B, C, D keys&#39; do</code>
+            <code class="ruby">  it &#39;determines the date shift for A key&#39; do</code>
           </li>
         </div>
       
@@ -3060,62 +5456,18 @@
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="106">
-            
-            
-
-            
-
-            <code class="ruby"></code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="covered" data-hits="1" data-linenumber="107">
+          <li class="covered" data-hits="1" data-linenumber="106">
             <span class="hits">1</span>
             
 
             
 
-            <code class="ruby">    expect(enigma.a_shift(&quot;h&quot;)).to eq(&quot;k&quot;)</code>
+            <code class="ruby">    expect(enigma.a_date_shift).to eq(1)</code>
           </li>
         </div>
       
         <div>
-          <li class="covered" data-hits="1" data-linenumber="108">
-            <span class="hits">1</span>
-            
-
-            
-
-            <code class="ruby">    expect(enigma.b_shift(&quot;e&quot;)).to eq(&quot;e&quot;)</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="covered" data-hits="1" data-linenumber="109">
-            <span class="hits">1</span>
-            
-
-            
-
-            <code class="ruby">    expect(enigma.c_shift(&quot;l&quot;)).to eq(&quot;d&quot;)</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="covered" data-hits="1" data-linenumber="110">
-            <span class="hits">1</span>
-            
-
-            
-
-            <code class="ruby">    expect(enigma.d_shift(&quot;l&quot;)).to eq(&quot;e&quot;)</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="never" data-hits="" data-linenumber="111">
+          <li class="never" data-hits="" data-linenumber="107">
             
             
 
@@ -3126,7 +5478,7 @@
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="112">
+          <li class="never" data-hits="" data-linenumber="108">
             
             
 
@@ -3137,13 +5489,57 @@
         </div>
       
         <div>
-          <li class="covered" data-hits="1" data-linenumber="113">
+          <li class="covered" data-hits="1" data-linenumber="109">
             <span class="hits">1</span>
             
 
             
 
-            <code class="ruby">  describe &#39;sorts the message&#39; do</code>
+            <code class="ruby">  it &#39;determines the date shift for B key&#39; do</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="110">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">    allow(enigma).to receive(:encrypt_message).and_return(&quot;keder ohulw&quot;)</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="111">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">    enigma.encrypt(&quot;hello world&quot;, &quot;02715&quot;, &quot;040895&quot;)</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="112">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">    expect(enigma.b_date_shift).to eq(0)</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="113">
+            
+            
+
+            
+
+            <code class="ruby">  end</code>
           </li>
         </div>
       
@@ -3159,24 +5555,24 @@
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="115">
-            
-            
-
+          <li class="covered" data-hits="1" data-linenumber="115">
+            <span class="hits">1</span>
             
 
-            <code class="ruby">  end</code>
+            
+
+            <code class="ruby">  it &#39;determines the date shift for C key&#39; do</code>
           </li>
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="116">
-            
-            
-
+          <li class="covered" data-hits="1" data-linenumber="116">
+            <span class="hits">1</span>
             
 
-            <code class="ruby"></code>
+            
+
+            <code class="ruby">    allow(enigma).to receive(:encrypt_message).and_return(&quot;keder ohulw&quot;)</code>
           </li>
         </div>
       
@@ -3187,7 +5583,7 @@
 
             
 
-            <code class="ruby">  it &#39;encrypts the message&#39; do</code>
+            <code class="ruby">    enigma.encrypt(&quot;hello world&quot;, &quot;02715&quot;, &quot;040895&quot;)</code>
           </li>
         </div>
       
@@ -3198,40 +5594,40 @@
 
             
 
-            <code class="ruby">    enigma.encrypt(&quot;hello &quot;, &quot;02715&quot;, &quot;040895&quot;)</code>
+            <code class="ruby">    expect(enigma.c_date_shift).to eq(2)</code>
           </li>
         </div>
       
         <div>
-          <li class="covered" data-hits="1" data-linenumber="119">
-            <span class="hits">1</span>
+          <li class="never" data-hits="" data-linenumber="119">
+            
             
 
             
 
-            <code class="ruby">      enigma.message = &quot;h&quot;</code>
+            <code class="ruby">  end</code>
           </li>
         </div>
       
         <div>
-          <li class="covered" data-hits="1" data-linenumber="120">
-            <span class="hits">1</span>
-            
-
-            
-
-            <code class="ruby">      expect(enigma.encrypt_message).to eq(&quot;k&quot;)</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="never" data-hits="" data-linenumber="121">
+          <li class="never" data-hits="" data-linenumber="120">
             
             
 
             
 
             <code class="ruby"></code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="121">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">  it &#39;determines the date shift for D key&#39; do</code>
           </li>
         </div>
       
@@ -3242,7 +5638,7 @@
 
             
 
-            <code class="ruby">      enigma.message = &quot;he&quot;</code>
+            <code class="ruby">    allow(enigma).to receive(:encrypt_message).and_return(&quot;keder ohulw&quot;)</code>
           </li>
         </div>
       
@@ -3253,12 +5649,34 @@
 
             
 
-            <code class="ruby">      expect(enigma.encrypt_message).to eq(&quot;ke&quot;)</code>
+            <code class="ruby">    enigma.encrypt(&quot;hello world&quot;, &quot;02715&quot;, &quot;040895&quot;)</code>
           </li>
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="124">
+          <li class="covered" data-hits="1" data-linenumber="124">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">    expect(enigma.d_date_shift).to eq(5)</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="125">
+            
+            
+
+            
+
+            <code class="ruby">  end</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="126">
             
             
 
@@ -3269,35 +5687,13 @@
         </div>
       
         <div>
-          <li class="covered" data-hits="1" data-linenumber="125">
+          <li class="covered" data-hits="1" data-linenumber="127">
             <span class="hits">1</span>
             
 
             
 
-            <code class="ruby">      enigma.message = &quot;hel&quot;</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="covered" data-hits="1" data-linenumber="126">
-            <span class="hits">1</span>
-            
-
-            
-
-            <code class="ruby">      expect(enigma.encrypt_message).to eq(&quot;ked&quot;)</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="never" data-hits="" data-linenumber="127">
-            
-            
-
-            
-
-            <code class="ruby"></code>
+            <code class="ruby">  it &#39;determines final shifts for A, B, C, D keys&#39; do</code>
           </li>
         </div>
       
@@ -3308,7 +5704,7 @@
 
             
 
-            <code class="ruby">      enigma.message = &quot;hell&quot;</code>
+            <code class="ruby">    allow(enigma).to receive(:encrypt_message).and_return(&quot;keder ohulw&quot;)</code>
           </li>
         </div>
       
@@ -3319,7 +5715,7 @@
 
             
 
-            <code class="ruby">      expect(enigma.encrypt_message).to eq(&quot;kede&quot;)</code>
+            <code class="ruby">    enigma.encrypt(&quot;hello world&quot;, &quot;02715&quot;, &quot;040895&quot;)</code>
           </li>
         </div>
       
@@ -3341,7 +5737,7 @@
 
             
 
-            <code class="ruby">      enigma.message = &quot;hello world&quot;</code>
+            <code class="ruby">    expect(enigma.a_final_shift).to eq(3)</code>
           </li>
         </div>
       
@@ -3352,12 +5748,34 @@
 
             
 
-            <code class="ruby">      expect(enigma.encrypt_message).to eq(&quot;keder ohulw&quot;)</code>
+            <code class="ruby">    expect(enigma.b_final_shift).to eq(27)</code>
           </li>
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="133">
+          <li class="covered" data-hits="1" data-linenumber="133">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">    expect(enigma.c_final_shift).to eq(73)</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="134">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">    expect(enigma.d_final_shift).to eq(20)</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="135">
             
             
 
@@ -3368,35 +5786,13 @@
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="134">
+          <li class="never" data-hits="" data-linenumber="136">
             
             
 
             
 
             <code class="ruby"></code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="covered" data-hits="1" data-linenumber="135">
-            <span class="hits">1</span>
-            
-
-            
-
-            <code class="ruby">  it &#39;determines decrypted character for A, B, C, D keys&#39; do</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="covered" data-hits="1" data-linenumber="136">
-            <span class="hits">1</span>
-            
-
-            
-
-            <code class="ruby">    enigma.encrypted_message = &quot;keder ohulw&quot;</code>
           </li>
         </div>
       
@@ -3407,7 +5803,7 @@
 
             
 
-            <code class="ruby">    enigma.given_date = &quot;040895&quot;</code>
+            <code class="ruby">  it &#39;determines encrypted character for A, B, C, D keys&#39; do</code>
           </li>
         </div>
       
@@ -3418,29 +5814,29 @@
 
             
 
-            <code class="ruby">    enigma.given_key = &quot;02715&quot;</code>
+            <code class="ruby">    allow(enigma).to receive(:encrypt_message).and_return(&quot;keder ohulw&quot;)</code>
           </li>
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="139">
+          <li class="covered" data-hits="1" data-linenumber="139">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">    enigma.encrypt(&quot;hello world&quot;, &quot;02715&quot;, &quot;040895&quot;)</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="140">
             
             
 
             
 
             <code class="ruby"></code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="covered" data-hits="1" data-linenumber="140">
-            <span class="hits">1</span>
-            
-
-            
-
-            <code class="ruby">    expect(enigma.reverse_a_shift(&quot;k&quot;)).to eq(&quot;h&quot;)</code>
           </li>
         </div>
       
@@ -3451,7 +5847,7 @@
 
             
 
-            <code class="ruby">    expect(enigma.reverse_b_shift(&quot;e&quot;)).to eq(&quot;e&quot;)</code>
+            <code class="ruby">    expect(enigma.a_shift(&quot;h&quot;)).to eq(&quot;k&quot;)</code>
           </li>
         </div>
       
@@ -3462,7 +5858,7 @@
 
             
 
-            <code class="ruby">    expect(enigma.reverse_c_shift(&quot;d&quot;)).to eq(&quot;l&quot;)</code>
+            <code class="ruby">    expect(enigma.b_shift(&quot;e&quot;)).to eq(&quot;e&quot;)</code>
           </li>
         </div>
       
@@ -3473,18 +5869,18 @@
 
             
 
-            <code class="ruby">    expect(enigma.reverse_d_shift(&quot;e&quot;)).to eq(&quot;l&quot;)</code>
+            <code class="ruby">    expect(enigma.c_shift(&quot;l&quot;)).to eq(&quot;d&quot;)</code>
           </li>
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="144">
-            
-            
-
+          <li class="covered" data-hits="1" data-linenumber="144">
+            <span class="hits">1</span>
             
 
-            <code class="ruby">  end</code>
+            
+
+            <code class="ruby">    expect(enigma.d_shift(&quot;l&quot;)).to eq(&quot;e&quot;)</code>
           </li>
         </div>
       
@@ -3495,18 +5891,18 @@
 
             
 
-            <code class="ruby"></code>
+            <code class="ruby">  end</code>
           </li>
         </div>
       
         <div>
-          <li class="covered" data-hits="1" data-linenumber="146">
-            <span class="hits">1</span>
+          <li class="never" data-hits="" data-linenumber="146">
+            
             
 
             
 
-            <code class="ruby">  it &#39;decrypts the message&#39; do</code>
+            <code class="ruby"></code>
           </li>
         </div>
       
@@ -3517,45 +5913,12 @@
 
             
 
-            <code class="ruby">    enigma.given_date = &quot;040895&quot;</code>
+            <code class="ruby">  describe &#39;sorts the message&#39; do</code>
           </li>
         </div>
       
         <div>
-          <li class="covered" data-hits="1" data-linenumber="148">
-            <span class="hits">1</span>
-            
-
-            
-
-            <code class="ruby">    enigma.given_key = &quot;02715&quot;</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="covered" data-hits="1" data-linenumber="149">
-            <span class="hits">1</span>
-            
-
-            
-
-            <code class="ruby">    enigma.encrypted_message = &quot;k&quot;</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="covered" data-hits="1" data-linenumber="150">
-            <span class="hits">1</span>
-            
-
-            
-
-            <code class="ruby">    expect(enigma.decrypt_message).to eq(&quot;h&quot;)</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="never" data-hits="" data-linenumber="151">
+          <li class="never" data-hits="" data-linenumber="148">
             
             
 
@@ -3566,128 +5929,7 @@
         </div>
       
         <div>
-          <li class="covered" data-hits="1" data-linenumber="152">
-            <span class="hits">1</span>
-            
-
-            
-
-            <code class="ruby">    enigma.encrypted_message = &quot;ke&quot;</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="covered" data-hits="1" data-linenumber="153">
-            <span class="hits">1</span>
-            
-
-            
-
-            <code class="ruby">    expect(enigma.decrypt_message).to eq(&quot;he&quot;)</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="never" data-hits="" data-linenumber="154">
-            
-            
-
-            
-
-            <code class="ruby"></code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="covered" data-hits="1" data-linenumber="155">
-            <span class="hits">1</span>
-            
-
-            
-
-            <code class="ruby">    enigma.encrypted_message = &quot;ked&quot;</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="covered" data-hits="1" data-linenumber="156">
-            <span class="hits">1</span>
-            
-
-            
-
-            <code class="ruby">    expect(enigma.decrypt_message).to eq(&quot;hel&quot;)</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="never" data-hits="" data-linenumber="157">
-            
-            
-
-            
-
-            <code class="ruby"></code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="covered" data-hits="1" data-linenumber="158">
-            <span class="hits">1</span>
-            
-
-            
-
-            <code class="ruby">    enigma.encrypted_message = &quot;kede&quot;</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="covered" data-hits="1" data-linenumber="159">
-            <span class="hits">1</span>
-            
-
-            
-
-            <code class="ruby">    expect(enigma.decrypt_message).to eq(&quot;hell&quot;)</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="never" data-hits="" data-linenumber="160">
-            
-            
-
-            
-
-            <code class="ruby"></code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="covered" data-hits="1" data-linenumber="161">
-            <span class="hits">1</span>
-            
-
-            
-
-            <code class="ruby">    enigma.encrypted_message = &quot;keder ohulw&quot;</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="covered" data-hits="1" data-linenumber="162">
-            <span class="hits">1</span>
-            
-
-            
-
-            <code class="ruby">    expect(enigma.decrypt_message).to eq(&quot;hello world&quot;)</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="never" data-hits="" data-linenumber="163">
+          <li class="never" data-hits="" data-linenumber="149">
             
             
 
@@ -3698,13 +5940,1960 @@
         </div>
       
         <div>
+          <li class="never" data-hits="" data-linenumber="150">
+            
+            
+
+            
+
+            <code class="ruby"></code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="151">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">  it &#39;encrypts the message&#39; do</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="152">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">    enigma.encrypt(&quot;hello &quot;, &quot;02715&quot;, &quot;040895&quot;)</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="153">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">      enigma.message = &quot;h&quot;</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="154">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">      expect(enigma.encrypt_message).to eq(&quot;k&quot;)</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="155">
+            
+            
+
+            
+
+            <code class="ruby"></code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="156">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">      enigma.message = &quot;he&quot;</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="157">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">      expect(enigma.encrypt_message).to eq(&quot;ke&quot;)</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="158">
+            
+            
+
+            
+
+            <code class="ruby"></code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="159">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">      enigma.message = &quot;hel&quot;</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="160">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">      expect(enigma.encrypt_message).to eq(&quot;ked&quot;)</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="161">
+            
+            
+
+            
+
+            <code class="ruby"></code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="162">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">      enigma.message = &quot;hell&quot;</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="163">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">      expect(enigma.encrypt_message).to eq(&quot;kede&quot;)</code>
+          </li>
+        </div>
+      
+        <div>
           <li class="never" data-hits="" data-linenumber="164">
             
             
 
             
 
+            <code class="ruby"></code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="165">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">      enigma.message = &quot;hello world&quot;</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="166">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">      expect(enigma.encrypt_message).to eq(&quot;keder ohulw&quot;)</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="167">
+            
+            
+
+            
+
+            <code class="ruby">  end</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="168">
+            
+            
+
+            
+
+            <code class="ruby"></code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="169">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">  it &#39;determines decrypted character for A, B, C, D keys&#39; do</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="170">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">    enigma.encrypted_message = &quot;keder ohulw&quot;</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="171">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">    enigma.given_date = &quot;040895&quot;</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="172">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">    enigma.given_key = &quot;02715&quot;</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="173">
+            
+            
+
+            
+
+            <code class="ruby"></code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="174">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">    expect(enigma.reverse_a_shift(&quot;k&quot;)).to eq(&quot;h&quot;)</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="175">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">    expect(enigma.reverse_b_shift(&quot;e&quot;)).to eq(&quot;e&quot;)</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="176">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">    expect(enigma.reverse_c_shift(&quot;d&quot;)).to eq(&quot;l&quot;)</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="177">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">    expect(enigma.reverse_d_shift(&quot;e&quot;)).to eq(&quot;l&quot;)</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="178">
+            
+            
+
+            
+
+            <code class="ruby">  end</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="179">
+            
+            
+
+            
+
+            <code class="ruby"></code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="180">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">  it &#39;decrypts the message&#39; do</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="181">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">    enigma.given_date = &quot;040895&quot;</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="182">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">    enigma.given_key = &quot;02715&quot;</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="183">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">    enigma.encrypted_message = &quot;k&quot;</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="184">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">    expect(enigma.decrypt_message).to eq(&quot;h&quot;)</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="185">
+            
+            
+
+            
+
+            <code class="ruby"></code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="186">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">    enigma.encrypted_message = &quot;ke&quot;</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="187">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">    expect(enigma.decrypt_message).to eq(&quot;he&quot;)</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="188">
+            
+            
+
+            
+
+            <code class="ruby"></code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="189">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">    enigma.encrypted_message = &quot;ked&quot;</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="190">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">    expect(enigma.decrypt_message).to eq(&quot;hel&quot;)</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="191">
+            
+            
+
+            
+
+            <code class="ruby"></code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="192">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">    enigma.encrypted_message = &quot;kede&quot;</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="193">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">    expect(enigma.decrypt_message).to eq(&quot;hell&quot;)</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="194">
+            
+            
+
+            
+
+            <code class="ruby"></code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="195">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">    enigma.encrypted_message = &quot;keder ohulw&quot;</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="196">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">    expect(enigma.decrypt_message).to eq(&quot;hello world&quot;)</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="197">
+            
+            
+
+            
+
+            <code class="ruby">  end</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="198">
+            
+            
+
+            
+
             <code class="ruby">end</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="199">
+            
+            
+
+            
+
+            <code class="ruby"></code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="200">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">describe &#39;cracking some code&#39; do</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="10" data-linenumber="201">
+            <span class="hits">10</span>
+            
+
+            
+
+            <code class="ruby">  let(:enigma) {Enigma.new}</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="202">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">  it &#39;figures out the end positions&#39; do</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="203">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">    @encrypted_message = enigma.encrypt(&quot;hello end&quot;, &quot;02715&quot;, &quot;040895&quot;)[:encryption]</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="204">
+            
+            
+
+            
+
+            <code class="ruby">    #keder xgg</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="205">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">    @date = &quot;040895&quot;</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="206">
+            
+            
+
+            
+
+            <code class="ruby">#figure out positions for &quot; end&quot; in the message to determine ABCD shifts</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="207">
+            
+            
+
+            
+
+            <code class="ruby">#total length of message - 3 for &quot; &quot;</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="208">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">    expect(enigma.space_position).to eq(6)</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="209">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">    expect(enigma.e_position).to eq(7)</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="210">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">    expect(enigma.n_position).to eq(8)</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="211">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">    expect(enigma.d_position).to eq(9)</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="212">
+            
+            
+
+            
+
+            <code class="ruby">  end</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="213">
+            
+            
+
+            
+
+            <code class="ruby"></code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="214">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">  it &#39;assigns ABCD shifts as attributes for the space &quot;e&quot;, &quot;n&quot;, &quot;d&quot;&#39; do</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="215">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">    @encrypted_message = enigma.encrypt(&quot;hello end&quot;, &quot;02715&quot;, &quot;040895&quot;)[:encryption]</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="216">
+            
+            
+
+            
+
+            <code class="ruby">    #keder xgg</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="217">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">    @date = &quot;040895&quot;</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="218">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">    enigma.assign_letter_shift(enigma.space_position)</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="219">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">    enigma.assign_letter_shift(enigma.e_position)</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="220">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">    enigma.assign_letter_shift(enigma.n_position)</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="221">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">    enigma.assign_letter_shift(enigma.d_position)</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="222">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">    @space_position_shift = :b_second</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="223">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">    @e_position_shift = :c_third</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="224">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">    @n_position_shift = :d_fourth</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="225">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">    @d_position_shift = :a_first</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="226">
+            
+            
+
+            
+
+            <code class="ruby">  end</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="227">
+            
+            
+
+            
+
+            <code class="ruby"></code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="228">
+            
+            
+
+            
+
+            <code class="ruby"></code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="229">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">  it &#39;determines ABCD shifts and shifts using just #date shift&#39; do</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="230">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">    @encrypted_message = enigma.encrypt(&quot;hello end&quot;, &quot;02715&quot;, &quot;040895&quot;)[:encryption]</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="231">
+            
+            
+
+            
+
+            <code class="ruby">    #keder xgg</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="232">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">    @date = &quot;040895&quot;</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="233">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">    expect(enigma.date_shift((enigma.space_position), &quot; &quot;)).to eq(&quot; &quot;)</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="234">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">    expect(enigma.date_shift((enigma.e_position), &quot;e&quot;)).to eq(&quot;g&quot;)</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="235">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">    expect(enigma.date_shift((enigma.n_position), &quot;n&quot;)).to eq(&quot;s&quot;)</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="236">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">    expect(enigma.date_shift((enigma.d_position), &quot;d&quot;)).to eq(&quot;e&quot;)</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="237">
+            
+            
+
+            
+
+            <code class="ruby">    # #2 key shift</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="238">
+            
+            
+
+            
+
+            <code class="ruby">    # #1 date shift</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="239">
+            
+            
+
+            
+
+            <code class="ruby">    # enigma.determine_a_key_shift</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="240">
+            
+            
+
+            
+
+            <code class="ruby">    # #27</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="241">
+            
+            
+
+            
+
+            <code class="ruby">    # #0</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="242">
+            
+            
+
+            
+
+            <code class="ruby">    # enigma.determine_b_key_shift</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="243">
+            
+            
+
+            
+
+            <code class="ruby">    # #71</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="244">
+            
+            
+
+            
+
+            <code class="ruby">    # #2</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="245">
+            
+            
+
+            
+
+            <code class="ruby">    # enigma.determine_c_key_shift</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="246">
+            
+            
+
+            
+
+            <code class="ruby">    # #15</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="247">
+            
+            
+
+            
+
+            <code class="ruby">    # #5</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="248">
+            
+            
+
+            
+
+            <code class="ruby">    # enigma.determine_d_key_shift</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="249">
+            
+            
+
+            
+
+            <code class="ruby">  end</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="250">
+            
+            
+
+            
+
+            <code class="ruby"></code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="251">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">  it &#39;determines key shift&#39; do</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="252">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">    @encrypted_message = enigma.encrypt(&quot;hello end&quot;, &quot;02715&quot;, &quot;040895&quot;)[:encryption]</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="253">
+            
+            
+
+            
+
+            <code class="ruby">    #keder xgg</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="254">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">    @date = &quot;040895&quot;</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="255">
+            
+            
+
+            
+
+            <code class="ruby">    # &quot; &quot; to &quot; &quot; - 00, 27, 54, 81 B</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="256">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">    expect(enigma.possible_key_shifts(@encrypted_message[enigma.space_position - 1], enigma.date_shift(enigma.space_position, &quot; &quot;))).to eq([&quot;00&quot;, &quot;27&quot;, &quot;54&quot;, &quot;81&quot;])</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="257">
+            
+            
+
+            
+
+            <code class="ruby">    # &quot;g&quot; to &quot;x&quot; - 17, 44, 71, 98 C</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="258">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">    expect(enigma.possible_key_shifts(@encrypted_message[enigma.e_position - 1], enigma.date_shift(enigma.e_position, &quot;e&quot;))).to eq([&quot;17&quot;, &quot;44&quot;, &quot;71&quot;, &quot;98&quot;])</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="259">
+            
+            
+
+            
+
+            <code class="ruby">    # &quot;s&quot; to &quot;g&quot; - 15, 42, 69, 96 D</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="260">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">    expect(enigma.possible_key_shifts(@encrypted_message[enigma.n_position - 1], enigma.date_shift(enigma.n_position, &quot;n&quot;))).to eq([&quot;15&quot;, &quot;42&quot;, &quot;69&quot;, &quot;96&quot;])</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="261">
+            
+            
+
+            
+
+            <code class="ruby">    #&quot;e&quot; to &quot;g&quot; - 02, 29, 56, 83 A</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="262">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">    expect(enigma.possible_key_shifts(@encrypted_message[enigma.d_position - 1], enigma.date_shift(enigma.d_position, &quot;d&quot;))).to eq([&quot;02&quot;, &quot;29&quot;, &quot;56&quot;, &quot;83&quot;])</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="263">
+            
+            
+
+            
+
+            <code class="ruby">  end</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="264">
+            
+            
+
+            
+
+            <code class="ruby"></code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="265">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">  it &#39;it makes a hash of all possible_key_shifts by letter shift designation&#39; do</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="266">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">    @encrypted_message = enigma.encrypt(&quot;hello end&quot;, &quot;02715&quot;, &quot;040895&quot;)[:encryption]</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="267">
+            
+            
+
+            
+
+            <code class="ruby">    #keder xgg</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="268">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">    @date = &quot;040895&quot;</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="269">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">    enigma.assign_letter_shift(enigma.space_position)</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="270">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">    enigma.assign_letter_shift(enigma.e_position)</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="271">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">    enigma.assign_letter_shift(enigma.n_position)</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="272">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">    enigma.assign_letter_shift(enigma.d_position)</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="273">
+            
+            
+
+            
+
+            <code class="ruby"></code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="274">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">    expect(enigma.key_shifts_by_letter).to eq( { </code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="275">
+            
+            
+
+            
+
+            <code class="ruby">      a_first: [&quot;02&quot;, &quot;29&quot;, &quot;56&quot;, &quot;83&quot;],</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="276">
+            
+            
+
+            
+
+            <code class="ruby">      b_second: [&quot;00&quot;, &quot;27&quot;, &quot;54&quot;, &quot;81&quot;],</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="277">
+            
+            
+
+            
+
+            <code class="ruby">      c_third: [&quot;17&quot;, &quot;44&quot;, &quot;71&quot;, &quot;98&quot;],</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="278">
+            
+            
+
+            
+
+            <code class="ruby">      d_fourth: [&quot;15&quot;, &quot;42&quot;, &quot;69&quot;, &quot;96&quot;]</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="279">
+            
+            
+
+            
+
+            <code class="ruby">    })</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="280">
+            
+            
+
+            
+
+            <code class="ruby">  end</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="281">
+            
+            
+
+            
+
+            <code class="ruby">  </code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="282">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">  it &#39;#potential_key_shifts&#39; do</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="283">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">    @encrypted_message = enigma.encrypt(&quot;hello end&quot;, &quot;02715&quot;, &quot;040895&quot;)[:encryption]</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="284">
+            
+            
+
+            
+
+            <code class="ruby">    #keder xgg</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="285">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">    @date = &quot;040895&quot;</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="286">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">    enigma.assign_letter_shift(enigma.space_position)</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="287">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">    enigma.assign_letter_shift(enigma.e_position)</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="288">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">    enigma.assign_letter_shift(enigma.n_position)</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="289">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">    enigma.assign_letter_shift(enigma.d_position)</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="290">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">    expect(enigma.potential_key_shifts).to eq({ </code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="291">
+            
+            
+
+            
+
+            <code class="ruby">        a_first: [&quot;02&quot;],</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="292">
+            
+            
+
+            
+
+            <code class="ruby">        b_second: [&quot;27&quot;],</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="293">
+            
+            
+
+            
+
+            <code class="ruby">        c_third: [&quot;71&quot;],</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="294">
+            
+            
+
+            
+
+            <code class="ruby">        d_fourth: [&quot;15&quot;]</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="295">
+            
+            
+
+            
+
+            <code class="ruby">      })</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="296">
+            
+            
+
+            
+
+            <code class="ruby">  end</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="297">
+            
+            
+
+            
+
+            <code class="ruby"></code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="298">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">  it &#39;makes an array of all possible keys&#39; do</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="299">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">    @encrypted_message = enigma.encrypt(&quot;hello end&quot;, &quot;02715&quot;, &quot;040895&quot;)[:encryption]</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="300">
+            
+            
+
+            
+
+            <code class="ruby">    #keder xgg</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="301">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">    @date = &quot;040895&quot;</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="302">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">    enigma.assign_letter_shift(enigma.space_position)</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="303">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">    enigma.assign_letter_shift(enigma.e_position)</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="304">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">    enigma.assign_letter_shift(enigma.n_position)</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="305">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">    enigma.assign_letter_shift(enigma.d_position)</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="306">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">    expect(enigma.list_of_possible_keys).to eq([&quot;02715&quot;])</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="307">
+            
+            
+
+            
+
+            <code class="ruby">  end</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="308">
+            
+            
+
+            
+
+            <code class="ruby"></code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="309">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">  it &#39;can handle multiple working keys&#39; do</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="310">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">    allow(enigma).to receive(:potential_key_shifts).and_return({ </code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="311">
+            
+            
+
+            
+
+            <code class="ruby">      a_first: [&quot;02&quot;, &quot;01&quot;],</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="312">
+            
+            
+
+            
+
+            <code class="ruby">      b_second: [&quot;27&quot;, &quot;12&quot;],</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="313">
+            
+            
+
+            
+
+            <code class="ruby">      c_third: [&quot;23&quot;, &quot;71&quot;],</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="314">
+            
+            
+
+            
+
+            <code class="ruby">      d_fourth: [&quot;34&quot;, &quot;15&quot;]</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="315">
+            
+            
+
+            
+
+            <code class="ruby">    })</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="316">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">    expect(enigma.multiple_keys_scenario).to eq([&quot;02715&quot;, &quot;01234&quot;])</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="317">
+            
+            
+
+            
+
+            <code class="ruby">  end</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="318">
+            
+            
+
+            
+
+            <code class="ruby"></code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="319">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">  it &#39;cracks!&#39; do</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="320">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">    expect(enigma.crack(&quot;keder xgg&quot;, &quot;040895&quot;)).to eq({</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="321">
+            
+            
+
+            
+
+            <code class="ruby">      decryption: &quot;hello end&quot;,</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="322">
+            
+            
+
+            
+
+            <code class="ruby">      date: &quot;040895&quot;,</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="323">
+            
+            
+
+            
+
+            <code class="ruby">      key: &quot;02715&quot;</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="324">
+            
+            
+
+            
+
+            <code class="ruby">      })</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="325">
+            
+            
+
+            
+
+            <code class="ruby">  end</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="326">
+            
+            
+
+            
+
+            <code class="ruby">end</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="327">
+            
+            
+
+            
+
+            <code class="ruby"></code>
           </li>
         </div>
       
