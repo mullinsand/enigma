@@ -279,7 +279,7 @@ describe 'cracking some code' do
     })
   end
   
-  it 'removes are unmatched keys from the array #potential_key_shifts' do
+  it '#potential_key_shifts' do
     @encrypted_message = enigma.encrypt("hello end", "02715", "040895")[:encryption]
     #keder xgg
     @date = "040895"
@@ -304,6 +304,16 @@ describe 'cracking some code' do
     enigma.assign_letter_shift(enigma.n_position)
     enigma.assign_letter_shift(enigma.d_position)
     expect(enigma.list_of_possible_keys).to eq(["02715"])
+  end
+
+  it 'can handle multiple working keys' do
+    allow(enigma).to receive(:potential_key_shifts).and_return({ 
+      a_first: ["02", "01"],
+      b_second: ["27", "12"],
+      c_third: ["23", "71"],
+      d_fourth: ["34", "15"]
+    })
+    expect(enigma.multiple_keys_scenario).to eq(["02715", "01234"])
   end
 end
 

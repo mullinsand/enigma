@@ -322,8 +322,32 @@ class Enigma
     final_potential_keys = potential_key_shifts
     keys = []
     if potential_key_shifts.all? {|k, shift| shift.length == 1}
-      keys << final_potential_keys[:a_first][0] + final_potential_keys[:c_third][0] + final_potential_keys[:d_fourth][1]
+      keys << final_potential_keys[:a_first][0] + final_potential_keys[:c_third][0] + final_potential_keys[:d_fourth][0][1]
+    else
+      keys = multiple_keys_scenario
     end
     keys
   end
+
+  def multiple_keys_scenario
+    final_potential_keys = potential_key_shifts
+    keys = []
+    final_potential_keys[:a_first].each do |a_key|
+      final_potential_keys[:b_second].each do |b_key|
+        final_potential_keys[:c_third].each do |c_key|
+          final_potential_keys[:d_fourth].each do |d_key|
+            keys << a_key + c_key + d_key[1] if valid_key?(a_key, b_key, c_key, d_key)
+          end
+        end
+      end
+    end
+    keys
+  end
+
+  def valid_key?(a_key, b_key, c_key, d_key)
+    a_key[1] == b_key[0] &&
+      b_key[1] == c_key[0] &&
+      c_key[1] == d_key[0]
+  end
+
 end
