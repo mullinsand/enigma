@@ -1,4 +1,4 @@
-require 'key_generator'
+require 'enigma'
 
 describe KeyGenerator do
   let(:enigma) {Enigma.new}
