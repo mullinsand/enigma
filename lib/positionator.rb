@@ -30,4 +30,8 @@ module Positionator
   def d_position?(position)
     position % 4 == 0
   end
+
+  def character_index(character)
+    @character_set.index(character)
+  end
 end

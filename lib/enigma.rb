@@ -82,14 +82,14 @@ class Enigma
   end
 
   def date_shift(position, character)
-    if position % 4 == 1 #A shift
-      @character_set[(@character_set.index(character) + square_date.digits[3]) % 27]
-    elsif position % 4 == 2 #B shift
-      @character_set[(@character_set.index(character) + square_date.digits[2]) % 27]
-    elsif position % 4 == 3 #C shift
-      @character_set[(@character_set.index(character) + square_date.digits[1]) % 27]
-    elsif position % 4 == 0 #D shift
-      @character_set[(@character_set.index(character) + square_date.digits[0]) % 27]
+    if a_position?(position)
+      @character_set[(character_index(character) + a_date_shift) % 27]
+    elsif b_position?(position)
+      @character_set[(character_index(character) + b_date_shift) % 27]
+    elsif c_position?(position)
+      @character_set[(character_index(character) + c_date_shift) % 27]
+    elsif d_position?(position)
+      @character_set[(character_index(character) + d_date_shift) % 27]
     end
   end
 
