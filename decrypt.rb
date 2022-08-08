@@ -9,7 +9,6 @@ date = ARGV[3]
 ciphertext = input.read
 enigma = Enigma.new
 decrypted = enigma.decrypt(ciphertext, key, date)
-message = decrypted[:decryption]
-output.write(message)
+output.write(decrypted[:decryption])
 output.close
 puts "Created '#{filename}' with the key #{decrypted[:key]} and date #{decrypted[:date]}"

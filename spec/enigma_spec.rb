@@ -27,11 +27,11 @@ describe Enigma do
     expect(enigma.given_date).to eq("040895")
   end
 
-  xit 'encrypts a message' do
-    allow(enigma).to receive(:key_generator).and_return("02715")
-    allow(enigma).to receive(:given_date).and_return("040895")
+  it 'encrypts a message' do
+    allow(enigma).to receive(:generate_key).and_return("02715")
+    allow(Time).to receive(:new).and_return(Time.new(1995, 8, 4))
 
-    expect(enigma.encrypt("hello world")).to eq( {
+    expect(enigma.encrypt("hello world", nil, nil)).to eq( {
           encryption: "keder ohulw",
           key: "02715",
           date: "040895"
@@ -53,10 +53,10 @@ describe Enigma do
     expect(enigma.given_date).to eq("040895")
   end
 
-  xit 'decrypts a ciphertext when given a just a key' do
-    allow(enigma).to receive(:given_date).and_return("040895")
-    expect(enigma.decrypt("keder ohulw", "02715")).to eq( {
-      encryption: "hello world",
+  it 'decrypts a ciphertext when given just a key' do
+    allow(Time).to receive(:new).and_return(Time.new(1995, 8, 4))
+    expect(enigma.decrypt("keder ohulw", "02715", nil)).to eq( {
+      decryption: "hello world",
       key: "02715",
       date: "040895"
     } )

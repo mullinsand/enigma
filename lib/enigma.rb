@@ -9,31 +9,18 @@ class Enigma
               :encrypted_message
 
   def initialize
-    #component_creation
-    #CLI Class
-    #run CLI method
-      #Input (encryption, decryption, crack)
-      #Sends info onto crypto class
-      #Outputs final stuff
-    #Enigma Class
-    @message = nil
-    @given_key = nil
-    @given_date = nil
-    @encrypted_message = nil
     @character_set = ["a", "b", "c", "d", "e", "f", 
                       "g", "h", "i", "j", "k", "l", 
                       "m", "n", "o", "p", "q", "r", 
                       "s", "t", "u", "v", "w", "x", 
                       "y", "z", " "]
-    @space_position_shift = nil
-    @e_position_shift = nil
-    @n_position_shift = nil
-    @d_position_shift = nil
   end
 
-  def encrypt(message, given_key = generate_key, given_date = Time.new.strftime("%d%m%y"))
+  def encrypt(message, given_key, given_date)
     @message = message
+    given_key ||= generate_key
     @given_key = given_key
+    given_date ||= Time.new.strftime("%d%m%y")
     @given_date = given_date
     {
       encryption: encrypt_message,
@@ -42,9 +29,10 @@ class Enigma
     }
   end
 
-  def decrypt(ciphertext, given_key, given_date = Time.new.strftime("d%m%y"))
+  def decrypt(ciphertext, given_key, given_date)
     @encrypted_message = ciphertext
     @given_key = given_key
+    given_date ||= Time.new.strftime("%d%m%y")
     @given_date = given_date
     {
       decryption: decrypt_message,
@@ -357,9 +345,10 @@ class Enigma
     assign_letter_shift(d_position)
   end
 
-  def crack(ciphertext, given_date = Time.new.strftime("%d%m%y"))
+  def crack(ciphertext, given_date)
     @encrypted_message = ciphertext
     assign_all_letter_shift
+    given_date ||= Time.new.strftime("%d%m%y")
     @given_date = given_date
     @given_key = list_of_possible_keys[0]
     {
