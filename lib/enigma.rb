@@ -25,7 +25,10 @@ class Enigma
                       "m", "n", "o", "p", "q", "r", 
                       "s", "t", "u", "v", "w", "x", 
                       "y", "z", " "]
-
+    @space_position_shift = nil
+    @e_position_shift = nil
+    @n_position_shift = nil
+    @d_position_shift = nil
   end
 
   def encrypt(message, given_key = generate_key, given_date = Time.new.strftime("%d%m%y"))
@@ -208,15 +211,70 @@ class Enigma
     raw_key_shift += 27 if raw_key_shift < 0
     raw_key_shift.to_s.length == 1 ? key_shift_str = "0" + raw_key_shift.to_s : key_shift_str = raw_key_shift.to_s
     possible_key_shifts << key_shift_str
-    require 'pry'; binding.pry
     until raw_key_shift > 100
       raw_key_shift += 27
       raw_key_shift.to_s.length == 1 ? key_shift_str = "0" + raw_key_shift.to_s : key_shift_str = raw_key_shift.to_s
       possible_key_shifts << key_shift_str if raw_key_shift < 100
     end
-    require 'pry'; binding.pry
     possible_key_shifts
   end
 
-
+  def assign_letter_shift(end_position)
+        position = end_position
+        require 'pry'; binding.pry
+    if position % 4 == 1 #A shift
+      if end_position == space_position
+        @space_position_shift = :a_first
+      elsif end_position == e_position
+        @e_position_shift = :a_first
+      elsif end_position == n_position
+        @n_position_shift = :a_first
+      elsif end_position == d_position
+        @d_position_shift = :a_first
+      end
+    elsif position % 4 == 2 #B shift
+      if end_position == space_position
+        @space_position_shift = :b_second
+      elsif end_position == e_position
+        @e_position_shift = :b_second
+      elsif end_position == n_position
+        @n_position_shift = :b_second
+      elsif end_position == d_position
+        @d_position_shift = :b_second
+      end
+    elsif position % 4 == 3 #C shift
+      if end_position == space_position
+        @space_position_shift = :c_third
+      elsif end_position == e_position
+        @e_position_shift = :c_third
+      elsif end_position == n_position
+        @n_position_shift = :c_third
+      elsif end_position == d_position
+        @d_position_shift = :c_third
+      end
+    elsif position % 4 == 0 #D shift
+      if end_position == space_position
+        @space_position_shift = :d_fourth
+      elsif end_position == e_position
+        @e_position_shift = :d_fourth
+      elsif end_position == n_position
+        @n_position_shift = :d_fourth
+      elsif end_position == d_position
+        @d_position_shift = :d_fourth
+      end
+    end
+  end
+  # def key_shifts_by_letter
+  #   key_shifts_by_letter = Hash.new
+  #   position = space_position
+  #   if position % 4 == 1 #A shift
+  #     key_shifts_by_letter[:A] = 
+  #   elsif position % 4 == 2 #B shift
+  #     @character_set[(@character_set.index(character) + square_date.digits[2]) % 27]
+  #   elsif position % 4 == 3 #C shift
+  #     @character_set[(@character_set.index(character) + square_date.digits[1]) % 27]
+  #   elsif position % 4 == 0 #D shift
+  #     @character_set[(@character_set.index(character) + square_date.digits[0]) % 27]
+  #   end
+  # end
 end
