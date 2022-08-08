@@ -4,6 +4,7 @@ require 'shiftable'
 class Enigma
   include KeyGenerator
   include Shiftable
+  include Positionator
   attr_accessor :message,
               :given_key,
               :given_date,
