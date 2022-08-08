@@ -211,15 +211,15 @@ describe 'cracking some code' do
     expect(enigma.d_position).to eq(9)
   end
 
-  it 'determines ABCD shifts and shifts using just date shift' do
+  it 'determines ABCD shifts and shifts using just #date shift' do
     @encrypted_message = enigma.encrypt("hello end", "02715", "040895")[:encryption]
     #keder xgg
     @date = "040895"
-    expect(enigma.date_shift(enigma.space_position, " ")).to eq(" ")
-    expect(enigma.date_shift(enigma.e_position, "e")).to eq("g")
-    expect(enigma.date_shift(enigma.n_position, "n")).to eq("s")
-    expect(enigma.date_shift(enigma.d_position, "d")).to eq("e")
-    # #2 key shifd
+    expect(enigma.date_shift((enigma.space_position), " ")).to eq(" ")
+    expect(enigma.date_shift((enigma.e_position), "e")).to eq("g")
+    expect(enigma.date_shift((enigma.n_position), "n")).to eq("s")
+    expect(enigma.date_shift((enigma.d_position), "d")).to eq("e")
+    # #2 key shift
     # #1 date shift
     # enigma.determine_a_key_shift
     # #27
@@ -237,14 +237,17 @@ describe 'cracking some code' do
     @encrypted_message = enigma.encrypt("hello end", "02715", "040895")[:encryption]
     #keder xgg
     @date = "040895"
-
-    expect(key_shift(@encrypted_message[enigma.space_position], enigma.date_shift(enigma.space_position, " "))).to eq(" ")
-    expect(enigma.date_shift(enigma.e_position, "e")).to eq("g")
-    expect(enigma.date_shift(enigma.n_position, "n")).to eq("s")
-    expect(enigma.date_shift(enigma.d_position, "d")).to eq("e")
+    # " " to " " - 00, 27, 54, 81 B
+    expect(enigma.possible_key_shifts(@encrypted_message[enigma.space_position - 1], enigma.date_shift(enigma.space_position, " "))).to eq(["00", "27", "54", "81"])
+    # "g" to "x" - 17, 44, 71, 98 C
+    expect(enigma.possible_key_shifts(@encrypted_message[enigma.e_position - 1], enigma.date_shift(enigma.e_position, "e"))).to eq(["17", "44", "71", "98"])
+    # "s" to "g" - 15, 42, 69, 96 D
+    expect(enigma.possible_key_shifts(@encrypted_message[enigma.n_position - 1], enigma.date_shift(enigma.n_position, "n"))).to eq(["15", "42", "69", "96"])
+    #"e" to "g" - 02, 29, 56, 83 A
+    expect(enigma.possible_key_shifts(@encrypted_message[enigma.d_position - 1], enigma.date_shift(enigma.d_position, "d"))).to eq(["02", "29", "56", "83"])
   end
   
-  
+
 
 end
 
