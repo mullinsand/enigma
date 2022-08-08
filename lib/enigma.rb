@@ -221,7 +221,6 @@ class Enigma
 
   def assign_letter_shift(end_position)
         position = end_position
-        require 'pry'; binding.pry
     if position % 4 == 1 #A shift
       if end_position == space_position
         @space_position_shift = :a_first
@@ -264,17 +263,67 @@ class Enigma
       end
     end
   end
-  # def key_shifts_by_letter
-  #   key_shifts_by_letter = Hash.new
-  #   position = space_position
-  #   if position % 4 == 1 #A shift
-  #     key_shifts_by_letter[:A] = 
-  #   elsif position % 4 == 2 #B shift
-  #     @character_set[(@character_set.index(character) + square_date.digits[2]) % 27]
-  #   elsif position % 4 == 3 #C shift
-  #     @character_set[(@character_set.index(character) + square_date.digits[1]) % 27]
-  #   elsif position % 4 == 0 #D shift
-  #     @character_set[(@character_set.index(character) + square_date.digits[0]) % 27]
-  #   end
-  # end
+
+  def key_shifts_by_letter
+    keys_by_letter = Hash.new
+    keys_by_letter[@space_position_shift] = possible_key_shifts(@encrypted_message[space_position - 1], date_shift(space_position, " "))
+    keys_by_letter[@e_position_shift] = possible_key_shifts(@encrypted_message[e_position - 1], date_shift(e_position, "e"))
+    keys_by_letter[@n_position_shift] = possible_key_shifts(@encrypted_message[n_position - 1], date_shift(n_position, "n"))
+    keys_by_letter[@d_position_shift] = possible_key_shifts(@encrypted_message[d_position - 1], date_shift(d_position, "d"))
+    keys_by_letter
+  end
+
+  def potential_key_shifts
+    final_potential_keys = Hash.new{|h,k| h[k] = []}
+    #b key match
+    a_b_matches = []
+    b_c_matches = []
+    key_shifts_by_letter[:b_second].each do |b_key|
+      key_shifts_by_letter[:a_first].each do |a_key|
+        a_b_matches << b_key if b_key[0] == a_key[1]
+      end
+      key_shifts_by_letter[:c_third].each do |c_key|
+        b_c_matches << b_key if b_key[1] == c_key[0]
+      end
+    end
+    final_potential_keys[:b_second] = a_b_matches.select do |key|
+      b_c_matches.include?(key)
+    end
+    #a key match
+    key_shifts_by_letter[:a_first].each do |a_key|
+      final_potential_keys[:b_second].each do |b_key|
+        final_potential_keys[:a_first] << a_key if a_key[1] == b_key[0]
+      end
+    end
+    #c key match
+    c_d_matches = []
+    c_b_matches = []
+    key_shifts_by_letter[:c_third].each do |c_key|
+      key_shifts_by_letter[:d_fourth].each do |d_key|
+        c_d_matches << c_key if d_key[0] == c_key[1]
+      end
+      final_potential_keys[:b_second].each do |b_key|
+        c_b_matches << c_key if c_key[0] == b_key[1]
+      end
+    end
+    final_potential_keys[:c_third] = c_d_matches.select do |key|
+      c_b_matches.include?(key)
+    end
+    #d key matches
+    key_shifts_by_letter[:d_fourth].each do |d_key|
+      final_potential_keys[:c_third].each do |c_key|
+        final_potential_keys[:d_fourth] << d_key if c_key[1] == d_key[0]
+      end
+    end
+    final_potential_keys
+  end
+
+  def list_of_possible_keys
+    final_potential_keys = potential_key_shifts
+    keys = []
+    if potential_key_shifts.all? {|k, shift| shift.length == 1}
+      keys << final_potential_keys[:a_first][0] + final_potential_keys[:c_third][0] + final_potential_keys[:d_fourth][1]
+    end
+    keys
+  end
 end

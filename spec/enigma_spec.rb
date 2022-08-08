@@ -262,20 +262,48 @@ describe 'cracking some code' do
     expect(enigma.possible_key_shifts(@encrypted_message[enigma.d_position - 1], enigma.date_shift(enigma.d_position, "d"))).to eq(["02", "29", "56", "83"])
   end
 
-  # it 'it makes a hash of all possible_key_shifts by letter shift designation' do
-  #   @encrypted_message = enigma.encrypt("hello end", "02715", "040895")[:encryption]
-  #   #keder xgg
-  #   @date = "040895"
+  it 'it makes a hash of all possible_key_shifts by letter shift designation' do
+    @encrypted_message = enigma.encrypt("hello end", "02715", "040895")[:encryption]
+    #keder xgg
+    @date = "040895"
+    enigma.assign_letter_shift(enigma.space_position)
+    enigma.assign_letter_shift(enigma.e_position)
+    enigma.assign_letter_shift(enigma.n_position)
+    enigma.assign_letter_shift(enigma.d_position)
 
-  #   expect(key_shifts_by_letter).to eq( { 
-  #     A: ["02", "29", "56", "83"],
-  #     B: ["00", "27", "54", "81"],
-  #     C: ["17", "44", "71", "98"],
-  #     D: ["15", "42", "69", "96"]
-  #   })
-  # end
+    expect(enigma.key_shifts_by_letter).to eq( { 
+      a_first: ["02", "29", "56", "83"],
+      b_second: ["00", "27", "54", "81"],
+      c_third: ["17", "44", "71", "98"],
+      d_fourth: ["15", "42", "69", "96"]
+    })
+  end
   
+  it 'removes are unmatched keys from the array #potential_key_shifts' do
+    @encrypted_message = enigma.encrypt("hello end", "02715", "040895")[:encryption]
+    #keder xgg
+    @date = "040895"
+    enigma.assign_letter_shift(enigma.space_position)
+    enigma.assign_letter_shift(enigma.e_position)
+    enigma.assign_letter_shift(enigma.n_position)
+    enigma.assign_letter_shift(enigma.d_position)
+    expect(enigma.potential_key_shifts).to eq({ 
+        a_first: ["02"],
+        b_second: ["27"],
+        c_third: ["71"],
+        d_fourth: ["15"]
+      })
+  end
 
-
+  it 'makes an array of all possible keys' do
+    @encrypted_message = enigma.encrypt("hello end", "02715", "040895")[:encryption]
+    #keder xgg
+    @date = "040895"
+    enigma.assign_letter_shift(enigma.space_position)
+    enigma.assign_letter_shift(enigma.e_position)
+    enigma.assign_letter_shift(enigma.n_position)
+    enigma.assign_letter_shift(enigma.d_position)
+    expect(enigma.list_of_possible_keys).to eq(["02715"])
+  end
 end
 
