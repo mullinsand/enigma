@@ -1,5 +1,6 @@
 require 'key_generator'
 require 'shiftable'
+require 'positionator'
 
 class Enigma
   include KeyGenerator
@@ -44,23 +45,19 @@ class Enigma
     }
   end
 
-  def sort_by_position(character)
-
-  end
-
   def encrypt_message
     position = 0
     @encrypted_message = @message.split("").map do |character|
       position += 1
       if !@character_set.include?(character)
         character
-      elsif position % 4 == 1
+      elsif a_position?(position)
         a_shift(character)
-      elsif position % 4 == 2
+      elsif b_position?(position)
         b_shift(character)
-      elsif position % 4 == 3
+      elsif c_position?(position)
         c_shift(character)
-      elsif position % 4 == 0
+      elsif d_position?(position)
         d_shift(character)
       end
     end.join
@@ -72,32 +69,16 @@ class Enigma
       position += 1
       if !@character_set.include?(character)
         character
-      elsif position % 4 == 1
+      elsif a_position?(position)
         reverse_a_shift(character)
-      elsif position % 4 == 2
+      elsif b_position?(position)
         reverse_b_shift(character)
-      elsif position % 4 == 3
+      elsif c_position?(position)
         reverse_c_shift(character)
-      elsif position % 4 == 0
+      elsif d_position?(position)
         reverse_d_shift(character)
       end
     end.join
-  end
-
-  def space_position
-    @encrypted_message.length - 3
-  end
-
-  def e_position
-    @encrypted_message.length - 2
-  end
-
-  def n_position
-    @encrypted_message.length - 1
-  end
-
-  def d_position
-    @encrypted_message.length
   end
 
   def date_shift(position, character)
