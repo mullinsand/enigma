@@ -350,4 +350,22 @@ class Enigma
       c_key[1] == d_key[0]
   end
 
+  def assign_all_letter_shift
+    assign_letter_shift(space_position)
+    assign_letter_shift(e_position)
+    assign_letter_shift(n_position)
+    assign_letter_shift(d_position)
+  end
+
+  def crack(ciphertext, given_date = Time.new.strftime("%d%m%y"))
+    @encrypted_message = ciphertext
+    assign_all_letter_shift
+    @given_date = given_date
+    @given_key = list_of_possible_keys[0]
+    {
+      decryption: decrypt_message,
+      key: list_of_possible_keys[0],
+      date: given_date
+    }
+  end
 end

@@ -315,5 +315,13 @@ describe 'cracking some code' do
     })
     expect(enigma.multiple_keys_scenario).to eq(["02715", "01234"])
   end
+
+  it 'cracks!' do
+    expect(enigma.crack("keder xgg", "040895")).to eq({
+      decryption: "hello end",
+      date: "040895",
+      key: "02715"
+      })
+  end
 end
 
