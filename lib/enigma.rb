@@ -1,7 +1,7 @@
-require 'key_generator'
-require 'shiftable'
-require 'positionator'
-require 'key_crack'
+require './lib/shiftable'
+require './lib/positionator'
+require './lib/key_crack'
+require './lib/key_generator'
 
 class Enigma
   include KeyGenerator
@@ -35,18 +35,6 @@ class Enigma
     }
   end
 
-  def decrypt(ciphertext, given_key, given_date)
-    @encrypted_message = ciphertext
-    @given_key = given_key
-    given_date ||= Time.new.strftime("%d%m%y")
-    @given_date = given_date
-    {
-      decryption: decrypt_message,
-      key: @given_key,
-      date: @given_date
-    }
-  end
-
   def encrypt_message
     position = 0
     @encrypted_message = @message.split("").map do |character|
@@ -63,6 +51,18 @@ class Enigma
         d_shift(character)
       end
     end.join
+  end
+
+  def decrypt(ciphertext, given_key, given_date)
+    @encrypted_message = ciphertext
+    @given_key = given_key
+    given_date ||= Time.new.strftime("%d%m%y")
+    @given_date = given_date
+    {
+      decryption: decrypt_message,
+      key: @given_key,
+      date: @given_date
+    }
   end
 
   def decrypt_message

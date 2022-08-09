@@ -221,8 +221,6 @@ describe 'cracking some code' do
   it 'figures out the end positions' do
     @encrypted_message = enigma.encrypt("hello end", "02715", "040895")[:encryption]
     #keder xgg
-#figure out positions for " end" in the message to determine ABCD shifts
-#total length of message - 3 for " "
     expect(enigma.space_position).to eq(6)
     expect(enigma.e_position).to eq(7)
     expect(enigma.n_position).to eq(8)
