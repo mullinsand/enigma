@@ -159,14 +159,70 @@ class Enigma
     end
     rotate_to_abcd_order(all_possible_keys)
   end
-  # def encrypt_character_by_position(position)
-  #   @encrypted_message[position - 1]
-  # end
 
-  # def decrypt_character_by_position(position)
-  #   return if position < (@encrypted_message.length - 3)
-  #   @encrypted_message[position - 1]
-  # end
+  def keys_by_shift
+    [:alpha, :beta, :gamma, :delta].zip(all_possible_key_shifts).to_h
+  end
+
+  def beta_matched_keys
+    matches = Hash.new{|h,k| h[k] = []}
+    keys_by_shift[:beta].each do |beta_key|
+      keys_by_shift[:alpha].each do |alpha_key|
+        matches[:a_b] << beta_key if beta_key[0] == alpha_key[1]
+      end
+      keys_by_shift[:gamma].each do |gamma_key|
+        matches[:b_c] << beta_key if beta_key[1] == gamma_key[0]
+      end
+    end
+    matches[:a_b].select { |key| matches[:b_c].include?(key) }
+  end
+
+  def gamma_matched_keys(matched_keys)
+    matches = Hash.new{|h,k| h[k] = []}
+    keys_by_shift[:gamma].each do |gamma_key|
+      keys_by_shift[:delta].each do |delta_key|
+        matches[:c_d] << gamma_key if delta_key[0] == gamma_key[1]
+      end
+      matched_keys[:beta].each do |beta_key|
+        matches[:c_b] << gamma_key if beta_key[1] == gamma_key[0]
+      end
+    end
+    matches[:c_d].select { |key| matches[:c_b].include?(key) }
+  end
+
+  def alpha_matched_keys(matched_keys)
+    matches = []
+    keys_by_shift[:alpha].each do |alpha_key|
+      matched_keys[:beta].each do |beta_key|
+        matches << alpha_key if alpha_key[1] == beta_key[0]
+      end
+    end
+    matches
+  end
+
+  def delta_matched_keys(matched_keys)
+    matches = []
+    keys_by_shift[:delta].each do |delta_key|
+      matched_keys[:gamma].each do |gamma_key|
+        matches << delta_key if gamma_key[1] == delta_key[0]
+      end
+    end
+    matches
+  end
+
+
+  def all_matched_key_shifts
+    matched_keys = Hash.new{|h,k| h[k] = []}
+    #b key match
+    matched_keys[:beta] = beta_matched_keys
+    #a key match
+    matched_keys[:alpha] = alpha_matched_keys(matched_keys)
+    #c key match
+    matched_keys[:gamma] = gamma_matched_keys(matched_keys)
+    #d key matches
+    matched_keys[:delta] = delta_matched_keys(matched_keys)
+    matched_keys
+  end
 
   def key_shift(position, encrypted_character, decrypted_character)
     key_shift = []

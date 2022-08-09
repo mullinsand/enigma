@@ -380,5 +380,49 @@ describe 'cracking some code' do
       ["15", "42", "69", "96"]
     ])
   end
+
+  it 'converts all possible key shifts from array to a hash' do
+    @encrypted_message = enigma.encrypt("hello end", "02715", "040895")[:encryption]
+    expect(enigma.keys_by_shift).to eq( { 
+      alpha: ["02", "29", "56", "83"],
+      beta: ["00", "27", "54", "81"],
+      gamma: ["17", "44", "71", "98"],
+      delta: ["15", "42", "69", "96"]
+    })
+  end
+#will need to be stumped for multiples
+  it 'finds all matched beta keys' do
+    @encrypted_message = enigma.encrypt("hello end", "02715", "040895")[:encryption]
+    expect(enigma.beta_matched_keys).to eq(["27"])
+  end
+
+  it 'finds all matched gamma keys' do
+    @encrypted_message = enigma.encrypt("hello end", "02715", "040895")[:encryption]
+    allow(enigma).to receive(:matched_keys).and_return({beta: ["27"]})
+    expect(enigma.gamma_matched_keys(enigma.matched_keys)).to eq(["71"])
+  end
+
+  it 'finds all matched alpha keys' do
+    @encrypted_message = enigma.encrypt("hello end", "02715", "040895")[:encryption]
+    allow(enigma).to receive(:matched_keys).and_return({beta: ["27"]})
+    expect(enigma.alpha_matched_keys(enigma.matched_keys)).to eq(["02"])
+  end
+
+  it 'finds all matched delta keys' do
+    @encrypted_message = enigma.encrypt("hello end", "02715", "040895")[:encryption]
+    allow(enigma).to receive(:matched_keys).and_return({gamma: ["71"]})
+    expect(enigma.delta_matched_keys(enigma.matched_keys)).to eq(["15"])
+  end
+
+  it 'all_matched_key_shifts' do
+    @encrypted_message = enigma.encrypt("hello end", "02715", "040895")[:encryption]
+    allow(enigma).to receive(:matched_keys).and_return({gamma: ["71"]})
+    expect(enigma.all_matched_key_shifts).to eq({ 
+      alpha: ["02"],
+      beta: ["27"],
+      gamma: ["71"],
+      delta: ["15"]
+    })
+  end
 end
 
