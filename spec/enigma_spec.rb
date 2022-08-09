@@ -333,6 +333,11 @@ describe 'cracking some code' do
     expect(enigma.shift_type_end).to eq([2, 3, 0, 1])
   end
 
+  it 'rotates the arrays to the proper order A,B,C,D' do
+    @encrypted_message = enigma.encrypt("hello end", "02715", "040895")[:encryption]
+    expect(enigma.rotate_to_abcd_order(enigma.encrypted_end)).to eq(["g", " ", "x", "g"])
+  end
+
   it 'maps over an array to convert to index numbers' do
     @encrypted_message = enigma.encrypt("hello end", "02715", "040895")[:encryption]
     expect(enigma.convert_to_index(enigma.decrypted_end)).to eq([26, 4, 13, 3])
@@ -348,10 +353,32 @@ describe 'cracking some code' do
     expect(enigma.convert_to_negative_date_shift(enigma.shift_type_end)).to eq([0, -2, -5, -1])
 
   end
+
   it 'combines positional elements in each array to get the key shift' do
     @encrypted_message = enigma.encrypt("hello end", "02715", "040895")[:encryption]
     expect(enigma.absolute_key_shift).to eq([0, 17, 15, 2])
   end
 
+  it 'converts integer key shifts to strings' do
+    expect(enigma.convert_key_to_string(0)).to eq("00")
+    expect(enigma.convert_key_to_string(17)).to eq("17")
+    expect(enigma.convert_key_to_string(15)).to eq("15")
+    expect(enigma.convert_key_to_string(2)).to eq("02")
+  end
+
+  it 'formats and orders the keys' do
+    @encrypted_message = enigma.encrypt("hello end", "02715", "040895")[:encryption]
+    expect(enigma.order_format_keys).to eq(["02", "00", "17", "15"])
+  end
+
+  xit 'finds all other possible key shifts based on one key shift' do
+    @encrypted_message = enigma.encrypt("hello end", "02715", "040895")[:encryption]
+    expect(enigma.all_possible_key_shifts).to eq([
+      ["02", "29", "56", "83"],
+      ["00", "27", "54", "81"],
+      ["17", "44", "71", "98"],
+      ["15", "42", "69", "96"]
+    ])
+  end
 end
 

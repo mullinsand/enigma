@@ -120,7 +120,41 @@ class Enigma
     neg_index_decrypted_end = convert_to_negative_index(decrypted_end)
     neg_date_shift_end = convert_to_negative_date_shift(shift_type_end)
     raw_key_shift = index_encrypted_end.zip(neg_index_decrypted_end, neg_date_shift_end).map(&:sum)
-    raw_key_shift.map {|key| key.negative? ? key +=27 : key}
+    raw_key_shift.map {|key| key.negative? ? key += 27 : key}
+  end
+
+  def convert_key_to_string(key_integer)
+    key_integer.to_s.length == 1 ? "0#{key_integer.to_s}" : key_integer.to_s
+  end
+
+  def rotate_to_abcd_order(array)
+    times_to_rotate = 0
+    abcd_array = shift_type_end
+    until abcd_array[0] == 1
+      abcd_array.rotate!
+      times_to_rotate += 1
+    end
+    times_to_rotate.times do
+      array.rotate!
+    end
+    array
+  end
+
+  def order_format_keys
+    formatted_keys = absolute_key_shift.map do |key|
+      convert_key_to_string(key)
+    end
+    rotate_to_abcd_order(formatted_keys)
+  end
+
+  def all_possible_key_shifts
+    possible_key_shifts << key_shift_str
+    until raw_key_shift > 100
+      raw_key_shift += 27
+      raw_key_shift.to_s.length == 1 ? key_shift_str = "0" + raw_key_shift.to_s : key_shift_str = raw_key_shift.to_s
+      possible_key_shifts << key_shift_str if raw_key_shift < 100
+    end
+    possible_key_shifts
   end
   # def encrypt_character_by_position(position)
   #   @encrypted_message[position - 1]
