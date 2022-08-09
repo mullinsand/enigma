@@ -1,9 +1,11 @@
 require 'key_generator'
 require 'shiftable'
+require 'positionator'
 
 class Enigma
   include KeyGenerator
   include Shiftable
+  include Positionator
   attr_accessor :message,
               :given_key,
               :given_date,
@@ -43,23 +45,19 @@ class Enigma
     }
   end
 
-  def sort_by_position(character)
-
-  end
-
   def encrypt_message
     position = 0
     @encrypted_message = @message.split("").map do |character|
       position += 1
       if !@character_set.include?(character)
         character
-      elsif position % 4 == 1
+      elsif a_position?(position)
         a_shift(character)
-      elsif position % 4 == 2
+      elsif b_position?(position)
         b_shift(character)
-      elsif position % 4 == 3
+      elsif c_position?(position)
         c_shift(character)
-      elsif position % 4 == 0
+      elsif d_position?(position)
         d_shift(character)
       end
     end.join
@@ -71,48 +69,32 @@ class Enigma
       position += 1
       if !@character_set.include?(character)
         character
-      elsif position % 4 == 1
+      elsif a_position?(position)
         reverse_a_shift(character)
-      elsif position % 4 == 2
+      elsif b_position?(position)
         reverse_b_shift(character)
-      elsif position % 4 == 3
+      elsif c_position?(position)
         reverse_c_shift(character)
-      elsif position % 4 == 0
+      elsif d_position?(position)
         reverse_d_shift(character)
       end
     end.join
   end
 
-  def space_position
-    @encrypted_message.length - 3
-  end
-
-  def e_position
-    @encrypted_message.length - 2
-  end
-
-  def n_position
-    @encrypted_message.length - 1
-  end
-
-  def d_position
-    @encrypted_message.length
-  end
-
   def date_shift(position, character)
-    if position % 4 == 1 #A shift
-      @character_set[(@character_set.index(character) + square_date.digits[3]) % 27]
-    elsif position % 4 == 2 #B shift
-      @character_set[(@character_set.index(character) + square_date.digits[2]) % 27]
-    elsif position % 4 == 3 #C shift
-      @character_set[(@character_set.index(character) + square_date.digits[1]) % 27]
-    elsif position % 4 == 0 #D shift
-      @character_set[(@character_set.index(character) + square_date.digits[0]) % 27]
+    if a_position?(position)
+      @character_set[(character_index(character) + a_date_shift) % 27]
+    elsif b_position?(position)
+      @character_set[(character_index(character) + b_date_shift) % 27]
+    elsif c_position?(position)
+      @character_set[(character_index(character) + c_date_shift) % 27]
+    elsif d_position?(position)
+      @character_set[(character_index(character) + d_date_shift) % 27]
     end
   end
 
   def possible_key_shifts(encrypted_character, date_shifted_character)
-    raw_key_shift = @character_set.index(encrypted_character) - @character_set.index(date_shifted_character)
+    raw_key_shift = character_index(encrypted_character) - character_index(date_shifted_character)
     possible_key_shifts = []
     raw_key_shift += 27 if raw_key_shift < 0
     raw_key_shift.to_s.length == 1 ? key_shift_str = "0" + raw_key_shift.to_s : key_shift_str = raw_key_shift.to_s
@@ -126,7 +108,7 @@ class Enigma
   end
 
   def assign_letter_shift(end_position)
-        position = end_position
+    position = end_position
     if position % 4 == 1 #A shift
       if end_position == space_position
         @space_position_shift = :a_first
