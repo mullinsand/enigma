@@ -366,12 +366,12 @@ describe 'cracking some code' do
     expect(enigma.convert_key_to_string(2)).to eq("02")
   end
 
-  it 'formats and orders the keys' do
-    @encrypted_message = enigma.encrypt("hello end", "02715", "040895")[:encryption]
-    expect(enigma.order_format_keys).to eq(["02", "00", "17", "15"])
-  end
+  # it 'formats and orders the keys' do
+  #   @encrypted_message = enigma.encrypt("hello end", "02715", "040895")[:encryption]
+  #   expect(enigma.order_format_keys()).to eq(["02", "00", "17", "15"])
+  # end
 
-  xit 'finds all other possible key shifts based on one key shift' do
+  it 'finds all other possible key shifts based on one key shift' do
     @encrypted_message = enigma.encrypt("hello end", "02715", "040895")[:encryption]
     expect(enigma.all_possible_key_shifts).to eq([
       ["02", "29", "56", "83"],

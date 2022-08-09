@@ -140,21 +140,24 @@ class Enigma
     array
   end
 
-  def order_format_keys
-    formatted_keys = absolute_key_shift.map do |key|
-      convert_key_to_string(key)
-    end
-    rotate_to_abcd_order(formatted_keys)
-  end
+  # def order_format_keys(array)
+  #   formatted_keys = array.map do |key|
+  #     convert_key_to_string(key)
+  #   end
+  #   rotate_to_abcd_order(formatted_keys)
+  # end
 
   def all_possible_key_shifts
-    possible_key_shifts << key_shift_str
-    until raw_key_shift > 100
-      raw_key_shift += 27
-      raw_key_shift.to_s.length == 1 ? key_shift_str = "0" + raw_key_shift.to_s : key_shift_str = raw_key_shift.to_s
-      possible_key_shifts << key_shift_str if raw_key_shift < 100
+    all_possible_keys = absolute_key_shift.map do |key|
+      all_key_shifts = []
+      all_key_shifts << key_shift = key
+      until key_shift > 100
+        key_shift += 27
+        all_key_shifts << key_shift if key_shift < 100
+      end
+      all_key_shifts.map {|key| convert_key_to_string(key)}
     end
-    possible_key_shifts
+    rotate_to_abcd_order(all_possible_keys)
   end
   # def encrypt_character_by_position(position)
   #   @encrypted_message[position - 1]
