@@ -382,24 +382,29 @@ class Enigma
   end
 
   def list_of_possible_keys
-    final_potential_keys = potential_key_shifts
+    keys_hash = all_matched_key_shifts
     keys = []
-    if potential_key_shifts.all? {|k, shift| shift.length == 1}
-      keys << final_potential_keys[:a_first][0] + final_potential_keys[:c_third][0] + final_potential_keys[:d_fourth][0][1]
+    if all_matched_key_shifts.all? {|shift_type, matched_keys| matched_keys.length == 1}
+      keys << combined_key(keys_hash[:alpha][0], keys_hash[:gamma][0], keys_hash[:delta][0])
     else
-      keys = multiple_keys_scenario
+      keys = multiple_keys_scenario(keys_hash)
     end
     keys
   end
 
-  def multiple_keys_scenario
-    final_potential_keys = potential_key_shifts
+  def combined_key(alpha_key, gamma_key, delta_key)
+    alpha_key + gamma_key + delta_key[1]
+  end
+
+  def multiple_keys_scenario(keys_hash)
     keys = []
-    final_potential_keys[:a_first].each do |a_key|
-      final_potential_keys[:b_second].each do |b_key|
-        final_potential_keys[:c_third].each do |c_key|
-          final_potential_keys[:d_fourth].each do |d_key|
-            keys << a_key + c_key + d_key[1] if valid_key?(a_key, b_key, c_key, d_key)
+    keys_hash[:alpha].each do |alpha_key|
+      keys_hash[:beta].each do |beta_key|
+        keys_hash[:gamma].each do |gamma_key|
+          keys_hash[:delta].each do |delta_key|
+            if valid_key?(alpha_key, beta_key, gamma_key, delta_key)
+              keys << combined_key(alpha_key, gamma_key, delta_key)
+            end
           end
         end
       end

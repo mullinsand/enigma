@@ -300,13 +300,13 @@ describe 'cracking some code' do
   end
 
   it 'can handle multiple working keys' do
-    allow(enigma).to receive(:potential_key_shifts).and_return({ 
-      a_first: ["02", "01"],
-      b_second: ["27", "12"],
-      c_third: ["23", "71"],
-      d_fourth: ["34", "15"]
+    allow(enigma).to receive(:all_matched_key_shifts).and_return({ 
+      alpha: ["02", "01"],
+      beta: ["27", "12"],
+      gamma: ["23", "71"],
+      delta: ["34", "15"]
     })
-    expect(enigma.multiple_keys_scenario).to eq(["02715", "01234"])
+    expect(enigma.multiple_keys_scenario(enigma.all_matched_key_shifts)).to eq(["02715", "01234"])
   end
 
   it 'cracks!' do
@@ -423,6 +423,11 @@ describe 'cracking some code' do
       gamma: ["71"],
       delta: ["15"]
     })
+  end
+
+  it 'can combine keys' do
+    @encrypted_message = enigma.encrypt("hello end", "02715", "040895")[:encryption]
+    expect(enigma.combined_key("02", "71", "15")).to eq("02715")
   end
 end
 
