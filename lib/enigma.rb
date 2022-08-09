@@ -94,7 +94,7 @@ class Enigma
   end
 
   def possible_key_shifts(encrypted_character, date_shifted_character)
-    raw_key_shift = @character_set.index(encrypted_character) - @character_set.index(date_shifted_character)
+    raw_key_shift = character_index(encrypted_character) - character_index(date_shifted_character)
     possible_key_shifts = []
     raw_key_shift += 27 if raw_key_shift < 0
     raw_key_shift.to_s.length == 1 ? key_shift_str = "0" + raw_key_shift.to_s : key_shift_str = raw_key_shift.to_s
@@ -108,7 +108,7 @@ class Enigma
   end
 
   def assign_letter_shift(end_position)
-        position = end_position
+    position = end_position
     if position % 4 == 1 #A shift
       if end_position == space_position
         @space_position_shift = :a_first
