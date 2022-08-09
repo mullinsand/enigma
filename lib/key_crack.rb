@@ -75,7 +75,6 @@ module KeyCrack
     matches
   end
 
-
   def all_matched_key_shifts
     matched_keys = Hash.new{|h,k| h[k] = []}
     #b key match
@@ -87,6 +86,10 @@ module KeyCrack
     #d key matches
     matched_keys[:delta] = delta_matched_keys(matched_keys)
     matched_keys
+  end
+  
+  def combined_key(alpha_key, gamma_key, delta_key)
+    alpha_key + gamma_key + delta_key[1]
   end
 
   def list_of_possible_keys
@@ -100,8 +103,10 @@ module KeyCrack
     keys
   end
 
-  def combined_key(alpha_key, gamma_key, delta_key)
-    alpha_key + gamma_key + delta_key[1]
+  def valid_key?(a_key, b_key, c_key, d_key)
+    a_key[1] == b_key[0] &&
+      b_key[1] == c_key[0] &&
+      c_key[1] == d_key[0]
   end
 
   def multiple_keys_scenario(keys_hash)
@@ -118,11 +123,5 @@ module KeyCrack
       end
     end
     keys
-  end
-
-  def valid_key?(a_key, b_key, c_key, d_key)
-    a_key[1] == b_key[0] &&
-      b_key[1] == c_key[0] &&
-      c_key[1] == d_key[0]
   end
 end

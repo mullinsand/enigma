@@ -1,5 +1,4 @@
 require './lib/enigma'
-require './lib/key_generator'
 
 filename = ARGV[1]
 input = File.open(ARGV[0], "r")

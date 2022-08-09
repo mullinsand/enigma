@@ -1,7 +1,7 @@
-require 'key_generator'
-require 'shiftable'
-require 'positionator'
-require 'key_crack'
+require './lib/shiftable'
+require './lib/positionator'
+require './lib/key_crack'
+require './lib/key_generator'
 
 class Enigma
   include KeyGenerator
