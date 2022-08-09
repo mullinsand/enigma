@@ -202,7 +202,6 @@ describe 'cracking some code' do
   it 'figures out the end positions' do
     @encrypted_message = enigma.encrypt("hello end", "02715", "040895")[:encryption]
     #keder xgg
-    @date = "040895"
 #figure out positions for " end" in the message to determine ABCD shifts
 #total length of message - 3 for " "
     expect(enigma.space_position).to eq(6)
@@ -211,109 +210,14 @@ describe 'cracking some code' do
     expect(enigma.d_position).to eq(9)
   end
 
-  it 'assigns ABCD shifts as attributes for the space "e", "n", "d"' do
-    @encrypted_message = enigma.encrypt("hello end", "02715", "040895")[:encryption]
-    #keder xgg
-    @date = "040895"
-    enigma.assign_letter_shift(enigma.space_position)
-    enigma.assign_letter_shift(enigma.e_position)
-    enigma.assign_letter_shift(enigma.n_position)
-    enigma.assign_letter_shift(enigma.d_position)
-    @space_position_shift = :b_second
-    @e_position_shift = :c_third
-    @n_position_shift = :d_fourth
-    @d_position_shift = :a_first
-  end
-
-
-  it 'determines ABCD shifts and shifts using just #date shift' do
-    @encrypted_message = enigma.encrypt("hello end", "02715", "040895")[:encryption]
-    #keder xgg
-    @date = "040895"
-    expect(enigma.date_shift((enigma.space_position), " ")).to eq(" ")
-    expect(enigma.date_shift((enigma.e_position), "e")).to eq("g")
-    expect(enigma.date_shift((enigma.n_position), "n")).to eq("s")
-    expect(enigma.date_shift((enigma.d_position), "d")).to eq("e")
-    # #2 key shift
-    # #1 date shift
-    # enigma.determine_a_key_shift
-    # #27
-    # #0
-    # enigma.determine_b_key_shift
-    # #71
-    # #2
-    # enigma.determine_c_key_shift
-    # #15
-    # #5
-    # enigma.determine_d_key_shift
-  end
-
-  it 'determines key shift' do
-    @encrypted_message = enigma.encrypt("hello end", "02715", "040895")[:encryption]
-    #keder xgg
-    @date = "040895"
-    # " " to " " - 00, 27, 54, 81 B
-    expect(enigma.possible_key_shifts(@encrypted_message[enigma.space_position - 1], enigma.date_shift(enigma.space_position, " "))).to eq(["00", "27", "54", "81"])
-    # "g" to "x" - 17, 44, 71, 98 C
-    expect(enigma.possible_key_shifts(@encrypted_message[enigma.e_position - 1], enigma.date_shift(enigma.e_position, "e"))).to eq(["17", "44", "71", "98"])
-    # "s" to "g" - 15, 42, 69, 96 D
-    expect(enigma.possible_key_shifts(@encrypted_message[enigma.n_position - 1], enigma.date_shift(enigma.n_position, "n"))).to eq(["15", "42", "69", "96"])
-    #"e" to "g" - 02, 29, 56, 83 A
-    expect(enigma.possible_key_shifts(@encrypted_message[enigma.d_position - 1], enigma.date_shift(enigma.d_position, "d"))).to eq(["02", "29", "56", "83"])
-  end
-
-  it 'it makes a hash of all possible_key_shifts by letter shift designation' do
-    @encrypted_message = enigma.encrypt("hello end", "02715", "040895")[:encryption]
-    #keder xgg
-    @date = "040895"
-    enigma.assign_letter_shift(enigma.space_position)
-    enigma.assign_letter_shift(enigma.e_position)
-    enigma.assign_letter_shift(enigma.n_position)
-    enigma.assign_letter_shift(enigma.d_position)
-
-    expect(enigma.key_shifts_by_letter).to eq( { 
-      a_first: ["02", "29", "56", "83"],
-      b_second: ["00", "27", "54", "81"],
-      c_third: ["17", "44", "71", "98"],
-      d_fourth: ["15", "42", "69", "96"]
-    })
-  end
-  
-  it '#potential_key_shifts' do
-    @encrypted_message = enigma.encrypt("hello end", "02715", "040895")[:encryption]
-    #keder xgg
-    @date = "040895"
-    enigma.assign_letter_shift(enigma.space_position)
-    enigma.assign_letter_shift(enigma.e_position)
-    enigma.assign_letter_shift(enigma.n_position)
-    enigma.assign_letter_shift(enigma.d_position)
-    expect(enigma.potential_key_shifts).to eq({ 
-        a_first: ["02"],
-        b_second: ["27"],
-        c_third: ["71"],
-        d_fourth: ["15"]
-      })
-  end
-
-  it 'makes an array of all possible keys' do
-    @encrypted_message = enigma.encrypt("hello end", "02715", "040895")[:encryption]
-    #keder xgg
-    @date = "040895"
-    enigma.assign_letter_shift(enigma.space_position)
-    enigma.assign_letter_shift(enigma.e_position)
-    enigma.assign_letter_shift(enigma.n_position)
-    enigma.assign_letter_shift(enigma.d_position)
-    expect(enigma.list_of_possible_keys).to eq(["02715"])
-  end
-
   it 'can handle multiple working keys' do
-    allow(enigma).to receive(:potential_key_shifts).and_return({ 
-      a_first: ["02", "01"],
-      b_second: ["27", "12"],
-      c_third: ["23", "71"],
-      d_fourth: ["34", "15"]
+    allow(enigma).to receive(:all_matched_key_shifts).and_return({ 
+      alpha: ["02", "01"],
+      beta: ["27", "12"],
+      gamma: ["23", "71"],
+      delta: ["34", "15"]
     })
-    expect(enigma.multiple_keys_scenario).to eq(["02715", "01234"])
+    expect(enigma.multiple_keys_scenario(enigma.all_matched_key_shifts)).to eq(["02715", "01234"])
   end
 
   it 'cracks!' do
@@ -322,6 +226,119 @@ describe 'cracking some code' do
       date: "040895",
       key: "02715"
       })
+  end
+
+  it 'makes an array of " end"' do
+    expect(enigma.decrypted_end).to eq([" ", "e", "n", "d"])
+  end
+
+  it 'makes an array of the last four characters in the encrypted message' do
+    @encrypted_message = enigma.encrypt("hello end", "02715", "040895")[:encryption]
+    #keder xgg
+    expect(enigma.encrypted_end).to eq([" ", "x", "g", "g"])
+  end
+
+  it 'makes an array of the shift type by position of the last four characters' do
+    @encrypted_message = enigma.encrypt("hello end", "02715", "040895")[:encryption]
+    #keder xgg
+    expect(enigma.shift_type_end).to eq([2, 3, 0, 1])
+  end
+
+  it 'rotates the arrays to the proper order A,B,C,D' do
+    @encrypted_message = enigma.encrypt("hello end", "02715", "040895")[:encryption]
+    expect(enigma.rotate_to_abcd_order(enigma.encrypted_end)).to eq(["g", " ", "x", "g"])
+  end
+
+  it 'maps over an array to convert to index numbers' do
+    @encrypted_message = enigma.encrypt("hello end", "02715", "040895")[:encryption]
+    expect(enigma.convert_to_index(enigma.decrypted_end)).to eq([26, 4, 13, 3])
+  end
+
+  it 'maps over an array to convert to negative index numbers' do
+    @encrypted_message = enigma.encrypt("hello end", "02715", "040895")[:encryption]
+    expect(enigma.convert_to_negative_index(enigma.decrypted_end)).to eq([-26, -4, -13, -3])
+  end
+
+  it 'converts position to negative date shift' do
+    @encrypted_message = enigma.encrypt("hello end", "02715", "040895")[:encryption]
+    expect(enigma.convert_to_negative_date_shift(enigma.shift_type_end)).to eq([0, -2, -5, -1])
+
+  end
+
+  it 'combines positional elements in each array to get the key shift' do
+    @encrypted_message = enigma.encrypt("hello end", "02715", "040895")[:encryption]
+    expect(enigma.absolute_key_shift).to eq([0, 17, 15, 2])
+  end
+
+  it 'converts integer key shifts to strings' do
+    expect(enigma.convert_key_to_string(0)).to eq("00")
+    expect(enigma.convert_key_to_string(17)).to eq("17")
+    expect(enigma.convert_key_to_string(15)).to eq("15")
+    expect(enigma.convert_key_to_string(2)).to eq("02")
+  end
+
+  # it 'formats and orders the keys' do
+  #   @encrypted_message = enigma.encrypt("hello end", "02715", "040895")[:encryption]
+  #   expect(enigma.order_format_keys()).to eq(["02", "00", "17", "15"])
+  # end
+
+  it 'finds all other possible key shifts based on one key shift' do
+    @encrypted_message = enigma.encrypt("hello end", "02715", "040895")[:encryption]
+    expect(enigma.all_possible_key_shifts).to eq([
+      ["02", "29", "56", "83"],
+      ["00", "27", "54", "81"],
+      ["17", "44", "71", "98"],
+      ["15", "42", "69", "96"]
+    ])
+  end
+
+  it 'converts all possible key shifts from array to a hash' do
+    @encrypted_message = enigma.encrypt("hello end", "02715", "040895")[:encryption]
+    expect(enigma.keys_by_shift).to eq( { 
+      alpha: ["02", "29", "56", "83"],
+      beta: ["00", "27", "54", "81"],
+      gamma: ["17", "44", "71", "98"],
+      delta: ["15", "42", "69", "96"]
+    })
+  end
+#will need to be stumped for multiples
+  it 'finds all matched beta keys' do
+    @encrypted_message = enigma.encrypt("hello end", "02715", "040895")[:encryption]
+    expect(enigma.beta_matched_keys).to eq(["27"])
+  end
+
+  it 'finds all matched gamma keys' do
+    @encrypted_message = enigma.encrypt("hello end", "02715", "040895")[:encryption]
+    allow(enigma).to receive(:matched_keys).and_return({beta: ["27"]})
+    expect(enigma.gamma_matched_keys(enigma.matched_keys)).to eq(["71"])
+  end
+
+  it 'finds all matched alpha keys' do
+    @encrypted_message = enigma.encrypt("hello end", "02715", "040895")[:encryption]
+    allow(enigma).to receive(:matched_keys).and_return({beta: ["27"]})
+    expect(enigma.alpha_matched_keys(enigma.matched_keys)).to eq(["02"])
+  end
+
+  it 'finds all matched delta keys' do
+    @encrypted_message = enigma.encrypt("hello end", "02715", "040895")[:encryption]
+    allow(enigma).to receive(:matched_keys).and_return({gamma: ["71"]})
+    expect(enigma.delta_matched_keys(enigma.matched_keys)).to eq(["15"])
+  end
+
+  it 'all_matched_key_shifts' do
+    @encrypted_message = enigma.encrypt("hello end", "02715", "040895")[:encryption]
+    allow(enigma).to receive(:matched_keys).and_return({gamma: ["71"]})
+    expect(enigma.all_matched_key_shifts).to eq({ 
+      alpha: ["02"],
+      beta: ["27"],
+      gamma: ["71"],
+      delta: ["15"]
+    })
+  end
+
+  it 'can combine keys' do
+    @encrypted_message = enigma.encrypt("hello end", "02715", "040895")[:encryption]
+    expect(enigma.combined_key("02", "71", "15")).to eq("02715")
   end
 end
 
