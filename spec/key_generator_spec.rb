@@ -7,5 +7,7 @@ describe KeyGenerator do
     expect(key.length).to eq(5)
     expect(key.to_i).to be_instance_of(Integer)
     expect(key).to be_instance_of(String)
+    srand(123)
+    expect(enigma.generate_key).to eq("22613")
   end
 end

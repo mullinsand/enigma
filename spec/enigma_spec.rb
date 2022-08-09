@@ -41,6 +41,17 @@ describe Enigma do
     expect(enigma.given_date).to eq("040895")
   end
 
+  it 'while encrypting it skips over characters not in character set' do
+    allow(enigma).to receive(:generate_key).and_return("02715")
+    allow(Time).to receive(:new).and_return(Time.new(1995, 8, 4))
+
+    expect(enigma.encrypt("hello world!", nil, nil)).to eq( {
+          encryption: "keder ohulw!",
+          key: "02715",
+          date: "040895"
+        } )
+  end
+
   it 'decrypts a ciphertext when given a key and date' do
     expect(enigma.decrypt("keder ohulw", "02715", "040895")).to eq( {
           decryption: "hello world",
@@ -51,6 +62,14 @@ describe Enigma do
     expect(enigma.encrypted_message).to eq("keder ohulw")
     expect(enigma.given_key).to eq("02715")
     expect(enigma.given_date).to eq("040895")
+  end
+
+  it 'while decrypting it skips over characters not in character set' do
+    expect(enigma.decrypt("keder ohulw!", "02715", "040895")).to eq( {
+          decryption: "hello world!",
+          key: "02715",
+          date: "040895"
+        } )
   end
 
   it 'decrypts a ciphertext when given just a key' do
@@ -218,6 +237,7 @@ describe 'cracking some code' do
       delta: ["34", "15"]
     })
     expect(enigma.multiple_keys_scenario(enigma.all_matched_key_shifts)).to eq(["02715", "01234"])
+    expect(enigma.list_of_possible_keys).to eq(["02715", "01234"])
   end
 
   it 'cracks!' do
@@ -276,11 +296,6 @@ describe 'cracking some code' do
     expect(enigma.convert_key_to_string(15)).to eq("15")
     expect(enigma.convert_key_to_string(2)).to eq("02")
   end
-
-  # it 'formats and orders the keys' do
-  #   @encrypted_message = enigma.encrypt("hello end", "02715", "040895")[:encryption]
-  #   expect(enigma.order_format_keys()).to eq(["02", "00", "17", "15"])
-  # end
 
   it 'finds all other possible key shifts based on one key shift' do
     @encrypted_message = enigma.encrypt("hello end", "02715", "040895")[:encryption]
