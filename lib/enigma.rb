@@ -89,10 +89,21 @@ class Enigma
     @encrypted_message[-4..].split("")
   end
 
-  def shift_type_by_position
+  def shift_type_end
     [space_position % 4, e_position % 4, n_position % 4, d_position % 4]
   end
 
+  def convert_to_index(array)
+    array.map {|letter| character_index(letter)}
+  end
+
+  def convert_to_negative_index(array)
+    array.map {|letter| -character_index(letter)}
+  end
+
+  def combo_enc_dec_shift
+    convert_to_index()
+  end
   # def encrypt_character_by_position(position)
   #   @encrypted_message[position - 1]
   # end
