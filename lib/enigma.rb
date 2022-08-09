@@ -81,7 +81,60 @@ class Enigma
     end.join
   end
 
+  def decrypted_end
+    " end".split("")
+  end
+
+  def encrypted_end
+    @encrypted_message[-4..].split("")
+  end
+
+  def shift_type_by_position
+    [space_position % 4, e_position % 4, n_position % 4, d_position % 4]
+  end
+
+  # def encrypt_character_by_position(position)
+  #   @encrypted_message[position - 1]
+  # end
+
+  # def decrypt_character_by_position(position)
+  #   return if position < (@encrypted_message.length - 3)
+  #   @encrypted_message[position - 1]
+  # end
+
+  def key_shift(position, encrypted_character, decrypted_character)
+    key_shift = []
+    
+    if a_position?(position)
+      key_shift << :alpha
+      key_shift << character_index(encrypted_character) - character_index(decrypted_character) + a_date_shift
+    elsif b_position?(position)
+      key_shift << :beta
+      key_shift << character_index(encrypted_character) - character_index(decrypted_character) + b_date_shift
+    elsif c_position?(position)
+      key_shift << :gamma
+      key_shift << character_index(encrypted_character) - character_index(decrypted_character) + c_date_shift
+    elsif d_position?(position)
+      key_shift << :delta
+      key_shift << character_index(encrypted_character) - character_index(decrypted_character) + a_date_shift
+    end
+    key_shift
+  end
+
+  def list_of_key_shifts
+    key_shifts = Hash.new
+    position = 0
+    @encrypted_message.split.each do |letter|
+      position += 1
+      return if position < (@encrypted_message.length - 3)
+      key_shift
+
+    end
+  end
+
   def date_shift(position, character)
+    #based on position, it determines the type of date shift (ABCD), applies the shift,
+    #and then spits out the character that it ends up on
     if a_position?(position)
       @character_set[(character_index(character) + a_date_shift) % 27]
     elsif b_position?(position)
@@ -250,6 +303,7 @@ class Enigma
     assign_all_letter_shift
     given_date ||= Time.new.strftime("%d%m%y")
     @given_date = given_date
+    @given_key = nil
     @given_key = list_of_possible_keys[0]
     {
       decryption: decrypt_message,
