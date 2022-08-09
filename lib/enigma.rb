@@ -303,7 +303,6 @@ class Enigma
     assign_all_letter_shift
     given_date ||= Time.new.strftime("%d%m%y")
     @given_date = given_date
-    @given_key = nil
     @given_key = list_of_possible_keys[0]
     {
       decryption: decrypt_message,
