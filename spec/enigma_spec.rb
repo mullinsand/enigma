@@ -337,5 +337,21 @@ describe 'cracking some code' do
     @encrypted_message = enigma.encrypt("hello end", "02715", "040895")[:encryption]
     expect(enigma.convert_to_index(enigma.decrypted_end)).to eq([26, 4, 13, 3])
   end
+
+  it 'maps over an array to convert to negative index numbers' do
+    @encrypted_message = enigma.encrypt("hello end", "02715", "040895")[:encryption]
+    expect(enigma.convert_to_negative_index(enigma.decrypted_end)).to eq([-26, -4, -13, -3])
+  end
+
+  it 'converts position to negative date shift' do
+    @encrypted_message = enigma.encrypt("hello end", "02715", "040895")[:encryption]
+    expect(enigma.convert_to_negative_date_shift(enigma.shift_type_end)).to eq([0, -2, -5, -1])
+
+  end
+  it 'combines positional elements in each array to get the key shift' do
+    @encrypted_message = enigma.encrypt("hello end", "02715", "040895")[:encryption]
+    expect(enigma.absolute_key_shift).to eq([0, 17, 15, 2])
+  end
+
 end
 

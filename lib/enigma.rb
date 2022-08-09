@@ -101,8 +101,26 @@ class Enigma
     array.map {|letter| -character_index(letter)}
   end
 
-  def combo_enc_dec_shift
-    convert_to_index()
+  def convert_to_negative_date_shift(array)
+    array.map do |shift_type|
+      if a_position?(shift_type)
+        -a_date_shift
+      elsif b_position?(shift_type)
+        -b_date_shift
+      elsif c_position?(shift_type)
+        -c_date_shift
+      elsif d_position?(shift_type)
+        -d_date_shift
+      end
+    end
+  end
+
+  def absolute_key_shift
+    index_encrypted_end = convert_to_index(encrypted_end)
+    neg_index_decrypted_end = convert_to_negative_index(decrypted_end)
+    neg_date_shift_end = convert_to_negative_date_shift(shift_type_end)
+    raw_key_shift = index_encrypted_end.zip(neg_index_decrypted_end, neg_date_shift_end).map(&:sum)
+    raw_key_shift.map {|key| key.negative? ? key +=27 : key}
   end
   # def encrypt_character_by_position(position)
   #   @encrypted_message[position - 1]
